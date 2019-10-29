@@ -4,14 +4,32 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class movie {
+	
+	// name of the movie
 	private String movieName;
+	
+	// create a common class PERSON which contains first name and last name
+	// movie directors name - object of class PERSON
 	private String directorName;
+	
+	// all movie reviews -- Array of class AllReviews which contains all reviews and person details with PERSON class
 	private String[] reviews;
+	
+	// all movie ratings -- Array of class AllRatings and person details with PERSON class
 	private double[] ratings;
-	private String showingStatus; // preview, now showing, coming soon
+	
+	// status of the movie - preview, now showing, coming soon
+	private String showingStatus;
+	
+	// synopsis of the movie
 	private String Synopsis;
+	
+	// cast of the movie -- Array of PERSON class type (can have 2 - 3 actors)
 	private String[] Cast;
+	
+	// all shows of the movie
 	private show[] Shows;
+	
 	
 	// main constructor
 	public movie(String name,String director,String[] reviews, double[] ratings,
