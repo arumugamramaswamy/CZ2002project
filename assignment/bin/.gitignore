@@ -1,3 +1,5 @@
 /assignment/
-/module-info.class
-/TicketConfiguration/
+/.DS_Store
+/config/
+/model/
+/tickets/

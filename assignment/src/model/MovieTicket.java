@@ -1,4 +1,8 @@
-package assignment;
+package model;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /*
  * MovieTicket Class
@@ -22,7 +26,7 @@ public class MovieTicket {
 	// Day of the Week - Public Holiday or Weekend(true), Week Day (false)
 	private boolean isPublicHoliday;
 	
-	// Price of the Ticket - Base Price (hardcoded for now, later needed to be retrieved from .flat file
+	// Price of the Ticket - Base Price
 	private double Price = 9.00;
 	
 	// Default Constructor
@@ -35,41 +39,38 @@ public class MovieTicket {
 	
 	
 	private double calculatePrice() {
-		/*
-		 * Hardcoding prices for now
-		 * Later needed to be retrieved from the .flat file
-		 */
+		
+		TicketPrice getQuotation = new TicketPrice();
 		
 		// All prices in SGD
 		
 		// Increase price if the movie is 3D
 		if(is3D) 
-			Price = Price + 3.5;
+			Price = Price + getQuotation.get3DPrice();
 		
 		// Increase price based on different class of Cinema
 		if(classOfCinema == "Standard")
-			Price = Price + 3.5;
+			Price = Price + getQuotation.getStandardPrice();
 		else if(classOfCinema == "Premium")
-			Price = Price + 5.5;
+			Price = Price + getQuotation.getPremiumPrice();
 		else if(classOfCinema == "Platinum")
-			Price = Price + 8.5;
+			Price = Price + getQuotation.getPlatinumPrice();
 		
 		// Decrease the price if ticket is of a child or a senior citizen
 		if(movieGoerCategory == "Child")
-			Price = Price - 2.5;
+			Price = Price - getQuotation.getChildPrice();
 		else if(movieGoerCategory == "SeniorCitizen")
-			Price = Price - 3.5;
+			Price = Price - getQuotation.getSeniorCitizenPrice();
 		
 		// Increase price if it is a public holiday
 		if(isPublicHoliday)
-			Price = Price + 2;
+			Price = Price + getQuotation.getPublicHolidayPrice();
 		
 		// Calculating GST
-		Price = Price + (7/100) * Price;
+		Price = Price + getQuotation.getGSTPrice() * Price;
 		
 		return Price;
 	}
-	
 	
 	// get total price
 	public double getPrice() {
@@ -78,3 +79,4 @@ public class MovieTicket {
 	}
 	
 }
+	
