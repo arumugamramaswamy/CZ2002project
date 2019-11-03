@@ -40,7 +40,7 @@ public class MovieTicket {
 	
 	private double calculatePrice() {
 		
-		TicketPrice getQuotation = new TicketPrice();
+		GetPrice getQuotation = new GetPrice();
 		
 		// All prices in SGD
 		
