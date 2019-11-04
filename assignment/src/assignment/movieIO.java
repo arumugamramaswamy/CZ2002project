@@ -200,6 +200,7 @@ public class movieIO {
 						if(j<temp.length-1)
 						st.append(",");
 					}
+
 					alw.add(st.toString());
 				}
 				write(filename,alw);
@@ -252,8 +253,8 @@ public class movieIO {
 						seats_final[x][y] = (int)Math.round(Seats[9*x+y]);
 					}
 				}
-				
-				show s = new show(mov,dateTime,cineplexID,screenNum,seats_final);
+				boolean is3D = Boolean.parseBoolean(star.nextToken().trim());
+				show s = new show(mov,dateTime,cineplexID,screenNum,is3D,seats_final);
 				
 //				s.assignSeat(0, 1);
 //				s.printSeats();
@@ -285,7 +286,8 @@ public class movieIO {
 						st.append(",");
 					}
 				}
-
+				st.append(SEPARATOR);
+				st.append(String.valueOf(s.get3D()));
 				
 				alw.add(st.toString());
 			}

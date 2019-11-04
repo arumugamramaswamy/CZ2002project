@@ -12,7 +12,7 @@ public class tester {
 		movie m = new movie("YOYO","supsup?", null, null, null, null, args);
 //		m.readShowDetails();
 //		m.saveShowDetails();
-		show s = new show(m,"10/10/19 12:00:00", 0, 0);
+		show s = new show(m,"10/10/19 12:00:00", 0, 0,false);
 		s.printSeats();
 ////		s.assignSeat(0, 0);
 ////		System.out.print("\n");

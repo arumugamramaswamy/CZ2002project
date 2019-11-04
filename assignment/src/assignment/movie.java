@@ -41,8 +41,6 @@ public class movie {
 		this.showingStatus = showingStatus;
 		this.ratings = ratings;
 		this.reviews = reviews;
-		//read ratings and review from file
-		//implement here
 	}
 	
 	// constructor used by show
@@ -128,9 +126,9 @@ public class movie {
 	}
 	
 	//create a show for this movie, currently set to protected to be used by admin module
-	void createShowListing(String dt,int screenNum,int cineplexID) {
+	void createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
 		show[] temp;
-		show s = new show(this,dt,screenNum,cineplexID);
+		show s = new show(this,dt,screenNum,cineplexID,is3D);
 		if(Shows == null) {
 			temp = new show[1];
 			temp[0] = s;

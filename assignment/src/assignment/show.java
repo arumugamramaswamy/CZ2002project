@@ -6,9 +6,10 @@ public class show{ // figure out how to implement extends movie
 	private int screenNum;
 	private int cineplexID;
 	private int[][] seats = new int[9][9];
+	private boolean is3D;
 	
 	// auto construct seats
-	public show(movie mov, String dt, int cineplexID, int screenNum) {
+	public show(movie mov, String dt, int cineplexID, int screenNum, boolean is3D) {
 		this.mov = mov;
 		dateTime = dt;
 		for(int i=0;i<9;i++) {
@@ -18,10 +19,11 @@ public class show{ // figure out how to implement extends movie
 		}
 		this.cineplexID = cineplexID;
 		this.screenNum = screenNum;
+		this.is3D = is3D;
 	}
 	
 	// manually construct seats, called by readShows in movieIO
-	public show(movie mov, String dt, int cineplexID, int screenNum, int[][] seats) {
+	public show(movie mov, String dt, int cineplexID, int screenNum, boolean is3D, int[][] seats) {
 		this.mov = mov;
 		dateTime = dt;
 		
@@ -30,6 +32,7 @@ public class show{ // figure out how to implement extends movie
 
 		this.cineplexID = cineplexID;
 		this.screenNum = screenNum;
+		this.is3D = is3D;
 	}
 	
 	// print Seats 
@@ -73,13 +76,20 @@ public class show{ // figure out how to implement extends movie
 	public String getDateTime() {
 		return dateTime;
 	}
+	
 	public int getCineplexID() {
 		return cineplexID;
 	}
+	
 	public int getScreenNum() {
 		return screenNum;
 	}
+	
 	public int[][] getSeats(){
 		return seats;
+	}
+	
+	public boolean get3D() {
+		return is3D;
 	}
 }
