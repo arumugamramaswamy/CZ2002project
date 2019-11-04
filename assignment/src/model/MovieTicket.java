@@ -4,32 +4,45 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-/*
- * MovieTicket Class
- * Used by the movie class to generate a Movie Ticket based on factors like
- * type of the movie,
- * day of the week,
- * etc. 
+/**
+ * Generate a Movie Ticket price
+ * @version 1.0
  */
 
 public class MovieTicket {
 	
-	// Type of Movie - 3D (true) or 2D (false)
+	/**
+	 * Type of Movie - 3D (true) or 2D (false)
+	 */
 	private boolean is3D;
 	
-	// Class of Cinema - Standard, Premium, Platinum
+	/**
+	 * Class of Cinema - Standard, Premium, Platinum
+	 */
 	private String classOfCinema;
 	
-	// Movie Goer Category - Child, Adult, SeniorCitizen
+	/**
+	 * Movie Goer Category - Child, Adult, SeniorCitizen
+	 */
 	private String movieGoerCategory;
 	
-	// Day of the Week - Public Holiday or Weekend(true), Week Day (false)
+	/**
+	 * Day of the Week - Public Holiday or Weekend(true), Week Day (false)
+	 */
 	private boolean isPublicHoliday;
 	
-	// Price of the Ticket - Base Price
+	/**
+	 * Price of the Ticket - Base Price
+	 */
 	private double Price = 9.00;
 	
-	// Default Constructor
+	/**
+	 * Default Constructor
+	 * @param is3D 					true if the movie is 3D
+	 * @param classOfCinema			Standard, Premium, Platinum
+	 * @param movieGoerCategory		Child, Adult, Senior Citizen
+	 * @param isPublicHoliday		true if it is a public holiday
+	 */
 	public MovieTicket(boolean is3D, String classOfCinema, String movieGoerCategory, boolean isPublicHoliday) {
 		this.is3D = is3D;
 		this.classOfCinema = classOfCinema;
@@ -37,7 +50,11 @@ public class MovieTicket {
 		this.isPublicHoliday = isPublicHoliday;
 	}
 	
-	
+	/**
+	 * Calculate the ticket price - all prices in SGD
+	 * Add a surcharge (3D, Platinum Ticket, etc..) on top of a base price
+	 * @return			movie ticket price
+	 */
 	private double calculatePrice() {
 		
 		GetPrice getQuotation = new GetPrice();
@@ -72,7 +89,10 @@ public class MovieTicket {
 		return Price;
 	}
 	
-	// get total price
+	/**
+	 * get total price
+	 * @return helper function to return total price
+	 */
 	public double getPrice() {
 		double totalPrice = calculatePrice();
 		return totalPrice;
