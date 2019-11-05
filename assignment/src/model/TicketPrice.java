@@ -5,27 +5,41 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-/*
- * TicketPrice.java
- * Used to read all ticket prices form prices.txt
+/**
+ * Used to read all ticket prices from prices.txt
+ * @version 1.0
  */
 
 
 public class TicketPrice {
 	
 private static ArrayList<Double> prices = new ArrayList<>(); 
-	
+
+/**
+ * read prices line by line from data/prices.txt
+ *  File Format
+ *  3DPrice
+ *  Class - Standard
+ *  Class - Premium
+ *  Class - Platinum
+ *  Movie Goer Category - Child
+ *  Movie Goer Category - Senior Citizen
+ *  Public Holiday Price
+ *  GST Percentage
+	 * @return array of all surcharge prices
+ */
 public static ArrayList<Double> readPrices() {
         
-        /* File Format
-            3DPrice
-            Class - Standard
-            Class - Premium
-            Class - Platinum
-            Movie Goer Category - Child
-            Movie Goer Category - Senior Citizen
-            Public Holiday Price
-            GST Percentage
+        /**
+         *  File Format
+         *  3DPrice
+         *  Class - Standard
+         *  Class - Premium
+         *  Class - Platinum
+         *  Movie Goer Category - Child
+         *  Movie Goer Category - Senior Citizen
+         *  Public Holiday Price
+         *  GST Percentage
         */
         
         File file = new File("assignment/data/prices.txt");
