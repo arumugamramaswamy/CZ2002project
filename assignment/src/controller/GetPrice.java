@@ -1,7 +1,8 @@
-package model;
+package controller;
 
 import java.util.ArrayList;
 
+import model.TicketPrice;
 
 /**
  * Returns all prices for different categories and types

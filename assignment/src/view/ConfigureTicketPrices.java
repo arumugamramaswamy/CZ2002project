@@ -4,9 +4,9 @@
 package view;
 import java.util.*;
 
-import model.GetPrice;
+import controller.GetPrice;
 import model.TicketPrice;
-import model.UpdateTicketPrices;
+import controller.UpdateTicketPrices;
 import model.AdminChangeStatus;
 import static model.AdminChangeStatus.*;
 
@@ -120,7 +120,7 @@ public class ConfigureTicketPrices {
 				break;
 				
 			case 10: 
-				// temp
+				// temporary
 				System.exit(0);
 				break;
 			}

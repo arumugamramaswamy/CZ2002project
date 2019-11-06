@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import controller.GetPrice;
+
 /**
  * Generate a Movie Ticket price
  * @version 1.0
