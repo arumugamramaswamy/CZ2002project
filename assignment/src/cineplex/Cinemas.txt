@@ -1,0 +1,9 @@
+Cinema1;Platinum;F01;
+Cinema2;Standard;F02;
+Cinema3;Platinum;F03;
+Cinema1;Platinum;G01;
+Cinema2;Standard;G02;
+Cinema3;Standard;G03;
+Cinema1;Standard;S01;
+Cinema2;Platinum;S02;
+Cinema3;Standard;S03;
