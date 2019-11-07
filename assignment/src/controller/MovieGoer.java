@@ -1,10 +1,10 @@
-package people;
+package controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import assignment.movie;
+import model.movie;
 
 import java.util.ArrayList;
 
@@ -13,22 +13,7 @@ import java.util.ArrayList;
  * It's me.
  */
 
-public class booking{
 
-    //the person who has made the booking
-    private MovieGoer booker;
-    
-    //movie object booked by the customer
-    private movie moviesBooked;
-    
-    //Date of the Booking
-    private Date dateBooked;
-
-    void 
-
-
-
-}
 
 public class MovieGoer{
     // name of the Customer
