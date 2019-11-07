@@ -39,6 +39,7 @@ public class ConfigureTicketPrices {
 			
 			GetPrice getQuotation = new GetPrice();
 			
+			System.out.println("");
 			System.out.println("1. 3D Movie Surcharge");
 			System.out.println("2. Seat Type - Standard");
 			System.out.println("3. Seat Type - Premium");
