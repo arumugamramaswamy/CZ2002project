@@ -5,21 +5,21 @@ import java.util.ArrayList;
 
 public class Cineplex {
     private String cineplexName;
-    private String cineplexId;
+    private int cineplexId;
     private ArrayList<Cinema> cinemaList;
 
     public Cineplex() {
         cinemaList=new ArrayList<>();
-        cineplexId="";
+        cineplexId=0;
         cineplexName="";
     }
 
-    public Cineplex(String cineplexName, String cineplexId) {
+    public Cineplex(String cineplexName, int cineplexId) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
     }
 
-    public Cineplex(String cineplexName, String cineplexId, ArrayList<Cinema> cinemaList) {
+    public Cineplex(String cineplexName, int cineplexId, ArrayList<Cinema> cinemaList) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
         this.cinemaList = cinemaList;
@@ -33,12 +33,12 @@ public class Cineplex {
         this.cineplexName = cineplexName;
     }
 
-    public String getCineplexId() {
+    public int getCineplexId() {
         return cineplexId;
     }
 
-    public void setCineplexId(String Id) {
-        this.cineplexId = cineplexId;
+    public void setCineplexId(int Id) {
+        this.cineplexId = Id;
     }
 
     public ArrayList<Cinema> getCinemaList() {

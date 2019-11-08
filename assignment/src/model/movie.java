@@ -28,7 +28,7 @@ public class movie {
 	private String[] Cast;
 	
 	// all shows of the movie
-	private show[] Shows;
+	private ArrayList<show> Shows;
 	
 	
 	// main constructor
@@ -127,19 +127,8 @@ public class movie {
 	
 	//create a show for this movie, currently set to protected to be used by admin module
 	void createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
-		show[] temp;
 		show s = new show(this,dt,screenNum,cineplexID,is3D);
-		if(Shows == null) {
-			temp = new show[1];
-			temp[0] = s;
-		}else {
-		temp = new show[Shows.length+1];
-		for (int i=0;i<Shows.length;i++) {
-			temp[i] = Shows[i];
-		}
-		temp[Shows.length] = s;
-		}
-		Shows = temp;
+		Shows.add(s);
 	}
 	
 	//save all shows to a text file under the Shows folder with file name as the movie name
@@ -157,10 +146,7 @@ public class movie {
 		movieIO m = new movieIO();
 		try {
 		ArrayList arr = m.readShows(this,"Shows/"+movieName+".txt");
-		Shows = new show[arr.size()];
-		for(int i =0;i<arr.size();i++) {
-			Shows[i] = (show)arr.get(i);
-		}
+		Shows = arr;
 			
 		}catch(IOException e) {
 			System.out.println("IOException > " + e.getMessage());
