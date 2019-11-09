@@ -41,15 +41,12 @@ public class movie {
 	// cast of the movie -- Array of PERSON class type (can have 2 - 3 actors)
 	private String[] Cast;
 	
-<<<<<<< HEAD
 	/**
 	 * all shows of the movie
 	 */
-	private show[] Shows;
-=======
+	// private show[] Shows;
 	// all shows of the movie
 	private ArrayList<show> Shows;
->>>>>>> master
 	
 	
 	/**

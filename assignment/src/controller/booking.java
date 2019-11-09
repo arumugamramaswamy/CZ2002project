@@ -1,4 +1,4 @@
-package controller.people;
+package controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 
-public class Booking{
+public class booking {
 
     //the person who has made the booking
     private MovieGoer booker;
@@ -23,7 +23,7 @@ public class Booking{
 
     private String firstseat;
 
-    public Booking(MovieGoer booker, String [] moviesBooked,int numseats, String firstseat){
+    public booking(MovieGoer booker, String [] moviesBooked,int numseats, String firstseat){
         this.booker = booker;
         this.moviesBooked = moviesBooked;
         this.numseats = numseats;

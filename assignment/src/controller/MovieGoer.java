@@ -1,4 +1,4 @@
-package controller.people;
+package controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,12 +17,12 @@ public class MovieGoer{
 
     private String customerAddress;
 
-    private Booking [] customerBookings;
+    private booking [] customerBookings;
 
     private int[][] seats = new int[9][9];
 
     //default constructor
-    public MovieGoer(String customerName, int customerAge, String customerAddress, Booking [] customerBookings){
+    public MovieGoer(String customerName, int customerAge, String customerAddress, booking [] customerBookings){
         this.customerAddress = customerAddress;
         this.customerAge = customerAge;
         this.customerBookings = customerBookings;
