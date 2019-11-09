@@ -26,7 +26,7 @@ private static ArrayList<Double> prices = new ArrayList<>();
  *  Movie Goer Category - Senior Citizen
  *  Public Holiday Price
  *  GST Percentage
-	 * @return array of all surcharge prices
+ * @return array of all surcharge prices
  */
 public static ArrayList<Double> readPrices() {
         

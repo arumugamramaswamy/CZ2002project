@@ -61,13 +61,19 @@ public class MovieTicket {
 		
 		GetPrice getQuotation = new GetPrice();
 		
-		// All prices in SGD
+		/**
+		 *  All prices in SGD
+		 */
 		
-		// Increase price if the movie is 3D
+		/**
+		 * Increase price if the movie is 3D
+		 */
 		if(is3D) 
 			Price = Price + getQuotation.get3DPrice();
 		
-		// Increase price based on different class of Cinema
+		/**
+		 * Increase price based on different class of Cinema
+		 */
 		if(classOfCinema == "Standard")
 			Price = Price + getQuotation.getStandardPrice();
 		else if(classOfCinema == "Premium")
@@ -75,17 +81,23 @@ public class MovieTicket {
 		else if(classOfCinema == "Platinum")
 			Price = Price + getQuotation.getPlatinumPrice();
 		
-		// Decrease the price if ticket is of a child or a senior citizen
+		/**
+		 * Decrease the price if ticket is of a child or a senior citizen
+		 */
 		if(movieGoerCategory == "Child")
 			Price = Price - getQuotation.getChildPrice();
 		else if(movieGoerCategory == "SeniorCitizen")
 			Price = Price - getQuotation.getSeniorCitizenPrice();
 		
-		// Increase price if it is a public holiday
+		/**
+		 * Increase price if it is a public holiday
+		 */
 		if(isPublicHoliday)
 			Price = Price + getQuotation.getPublicHolidayPrice();
 		
-		// Calculating GST
+		/**
+		 * Calculating GST
+		 */
 		Price = Price + getQuotation.getGSTPrice() * Price;
 		
 		return Price;

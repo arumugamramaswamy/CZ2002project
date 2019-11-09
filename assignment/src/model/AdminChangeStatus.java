@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Global announcements made whenever a change is triggered in the Admin Section of MOBLIMA
+ * @version 1.0
+ */
+
 public enum AdminChangeStatus {
 	
 	/**
@@ -20,7 +25,7 @@ public enum AdminChangeStatus {
 	private String status;
 	
 	/**
-	 * set status
+	 * set status of the announcement
 	 * @param status the current status of the change made
 	 */
 	AdminChangeStatus(String status) {
