@@ -1,20 +1,34 @@
-package controller;
+package controller.people;
 
-import model.movie;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-public class booking{
+
+import java.util.ArrayList;
+
+
+public class Booking{
 
     //the person who has made the booking
     private MovieGoer booker;
     
     //movie object booked by the customer
-    private movie moviesBooked;
+    private String [] moviesBooked;
     
     //Date of the Booking
-//    private Date dateBooked;
+    //private Date dateBooked;
 
-//    void 
+    private int numseats;
 
+    private String firstseat;
 
+    public Booking(MovieGoer booker, String [] moviesBooked,int numseats, String firstseat){
+        this.booker = booker;
+        this.moviesBooked = moviesBooked;
+        this.numseats = numseats;
+        this.firstseat = firstseat;
+    }
 
 }
+

@@ -55,7 +55,7 @@ private static void readCineplex(){
                         tempCinemaList.add(findCinemaByName(temp[i]));
                     }
                     cineplexesList.add(new Cineplex(
-                            temp[0], temp[1],
+                            temp[0], Integer.parseInt(temp[1]),
                             tempCinemaList
                     ));
                 }

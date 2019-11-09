@@ -267,13 +267,13 @@ public class movieIO {
 			return alr ;
 	}
 	
-	public static void saveShows(String filename, show[] Shows) throws IOException {
+	public static void saveShows(String filename, List Shows) throws IOException {
 		if(Shows==null)
 			return;
 		List alw = new ArrayList() ;// to store Professors data
 
-        for (int i = 0 ; i < Shows.length ; i++) {
-				show s = Shows[i];
+        for (int i = 0 ; i < Shows.size() ; i++) {
+				show s = (show) Shows.get(i);
 				StringBuilder st =  new StringBuilder() ;
 				st.append(s.getDateTime().trim());
 				st.append(SEPARATOR);

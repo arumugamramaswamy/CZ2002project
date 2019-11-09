@@ -41,10 +41,15 @@ public class movie {
 	// cast of the movie -- Array of PERSON class type (can have 2 - 3 actors)
 	private String[] Cast;
 	
+<<<<<<< HEAD
 	/**
 	 * all shows of the movie
 	 */
 	private show[] Shows;
+=======
+	// all shows of the movie
+	private ArrayList<show> Shows;
+>>>>>>> master
 	
 	
 	/**
@@ -201,19 +206,8 @@ public class movie {
 	 * @param is3D bool true if the movie is 3D
 	 */
 	void createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
-		show[] temp;
 		show s = new show(this,dt,screenNum,cineplexID,is3D);
-		if(Shows == null) {
-			temp = new show[1];
-			temp[0] = s;
-		}else {
-		temp = new show[Shows.length+1];
-		for (int i=0;i<Shows.length;i++) {
-			temp[i] = Shows[i];
-		}
-		temp[Shows.length] = s;
-		}
-		Shows = temp;
+		Shows.add(s);
 	}
 	
 	/**
@@ -235,10 +229,7 @@ public class movie {
 		movieIO m = new movieIO();
 		try {
 		ArrayList arr = m.readShows(this,"Shows/"+movieName+".txt");
-		Shows = new show[arr.size()];
-		for(int i =0;i<arr.size();i++) {
-			Shows[i] = (show)arr.get(i);
-		}
+		Shows = arr;
 			
 		}catch(IOException e) {
 			System.out.println("IOException > " + e.getMessage());
