@@ -13,7 +13,7 @@ public class master {
 	
 	private ArrayList<movie> movieList;
 	private ArrayList<Cineplex> cineplexList;
-	private static String filename = "";
+	private static String filename = "data/movies.txt";
 
 	public void addMovieListing(movie m) {
 		movieList.add(m);
@@ -60,11 +60,11 @@ public class master {
 			
 	}
 	
-	public void saveCineplexes(String filename) {
+	public void saveCineplexes() {
 
 		CineplexIO temp = new CineplexIO();
 		try {
-		temp.saveCineplex(filename,cineplexList);
+		temp.saveCineplex(cineplexList);
 		}
 		catch(IOException e){
 			

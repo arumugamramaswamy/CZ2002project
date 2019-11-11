@@ -14,7 +14,7 @@ import model.master;
 public class CineplexIO {
 
 //	private static String SEPERATOR = "|";
-	public static String filename ="";
+	public static String filename ="data/cineplex.txt";
 	public CineplexIO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -51,7 +51,7 @@ public class CineplexIO {
 	    }
 	}
 	
-	public static void saveCineplex(String filename, List al) throws IOException {
+	public static void saveCineplex(List al) throws IOException {
 		List alw = new ArrayList() ;
 		Cineplex c;
 		ArrayList<Cinema> temp1;

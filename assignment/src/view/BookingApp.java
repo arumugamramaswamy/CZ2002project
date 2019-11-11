@@ -2,12 +2,7 @@ package view;
 
 import java.util.*;
 
-<<<<<<< Updated upstream
-import model.LoginStatus;
-import model.PasswordHasher;
-=======
 import model.*;
->>>>>>> Stashed changes
 
 public class BookingApp {
 	public static void main(String[] args) {
@@ -20,7 +15,8 @@ public class BookingApp {
     	int selection;
     	int user;
     master Master = new master();
-
+    Master.readCinplexes();
+    Master.readMovies();
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
