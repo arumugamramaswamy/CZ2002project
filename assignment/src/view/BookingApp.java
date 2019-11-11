@@ -7,13 +7,13 @@ import java.util.*;
 public class BookingApp {
 	public static void main(String[] args) {
 
-        Scanner sc= new Scanner(System.in);
+    Scanner sc= new Scanner(System.in);
     
     /* outer do-while loop determines the user mode (STAFF/CUSTOMER) & runs corresponding allowable actions
        in individual do-while loops  
     */
-    	int selection;
-    	int user;
+    int selection;
+    int user;
     master Master = new master();
     Master.readMovies();
     Master.readCinplexes();
@@ -64,9 +64,13 @@ public class BookingApp {
                             break;
                     case 6: 
                             break;
+<<<<<<< Updated upstream
                     case 8: System.out.println("Thank you for using our Application!");
                     		System.exit(0);
                     		break;
+=======
+         
+>>>>>>> Stashed changes
                     default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
                 
