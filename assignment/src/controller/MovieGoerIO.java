@@ -28,11 +28,22 @@ public class MovieGoerIO{
     
     private int customerAge;
     
-    private static int linecounter = 1;
+    private static int linecounter;
     
     public int [][] seats = new int[9][9];
     
     public MovieGoerIO() {};
+	
+    public void countPreviousBookings() throws IOException,Exception {
+    	FileReader fw = new FileReader("src/people/Customers.txt");
+		BufferedReader br = new BufferedReader(fw);
+		
+		String s;
+		while((s=br.readLine())!=null) {
+			linecounter ++;
+		}
+		br.close();
+    }	
     
     public void readBookingsFile() throws IOException,Exception {
     	
@@ -65,7 +76,8 @@ public class MovieGoerIO{
     		}	
     }
     
-    public void writeNewBooking() {
+    public void writeNewBooking() throws IOException,Exception{
+	countPreviousBookings();    
     	file = getCustomerFile();
     	String temp;
     	try {
