@@ -19,14 +19,14 @@ public class Cineplex {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
         this.cinemaList = new ArrayList<Cinema>();
-        m.addCineplex(this);
+//        m.addCineplex(this);
     }
 
     public Cineplex(String cineplexName, int cineplexId, ArrayList<Cinema> cinemaList,master m) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
         this.cinemaList = cinemaList;
-        m.addCineplex(this);
+//        m.addCineplex(this);
     }
 
     public String getCineplexName() {

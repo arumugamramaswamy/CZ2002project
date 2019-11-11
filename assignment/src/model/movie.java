@@ -70,7 +70,7 @@ public class movie {
 		this.ratings = ratings;
 		this.reviews = reviews;
 		this.Shows = new ArrayList<show>();
-		m.addMovieListing(this);
+//		m.addMovieListing(this);
 	}
 	
 //	/**

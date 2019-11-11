@@ -114,25 +114,25 @@ public class movieIO {
 					// add to movie list
 					alr.add(mov) ;
 					
-					//print all fields
-					System.out.println(movieName);
-					System.out.println(directorName);
-					System.out.println(all_rev);
-					for(int x =0;x<reviews.length;x++) 
-						System.out.printf("%s ",reviews[x]);
-					
-					System.out.printf("\n");
-					System.out.println(all_ratings);
-					for(int x =0;x<ratings.length;x++) 
-						System.out.printf("%f ",ratings[x]);
-					System.out.printf("\n");
-
-					System.out.println(showingStatus);
-					System.out.println(Synopsis);
-					System.out.println(all_Cast);
-					for(int x =0;x<Cast.length;x++) 
-						System.out.printf("%s ",Cast[x]);
-					System.out.printf("\n");
+//					//print all fields
+//					System.out.println(movieName);
+//					System.out.println(directorName);
+//					System.out.println(all_rev);
+//					for(int x =0;x<reviews.length;x++) 
+//						System.out.printf("%s ",reviews[x]);
+//					
+//					System.out.printf("\n");
+//					System.out.println(all_ratings);
+//					for(int x =0;x<ratings.length;x++) 
+//						System.out.printf("%f ",ratings[x]);
+//					System.out.printf("\n");
+//
+//					System.out.println(showingStatus);
+//					System.out.println(Synopsis);
+//					System.out.println(all_Cast);
+//					for(int x =0;x<Cast.length;x++) 
+//						System.out.printf("%s ",Cast[x]);
+//					System.out.printf("\n");
 
 
 	        }

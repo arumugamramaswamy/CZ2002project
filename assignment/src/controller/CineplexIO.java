@@ -25,13 +25,13 @@ public class CineplexIO {
 	        String[] temp;
 	        String[] temp2;
 	        Cinema c;
-	        Scanner fileScanner = new Scanner(new File("C:\\Users\\tianyi\\eclipse-workspace\\storage\\Cineplexs.txt"));
+	        Scanner fileScanner = new Scanner(new File(filename));
 	        while (fileScanner.hasNext()) {
 	            temp = fileScanner.nextLine().split(";");
 
 	                    ArrayList<Cinema> tempCinemaList = new ArrayList<>();
 	                    for (int i = 2; i < temp.length; i++) {
-	                    	temp2 = temp[i].split("|");
+	                    	temp2 = temp[i].split("[|]");
 	                    	c = new Cinema(temp2[0],temp2[1],Integer.parseInt(temp2[2]));
 	                        tempCinemaList.add(c);
 	                    }

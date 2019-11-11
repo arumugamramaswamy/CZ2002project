@@ -21,8 +21,11 @@ public class BookingApp {
     	int selection;
     	int user;
     master Master = new master();
-    Master.readCinplexes();
     Master.readMovies();
+    Master.readCinplexes();
+
+//    System.out.println(Master.getCineplexes());
+    System.out.println(Master.getCineplexes().get(0));
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
