@@ -1,4 +1,4 @@
-package cineplex;
+package model;
 
 import java.util.ArrayList;
 

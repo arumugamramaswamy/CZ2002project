@@ -1,4 +1,4 @@
-package cineplex;
+package model;
 import java.io.*;
 import java.text.ParseException;
 import java.util.ArrayList;
