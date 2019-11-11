@@ -3,6 +3,7 @@ package view;
 import java.util.*;
 
 import model.LoginStatus;
+import model.PasswordHasher;
 
 public class BookingApp {
 	public static void main(String[] args) {
@@ -63,7 +64,7 @@ public class BookingApp {
         	
         	boolean incorrectInput = true;
         	int username = -1; // initialize as a negative 
-        	String password;
+        	String password = null;
         	
         	System.out.println("Please LOGIN to continue:");
         	
@@ -81,7 +82,10 @@ public class BookingApp {
 	        	}
         	}
 
+        	PasswordHasher login = new PasswordHasher();
         	
+        	
+        	if(login.checkPass(password) == true) {
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
@@ -109,8 +113,13 @@ public class BookingApp {
                 }
 
             } while(selection != 4);
+            
+        } else {
+        	System.err.println(LoginStatus.FAILED.returningStatus());
         }
         
+        } 
+        	
         } while(user == 1 || user == 2);
 
     }
