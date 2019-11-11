@@ -1,4 +1,4 @@
-package people;
+package controller;
 
 import java.io.*;
 import java.util.Scanner;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MovieGoerIO{
     
-    private File file = new File("src/people/Customers.txt");
+    private File file = new File("src/controller/Customers.txt");
     
     private static ArrayList<MovieGoer> customers = new ArrayList<>();
     
@@ -38,7 +38,7 @@ public class MovieGoerIO{
     	
     	
     		
-    		FileReader fw = new FileReader("src/people/Customers.txt");
+    		FileReader fw = new FileReader("src/controller/Customers.txt");
     		BufferedReader br = new BufferedReader(fw);
     		
     		String s;
@@ -182,10 +182,10 @@ public class MovieGoerIO{
 	public void printBookings(int i) {
 		System.out.println("Customer Name is " + customers.get(i).getCustomerName());
 		System.out.println("Customer Age is " + customers.get(i).getCustomerAge());
-		System.out.println("Booking ID: " + customers.get(i).getBooking().getbookingID());
-		System.out.println("FirstSeat of the Booking: " + customers.get(i).getBooking().getfirstseat());
-		System.out.println("MovieBooked is: " + customers.get(i).getBooking().getmovieBooked());
-		System.out.println("Total Number of Seats booked: " + customers.get(i).getBooking().getnumseats());
+		System.out.println("Booking ID: " + customers.get(i).getBooking(i).getbookingID());
+		System.out.println("FirstSeat of the Booking: " + customers.get(i).getBooking(i).getfirstseat());
+		System.out.println("MovieBooked is: " + customers.get(i).getBooking(i).getmovieBooked());
+		System.out.println("Total Number of Seats booked: " + customers.get(i).getBooking(i).getnumseats());
 		
 		
 		
