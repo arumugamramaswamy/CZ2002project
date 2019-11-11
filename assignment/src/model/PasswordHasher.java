@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 
 public class PasswordHasher {
 
+	static ArrayList<String> passwords = new ArrayList<>();
+	
 	public static String getHashSHA1 (String password) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("SHA-1");
@@ -28,21 +30,19 @@ public class PasswordHasher {
 			return null;
 		}
 	}
-	
-	private static ArrayList<Double> prices = new ArrayList<>(); 
 
-	public static ArrayList<Double> readPrices() {
+
+	public static ArrayList<String> readPasswords() { 
 	        
-	        
-	        File file = new File("data/prices.txt");
+	        File file = new File("data/passwords.txt");
 	        
 	        try {
 	    
 	            Scanner sc = new Scanner(file);
 	    
 	            while (sc.hasNextLine()) {
-	                double i = sc.nextDouble();
-	                prices.add(i);
+	                String i = sc.nextLine();
+	                passwords.add(i);
 	            }
 	            sc.close();
 	        } 
@@ -50,8 +50,25 @@ public class PasswordHasher {
 	            e.printStackTrace();
 	        }
 	        
-	        return prices;
+	        return passwords;
 	        
+	}
+	
+	public static boolean checkPass(String password) {
+		
+		ArrayList<String> pass = readPasswords();
+		boolean valid;
+		
+		valid = false;
+		
+		for (int i = 0; i < pass.size(); i++) {
+
+			if (pass.get(i).matches(getHashSHA1(password))) {
+				valid = true;
+			}
+		}
+
+		return valid;
 	}
 	
 }

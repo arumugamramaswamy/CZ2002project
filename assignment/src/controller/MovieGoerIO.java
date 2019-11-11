@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import model.show;
+
 public class MovieGoerIO{
     
     private File file = new File("src/controller/Customers.txt");
@@ -177,6 +179,16 @@ public class MovieGoerIO{
             }
         }
         System.out.println(numseats + " seats in row " + row + " from first seat " +  firstseat + "assigned to " + m.getCustomerName());
+    }
+	
+	public void assignFinalSeats(MovieGoer m, show s, int row, int numseats, int firstseat) {
+    	Booking b = m.getBooking();
+    	
+    	b.setnumseats(numseats);
+    	
+    	for(int i=1; i<=numseats; i++) {
+    		s.assignSeat(row, i+firstseat-1);
+    	}
     }
 
 

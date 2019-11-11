@@ -3,6 +3,9 @@ package model;
 import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import controller.*;
+import java.io.IOException;
+
 
 
 public class master {
@@ -10,6 +13,7 @@ public class master {
 	
 	private ArrayList<movie> movieList;
 	private ArrayList<Cineplex> cineplexList;
+	private static String filename = "data/movies.txt";
 
 	public void addMovieListing(movie m) {
 		movieList.add(m);
@@ -31,4 +35,39 @@ public class master {
 		movieList.remove(index);
 	}
 	
+	public void readMovies() {
+		movieIO temp = new movieIO();
+		try {
+		temp.readMovie(filename, this);
+		}catch(IOException e){
+			
+		}
+	}
+	
+	public void saveMovies() {
+		movieIO temp = new movieIO();
+		try {
+		temp.saveMovie(filename, movieList);
+		}catch(IOException e){
+			
+		}
+	}
+	
+	public void readCinplexes() {
+
+			CineplexIO temp = new CineplexIO();
+			temp.readCineplex(this);
+			
+	}
+	
+	public void saveCineplexes() {
+
+		CineplexIO temp = new CineplexIO();
+		try {
+		temp.saveCineplex(cineplexList);
+		}
+		catch(IOException e){
+			
+		}
+	}
 }

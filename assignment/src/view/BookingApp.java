@@ -3,8 +3,12 @@ package view;
 import model.*;
 import controller.*;
 
+<<<<<<< HEAD
 import java.util.*;
 import java.util.ArrayList;
+=======
+import model.*;
+>>>>>>> 5664dfae4858b220d197aa84079d35c5bec6b47e
 
 public class BookingApp {
 	public static void main(String[] args) {
@@ -16,7 +20,9 @@ public class BookingApp {
     */
     	int selection;
     	int user;
-
+    master Master = new master();
+    Master.readCinplexes();
+    Master.readMovies();
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
@@ -73,9 +79,13 @@ public class BookingApp {
         	
         	boolean incorrectInput = true;
         	int username = -1; // initialize as a negative 
-        	String password;
+        	String password = null;
         	
         	System.out.println("Please LOGIN to continue:");
+        	
+        	int flag = 0;
+        	
+        	do {
         	
         	while (incorrectInput) {
         		
@@ -90,6 +100,19 @@ public class BookingApp {
 	        		sc.nextLine();
 	        	}
         	}
+<<<<<<< HEAD
+=======
+
+        	PasswordHasher login = new PasswordHasher();
+        	
+        	if(login.checkPass(password) == false) {
+        		System.err.println(LoginStatus.FAILED.returningStatus());
+        
+        	} else {
+        	flag = 1;
+        	
+        	System.out.println(LoginStatus.SUCCESSFUL.returningStatus());
+>>>>>>> 5664dfae4858b220d197aa84079d35c5bec6b47e
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
@@ -115,8 +138,13 @@ public class BookingApp {
                 }
 
             } while(selection != 4);
+            
         }
-        
+        	
+        } while(flag == 1);
+        	
+        }
+        	
         } while(user == 1 || user == 2);
 
     }
