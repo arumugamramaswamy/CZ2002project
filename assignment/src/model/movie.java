@@ -3,6 +3,9 @@ package model;
 import java.io.IOException;
 import java.util.ArrayList;
 import controller.movieIO;
+import model.master;
+import model.Cineplex;
+import model.Cinema;
 
 /**
  * This class contains all the attributes of a movie and initializes the show class object
@@ -224,12 +227,26 @@ public class movie {
 	/**
 	 * read show details from the shows folder with file name as movie name
 	 */
-	void readShowDetails() {
+	void readShowDetails(master Master) {
+		show temp;
+		ArrayList<Cineplex> tempCineplexArray;
+		ArrayList<Cinema> tempCinemaArray;
+		Cineplex tempCineplex;
+		Cinema tempCinema;
 		movieIO m = new movieIO();
 		try {
 		ArrayList arr = m.readShows(this,"Shows/"+movieName+".txt");
 		Shows = arr;
-			
+		
+		for(int i=0;i<Shows.size();i++) {
+			temp = Shows.get(i);
+			tempCineplexArray = Master.getCineplexes();
+			tempCineplex = tempCineplexArray.get(temp.getCineplexID());
+			tempCinemaArray = tempCineplex.getCinemaList();
+			tempCinema = tempCinemaArray.get(temp.getScreenNum());
+			tempCinema.addShow(temp);
+		}
+		
 		}catch(IOException e) {
 			System.out.println("IOException > " + e.getMessage());
 		}

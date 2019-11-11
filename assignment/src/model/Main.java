@@ -3,7 +3,7 @@ import java.io.*;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import model.Cinema;
 
 
 
@@ -43,20 +43,25 @@ public class Main {
         return systemScanner;
     }
 
-private static void readCineplex(){
+private static void readCineplex(master m){
     try{
         String[] temp;
+        String[] temp2;
+        Cinema c;
         Scanner fileScanner = new Scanner(new File("C:\\Users\\tianyi\\eclipse-workspace\\storage\\Cineplexs.txt"));
         while (fileScanner.hasNext()) {
             temp = fileScanner.nextLine().split(";");
 
                     ArrayList<Cinema> tempCinemaList = new ArrayList<>();
                     for (int i = 2; i < temp.length; i++) {
-                        tempCinemaList.add(findCinemaByName(temp[i]));
+                    	temp2 = temp[i].split("|");
+                    	c = new Cinema(temp2[0],temp2[1],Integer.parseInt(temp2[2]));
+                        tempCinemaList.add(c);
                     }
                     cineplexesList.add(new Cineplex(
                             temp[0], Integer.parseInt(temp[1]),
-                            tempCinemaList
+                            tempCinemaList,
+                            m
                     ));
                 }
 
