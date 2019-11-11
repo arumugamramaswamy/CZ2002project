@@ -38,6 +38,7 @@ public class BookingApp {
                 + " 5) View booking history.\n"
                 + " 6) List the top 5 ranking by ticket sales OR by overall reviewers' ratings.\n"
                 + " 7) Quit MOBLIMA.\n"
+                + " 8) Quit MOBILA.\n"
                 + " Enter your choice below:\n");
                 selection = sc.nextInt();
 
@@ -63,7 +64,8 @@ public class BookingApp {
                             break;
                     case 6: 
                             break;
-                    case 7: System.exit(0);
+                    case 8: System.out.println("Thank you for using our Application!");
+                    		System.exit(0);
                     		break;
                     default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
@@ -131,6 +133,8 @@ public class BookingApp {
                     case 3: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
                     		CTP.main(args);
                             break;
+                    case 4: System.out.println("Thank you for using our Application!");
+                    		System.exit(0);
                     default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
 
