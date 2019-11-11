@@ -68,6 +68,10 @@ public class BookingApp {
         	
         	System.out.println("Please LOGIN to continue:");
         	
+        	int flag = 0;
+        	
+        	do {
+        	
         	while (incorrectInput) {
         		
 	        	try {
@@ -84,8 +88,13 @@ public class BookingApp {
 
         	PasswordHasher login = new PasswordHasher();
         	
+        	if(login.checkPass(password) == false) {
+        		System.err.println(LoginStatus.FAILED.returningStatus());
+        
+        	} else {
+        	flag = 1;
         	
-        	if(login.checkPass(password) == true) {
+        	System.out.println(LoginStatus.SUCCESSFUL.returningStatus());
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
@@ -114,11 +123,11 @@ public class BookingApp {
 
             } while(selection != 4);
             
-        } else {
-        	System.err.println(LoginStatus.FAILED.returningStatus());
         }
-        
-        } 
+        	
+        } while(flag == 1);
+        	
+        }
         	
         } while(user == 1 || user == 2);
 
