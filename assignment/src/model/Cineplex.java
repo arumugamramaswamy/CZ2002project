@@ -9,15 +9,16 @@ public class Cineplex {
     private int cineplexId;
     private ArrayList<Cinema> cinemaList;
 
-    public Cineplex(master m) {
-        cinemaList=new ArrayList<>();
-        cineplexId=0;
-        cineplexName="";
-    }
+//    public Cineplex(master m) {
+//        cinemaList=new ArrayList<>();
+//        cineplexId=0;
+//        cineplexName="";
+//    }
 
     public Cineplex(String cineplexName, int cineplexId,master m) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
+        this.cinemaList = new ArrayList<Cinema>();
         m.addCineplex(this);
     }
 
@@ -40,16 +41,20 @@ public class Cineplex {
         return cineplexId;
     }
 
-    public void setCineplexId(int Id) {
-        this.cineplexId = Id;
-    }
+//    public void setCineplexId(int Id) {
+//        this.cineplexId = Id;
+//    }
 
     public ArrayList<Cinema> getCinemaList() {
         return cinemaList;
     }
 
-    public void setCinemaList(ArrayList<Cinema> cinemaList) {
-        this.cinemaList = cinemaList;
+    public void addCinema(Cinema c) {
+    	cinemaList.add(c);
     }
+    
+//    public void setCinemaList(ArrayList<Cinema> cinemaList) {
+//        this.cinemaList = cinemaList;
+//    }
 }
 

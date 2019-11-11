@@ -68,6 +68,7 @@ public class movie {
 		this.showingStatus = showingStatus;
 		this.ratings = ratings;
 		this.reviews = reviews;
+		this.Shows = new ArrayList<show>();
 		m.addMovieListing(this);
 	}
 	

@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 
 import model.movie;
 import model.show;
+import model.master;
 
 public class movieIO {
 
@@ -53,7 +54,7 @@ public class movieIO {
 	    }
 		
 	    // an example of reading
-		public static ArrayList readMovie(String filename) throws IOException {
+		public static ArrayList readMovie(String filename,master m) throws IOException {
 			
 			// read String from text file
 			ArrayList stringArray = (ArrayList)read(filename);
@@ -108,7 +109,7 @@ public class movieIO {
 					String[] Cast = GetStringArray(alr2);
 					
 					// create Professor object from file data
-					movie mov = new movie(movieName,directorName,reviews,ratings,showingStatus,Synopsis,Cast);
+					movie mov = new movie(movieName,directorName,reviews,ratings,showingStatus,Synopsis,Cast,m);
 					
 					// add to movie list
 					alr.add(mov) ;
@@ -209,13 +210,13 @@ public class movieIO {
 				write(filename,alw);
 		}
 	
-	public static ArrayList readShows(movie mov,String filename) throws IOException {
+	public static ArrayList<show> readShows(movie mov,String filename) throws IOException {
 		
 		// read String from text file
 		ArrayList stringArray = (ArrayList)read(filename);
 		
 		//final array to store movie objects
-		ArrayList alr = new ArrayList() ;// to store Movie data
+		ArrayList<show> alr = new ArrayList<show>() ;// to store Movie data
 		
 
 		

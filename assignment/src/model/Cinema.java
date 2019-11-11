@@ -9,26 +9,26 @@ import java.util.ArrayList;
 public class Cinema {
     private String cinemaName;
     private String cinemaClass;
-    private String cinemaCode;
-//    private ArrayList<MovieInCinema> moviesList;
+    private int cinemaID;
+    private ArrayList<show> showList;
 
 
-    public Cinema() {
-        cinemaName="";
-        cinemaClass="";
-        cinemaCode="";
-        
-      
-    }
-
+//    public Cinema() {
+//        cinemaName="";
+//        cinemaClass="";
+//        cinemaCode="";
+//        
+//      
+//    }
+//
 
 
 
   
-    public Cinema(String cinemaName, String cinemaClass, String cinemaCode) {
+    public Cinema(String cinemaName, String cinemaClass, int cinemaID) {
         this.cinemaName = cinemaName;
         this.cinemaClass = cinemaClass;
-        this.cinemaCode = cinemaCode;
+        this.cinemaID = cinemaID;
 //        moviesList=new ArrayList<>();
 
         
@@ -53,11 +53,18 @@ public class Cinema {
 
 
 
-    public String getCinemaCode() {
-        return cinemaCode;
+    public int getCinemaID() {
+        return cinemaID;
     }
 
+    public void addShow(show s) {
+    	showList.add(s);
+    }
  
+    public ArrayList<show> getCinemaShows(){
+    	return showList;
+    }
+    
 //    public ArrayList<MovieInCinema> getMoviesList() {
 //        return moviesList;
 //    }
