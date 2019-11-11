@@ -17,7 +17,7 @@ public class UpdateTicketPrices {
 		
 		try {
 		
-		PrintWriter writer = new PrintWriter("assignment/data/prices.txt");
+		PrintWriter writer = new PrintWriter("data/prices.txt");
 		
 		for(int i = 0; i < 7; i++) {
 			writer.println(newPrices.get(i));

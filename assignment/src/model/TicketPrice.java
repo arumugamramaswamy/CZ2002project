@@ -42,7 +42,7 @@ public static ArrayList<Double> readPrices() {
          *  GST Percentage
         */
         
-        File file = new File("assignment/data/prices.txt");
+        File file = new File("data/prices.txt");
         
         try {
     

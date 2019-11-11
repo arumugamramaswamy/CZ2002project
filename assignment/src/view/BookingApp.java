@@ -94,7 +94,7 @@ public class BookingApp {
                 + " 2) Create/Update/Remove Movie Listing.\n"
                 + " 3) Create/Update/Remove cinema showtimes and movies to be shown.\n"
                 //System settings include ticket prices, holidays
-                + " 4) Configure system settings. \n"
+                + " 4) Configure Ticket Prices \n"
                 + " 5) Quit MOBLIMA\n"
                 + " Enter your choice below:\n");
 
@@ -108,7 +108,8 @@ public class BookingApp {
                             break;
                     case 3: 
                             break;
-                    case 4: 
+                    case 4: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
+                    		CTP.main(args);
                             break;
                     default: System.out.print("Invalid input, please try again!"); 
                 }
