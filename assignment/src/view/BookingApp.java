@@ -1,8 +1,10 @@
 package view;
 
-import java.util.*;
+import model.*;
+import controller.*;
 
-import model.LoginStatus;
+import java.util.*;
+import java.util.ArrayList;
 
 public class BookingApp {
 	public static void main(String[] args) {
@@ -38,7 +40,15 @@ public class BookingApp {
 
                 switch (selection)
                 {
-                    case 1:  
+                    case 1: master Master = new master();
+                    		ArrayList<movie> movies=new ArrayList<movie>();
+                    		
+                    		int i;
+                    		movies = Master.getMovies();
+                            
+                            for(i=0; i< movies.size();i++)
+                            	System.out.print(movies.get(i).getMovieName());
+                            
                             break;
                     case 2: 
                             break;
@@ -80,8 +90,6 @@ public class BookingApp {
 	        		sc.nextLine();
 	        	}
         	}
-
-        	
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
@@ -103,8 +111,6 @@ public class BookingApp {
                     case 3: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
                     		CTP.main(args);
                             break;
-                    case 5: System.exit(0);
-                    		break;
                     default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
 

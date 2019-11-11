@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BookingApp",
+            "request": "launch",
+            "mainClass": "view.BookingApp",
+            "projectName": "assignment"
+        }
+    ]
+}
