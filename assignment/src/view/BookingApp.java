@@ -2,13 +2,7 @@ package view;
 
 import model.*;
 import controller.*;
-
-<<<<<<< HEAD
 import java.util.*;
-import java.util.ArrayList;
-=======
-import model.*;
->>>>>>> 5664dfae4858b220d197aa84079d35c5bec6b47e
 
 public class BookingApp {
 	public static void main(String[] args) {
@@ -49,7 +43,7 @@ public class BookingApp {
 
                 switch (selection)
                 {
-                    case 1: master Master = new master();
+                    case 1:
                     		ArrayList<movie> movies=new ArrayList<movie>();
                     		
                     		int i;
@@ -103,8 +97,7 @@ public class BookingApp {
 	        		sc.nextLine();
 	        	}
         	}
-<<<<<<< HEAD
-=======
+
 
         	PasswordHasher login = new PasswordHasher();
         	
@@ -115,7 +108,6 @@ public class BookingApp {
         	flag = 1;
         	
         	System.out.println(LoginStatus.SUCCESSFUL.returningStatus());
->>>>>>> 5664dfae4858b220d197aa84079d35c5bec6b47e
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
