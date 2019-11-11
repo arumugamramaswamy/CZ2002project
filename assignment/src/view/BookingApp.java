@@ -90,12 +90,11 @@ public class BookingApp {
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
-                + " 1) LOGIN\n"
-                + " 2) Create/Update/Remove Movie Listing.\n"
-                + " 3) Create/Update/Remove cinema showtimes and movies to be shown.\n"
+                + " 1) Create/Update/Remove Movie Listing\n"
+                + " 2) Create/Update/Remove cinema showtimes and movies to be shown\n"
                 //System settings include ticket prices, holidays
-                + " 4) Configure Ticket Prices \n"
-                + " 5) Quit MOBLIMA\n"
+                + " 3) Configure Ticket Prices \n"
+                + " 4) Quit MOBLIMA\n"
                 + " Enter your choice below:\n");
 
                 selection= sc.nextInt();
@@ -111,13 +110,15 @@ public class BookingApp {
                     case 4: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
                     		CTP.main(args);
                             break;
-                    default: System.out.print("Invalid input, please try again!"); 
+                    case 5: System.exit(0);
+                    		break;
+                    default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
 
-            } while(selection!=5);
+            } while(selection != 4);
         }
         
-        } while(user==1 || user==2);
+        } while(user == 1 || user == 2);
 
     }
 
