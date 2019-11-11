@@ -28,7 +28,7 @@ public class MovieGoerIO{
     
     private int customerAge;
     
-    private static int linecounter;
+    private static int linecounter=0;
     
     public int [][] seats = new int[9][9];
     
