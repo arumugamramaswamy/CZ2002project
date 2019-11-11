@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import model.show;
+
 public class MovieGoerIO{
     
     private File file = new File("src/controller/Customers.txt");
