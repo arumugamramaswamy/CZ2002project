@@ -1,5 +1,7 @@
 package controller;
 
+import model.show;
+
 public class Booking{
 
     //the person who has made the booking
@@ -17,14 +19,16 @@ public class Booking{
 
     private String firstseat;
     
+    private show show;
     
     public Booking() {};
 
-    public Booking(int bookingID, String movieBooked,int numseats, String firstseat){
+    public Booking(int bookingID, String movieBooked,int numseats, String firstseat, show show){
         this.bookingID = bookingID;
         this.movieBooked = movieBooked;
         this.numseats = numseats;
         this.firstseat = firstseat;
+        this.setShow(show);
     }
     
     public String getmovieBooked() {
@@ -42,6 +46,8 @@ public class Booking{
     public String getfirstseat() {
     	return firstseat;
     }
+    
+    
     
     public void setmovieBooked(String movieBooked) {
     	this.movieBooked = movieBooked;
@@ -66,6 +72,14 @@ public class Booking{
 
 	public void setCustID(int custID) {
 		this.custID = custID;
+	}
+
+	public show getShow() {
+		return show;
+	}
+
+	public void setShow(show show) {
+		this.show = show;
 	}
 }
 
