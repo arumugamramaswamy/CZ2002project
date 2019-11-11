@@ -1,4 +1,4 @@
-package people;
+package controller;
 
 public class Booking{
 
