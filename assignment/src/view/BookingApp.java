@@ -70,15 +70,10 @@ public class BookingApp {
         	while (incorrectInput) {
         		
 	        	try {
-		        	System.out.print("Enter Username: ");
-		        	username = sc.nextInt();
-		        	incorrectInput = false;
-		        	
 		        	System.out.print("Enter Password: ");
 		        	sc.nextLine();
 		        	password = sc.nextLine();
-		        	
-		        	System.out.println("");
+		        	incorrectInput = false;
 	        	}
 	        	catch (Exception e) {
 	        		System.err.println(LoginStatus.FAILED.returningStatus());
@@ -105,9 +100,7 @@ public class BookingApp {
                             break;
                     case 2: 
                             break;
-                    case 3: 
-                            break;
-                    case 4: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
+                    case 3: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
                     		CTP.main(args);
                             break;
                     case 5: System.exit(0);
