@@ -57,8 +57,8 @@ public class MovieGoer{
 		customerbookings.add(b);
 	}
 	
-	public Booking getBooking() {
-		return customerbookings.get(0);
+	public Booking getBooking(int i) {
+		return customerbookings.get(i);
 	}
 
 }
