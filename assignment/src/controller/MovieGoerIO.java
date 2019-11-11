@@ -191,6 +191,18 @@ public class MovieGoerIO{
 		this.file = file;
 	}
 	
+	public MovieGoer getMovieGoer(int custID) {
+		int length = customers.size();
+		int i;
+		for(i=0; i<length; i++) {
+			int c = customers.get(i).getCustID();
+			if(c==custID) break;
+		}
+		
+		return customers.get(i);
+		
+	}
+	
 	public void printBookings(int i) {
 		System.out.println("Customer Name is " + customers.get(i).getCustomerName());
 		System.out.println("Customer Age is " + customers.get(i).getCustomerAge());
