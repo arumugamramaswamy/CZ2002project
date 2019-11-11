@@ -60,7 +60,7 @@ public class movie {
 	 * @param Cast			array of actors in the movie
 	 */
 	public movie(String name,String director,String[] reviews, double[] ratings,
-								String showingStatus, String Synopsis, String[] Cast) {
+								String showingStatus, String Synopsis, String[] Cast,master m) {
 		movieName = name;
 		directorName = director;
 		this.Cast = Cast;
@@ -68,21 +68,22 @@ public class movie {
 		this.showingStatus = showingStatus;
 		this.ratings = ratings;
 		this.reviews = reviews;
+		m.addMovieListing(this);
 	}
 	
-	/**
-	 * constructor used by show
-	 * @param mov contains all the attributes of a movie
-	 */
-	public movie(movie mov) {
-		movieName = mov.movieName;
-		directorName = mov.directorName;
-		reviews = mov.reviews;
-		ratings = mov.ratings;
-		showingStatus = mov.showingStatus;
-		Synopsis = mov.Synopsis;
-		Cast = mov.Cast;
-	}
+//	/**
+//	 * constructor used by show
+//	 * @param mov contains all the attributes of a movie
+//	 */
+//	public movie(movie mov,master m) {
+//		movieName = mov.movieName;
+//		directorName = mov.directorName;
+//		reviews = mov.reviews;
+//		ratings = mov.ratings;
+//		showingStatus = mov.showingStatus;
+//		Synopsis = mov.Synopsis;
+//		Cast = mov.Cast;
+//	}
 	
 	/**
 	 * get the movie name

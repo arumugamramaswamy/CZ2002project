@@ -10,11 +10,6 @@ public class master {
 	
 	private ArrayList<movie> movieList;
 	private ArrayList<Cineplex> cineplexList;
-	
-	
-	public master() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public void addMovieListing(movie m) {
 		movieList.add(m);
@@ -22,6 +17,18 @@ public class master {
 	
 	public void addCineplex(Cineplex c) {
 		cineplexList.add(c);
+	}
+	
+	public ArrayList<movie> getMovies(){
+		return movieList;
+	}
+	
+	public ArrayList<Cineplex> getCineplexes(){
+		return cineplexList;
+	}
+	
+	public void deleteMovie(int index) {
+		movieList.remove(index);
 	}
 	
 }

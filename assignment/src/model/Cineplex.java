@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import model.master;
 
 
 public class Cineplex {
@@ -8,21 +9,23 @@ public class Cineplex {
     private int cineplexId;
     private ArrayList<Cinema> cinemaList;
 
-    public Cineplex() {
+    public Cineplex(master m) {
         cinemaList=new ArrayList<>();
         cineplexId=0;
         cineplexName="";
     }
 
-    public Cineplex(String cineplexName, int cineplexId) {
+    public Cineplex(String cineplexName, int cineplexId,master m) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
+        m.addCineplex(this);
     }
 
-    public Cineplex(String cineplexName, int cineplexId, ArrayList<Cinema> cinemaList) {
+    public Cineplex(String cineplexName, int cineplexId, ArrayList<Cinema> cinemaList,master m) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
         this.cinemaList = cinemaList;
+        m.addCineplex(this);
     }
 
     public String getCineplexName() {
