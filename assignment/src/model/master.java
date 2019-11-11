@@ -38,7 +38,7 @@ public class master {
 	public void readMovies() {
 		movieIO temp = new movieIO();
 		try {
-		temp.readMovie(filename, this);
+		movieList = temp.readMovie(filename, this);
 		}catch(IOException e){
 			
 		}
@@ -56,7 +56,7 @@ public class master {
 	public void readCinplexes() {
 
 			CineplexIO temp = new CineplexIO();
-			temp.readCineplex(this);
+			cineplexList = temp.readCineplex(this);
 			
 	}
 	
