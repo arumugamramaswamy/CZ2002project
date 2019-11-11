@@ -63,6 +63,8 @@ public class BookingApp {
                             break;
                     case 6: 
                             break;
+                    case 7: System.exit(0);
+                    		break;
                     default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
                 
