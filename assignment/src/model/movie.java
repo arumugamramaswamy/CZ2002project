@@ -47,8 +47,6 @@ public class movie {
 	/**
 	 * all shows of the movie
 	 */
-	// private show[] Shows;
-	// all shows of the movie
 	private ArrayList<show> Shows;
 	
 	

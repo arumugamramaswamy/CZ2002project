@@ -11,6 +11,7 @@ import controller.GetPrice;
  * @version 1.0
  */
 
+
 public class MovieTicket {
 	
 	/**

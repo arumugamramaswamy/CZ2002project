@@ -2,6 +2,8 @@ package view;
 
 import java.util.*;
 
+import model.LoginStatus;
+
 public class BookingApp {
 	public static void main(String[] args) {
 
@@ -15,11 +17,11 @@ public class BookingApp {
 
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
-                            + " 1) Customer\n"
-                            + " 2) Staff\n");
+                            + "1) Customer\n"
+                            + "2) Staff\n");
         user= sc.nextInt();
         
-        if(user==1)
+        if(user==1) {
 
             //do-while loop for user= CUSTOMER 
             do {   System.out.print("\n"
@@ -53,13 +55,43 @@ public class BookingApp {
                 
             } while(selection != 7);
         
-        else if(user==2)
+        }
+        
+        else if(user==2) {
 
-            //do-while loop for user= STAFF
+            // do-while loop for user = STAFF
+        	
+        	boolean incorrectInput = true;
+        	int username = -1; // initialize as a negative 
+        	String password;
+        	
+        	System.out.println("Please LOGIN to continue:");
+        	
+        	while (incorrectInput) {
+        		
+	        	try {
+		        	System.out.print("Enter Username: ");
+		        	username = sc.nextInt();
+		        	incorrectInput = false;
+		        	
+		        	System.out.print("Enter Password: ");
+		        	sc.nextLine();
+		        	password = sc.nextLine();
+		        	
+		        	System.out.println("");
+	        	}
+	        	catch (Exception e) {
+	        		System.err.println(LoginStatus.FAILED.returningStatus());
+	        		sc.nextLine();
+	        	}
+        	}
+
+        	
+        	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
-                + " 1) LOGIN.\n"
-                + " 2) Create/Update/Remove movie listing.\n"
+                + " 1) LOGIN\n"
+                + " 2) Create/Update/Remove Movie Listing.\n"
                 + " 3) Create/Update/Remove cinema showtimes and movies to be shown.\n"
                 //System settings include ticket prices, holidays
                 + " 4) Configure system settings. \n"
@@ -82,7 +114,8 @@ public class BookingApp {
                 }
 
             } while(selection!=5);
-
+        }
+        
         } while(user==1 || user==2);
 
     }
