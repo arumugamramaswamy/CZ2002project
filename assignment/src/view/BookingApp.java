@@ -29,8 +29,8 @@ public class BookingApp {
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
-                            + "2) Staff\n");
-        user= sc.nextInt();
+                            + "2) Staff\n");  
+		    user= sc.nextInt();
         
         if(user==1) {
 
@@ -69,7 +69,7 @@ public class BookingApp {
                             break;
                     case 6: 
                             break;
-                    default: System.out.print("Invalid input, please try again!"); 
+                    default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
                 
             } while(selection != 7);
