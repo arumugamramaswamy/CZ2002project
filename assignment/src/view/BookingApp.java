@@ -16,7 +16,7 @@ public class BookingApp {
     int user;
     master Master = new master();
     Master.readMovies();
-    Master.readCinplexes();
+    Master.readCineplexes();
 
 //    System.out.println(Master.getCineplexes());
     System.out.println(Master.getCineplexes().get(0));
@@ -37,8 +37,8 @@ public class BookingApp {
                 + " 4) Book and purchase movie ticket(s).\n"
                 + " 5) View booking history.\n"
                 + " 6) List the top 5 ranking by ticket sales OR by overall reviewers' ratings.\n"
-                + " 7) Quit MOBLIMA.\n"
-                + " 8) Quit MOBILA.\n"
+                + " 7) Search/List all Cinplexes.\n"
+                + " 8) Quit MOBILMA.\n"
                 + " Enter your choice below:\n");
                 selection = sc.nextInt();
 
@@ -51,7 +51,7 @@ public class BookingApp {
                     		movies = Master.getMovies();
                             
                             for(i=0; i< movies.size();i++)
-                            	System.out.print(movies.get(i).getMovieName());
+                            	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
                             
                             break;
                     case 2: 
@@ -64,7 +64,20 @@ public class BookingApp {
                             break;
                     case 6: 
                             break;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+                    case 7: 
+                		ArrayList<Cineplex> Cineplexes=new ArrayList<Cineplex>();
+                		
+                		Cineplexes = Master.getCineplexes();
+                        
+                        for(i=0; i< Cineplexes.size();i++)
+                        	System.out.printf("%d) "+Cineplexes.get(i).getCineplexName()+"\n",i+1);
+                        
+                        
+                        break;
+>>>>>>> master
                     case 8: System.out.println("Thank you for using our Application!");
                     		System.exit(0);
                     		break;

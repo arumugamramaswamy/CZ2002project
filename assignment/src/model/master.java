@@ -53,7 +53,7 @@ public class master {
 		}
 	}
 	
-	public void readCinplexes() {
+	public void readCineplexes() {
 
 			CineplexIO temp = new CineplexIO();
 			cineplexList = temp.readCineplex(this);
