@@ -182,6 +182,8 @@ public class BookingApp {
                     		//Iterate through customerbookings ArrayList to print movie names of bookings made by customer. 
                     		for(i=0; i< customerbookings.size(); i++)
                     			System.out.println(customerbookings.get(i).getmovieBooked());
+				
+				//have to handle case of invalid custID
                     		
                             break;
                             
