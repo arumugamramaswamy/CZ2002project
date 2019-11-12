@@ -160,18 +160,26 @@ public class BookingApp {
                     		
                             break;
                             
-                    case 4: int id;
+                    case 4: //Inititalising for this case. 
+                    		int id;
                     		MovieGoerIO M = new MovieGoerIO(); 
                     		MovieGoer moviegoer = new MovieGoer();
                     		ArrayList<Booking> customerbookings = new ArrayList<>();
                     		
+                    		//Accepting Customer ID to retrieve booking history. 
                     		System.out.println("Please enter Customer ID to view booking history:");
                     		id = sc.nextInt();
                     		
+                    		//Populates customerbookings ArrayList in MovieGoer from corresponding text file. 
                     		M.readBookingsFile();
+                    		
+                    		//Get corresponding MovieGoer object from MoverGoerIO class using CustomerID. 
                     		moviegoer = M.getMovieGoer(id);
+                    		
+                    		//Use MovieGoer object to retrieve customerbooking ArrayList for corresponding cutomer ID. 
                     		customerbookings = moviegoer.getBooking();
-                    				
+                    		
+                    		//Iterate through customerbookings ArrayList to print movie names of bookings made by customer. 
                     		for(i=0; i< customerbookings.size(); i++)
                     			System.out.println(customerbookings.get(i).getmovieBooked());
                     		
