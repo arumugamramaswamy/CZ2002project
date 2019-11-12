@@ -214,7 +214,9 @@ public void assignFinalSeats(MovieGoer m, Booking b, int row, int numseats, int 
 	}
 	
 	public MovieGoer getMovieGoer(int custID) throws IOException, Exception {
-		try{int length = customers.size();
+		try{
+		readBookingsFile();
+		int length = customers.size();
 		int i;
 		for(i=0; i<length; i++) {
 			int c = customers.get(i).getCustID();

@@ -173,9 +173,6 @@ public class BookingApp {
                     		System.out.println("Please enter Customer ID to view booking history:");
                     		id = sc.nextInt();
                     		
-                    		//Populates customerbookings ArrayList in MovieGoer from corresponding text file. 
-                    		M.readBookingsFile();
-                    		
                     		//Get corresponding MovieGoer object from MoverGoerIO class using CustomerID. 
                     		moviegoer = M.getMovieGoer(id);
                     		
