@@ -255,4 +255,8 @@ public class movie {
 	public ArrayList<show> getShows(){
 		return Shows;
 	}
+	
+	public void setShowingStatus(String st) {
+		showingStatus = st;
+	}
 }
