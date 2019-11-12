@@ -187,7 +187,12 @@ public class BookingApp {
                 switch (selection)
                 {
                     case 1: 
-                            break;
+                    	
+                    	System.out.println("-- Create/Update/Remove Movie Listing --");
+                    	CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing();
+                    	CURML.main(args);
+                        break;
+                        
                     case 2: 
                             break;
                     case 3: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
