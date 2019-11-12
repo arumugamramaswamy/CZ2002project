@@ -7,13 +7,13 @@ import java.util.*;
 public class BookingApp {
 	public static void main(String[] args) {
 
-        Scanner sc= new Scanner(System.in);
+    Scanner sc= new Scanner(System.in);
     
     /* outer do-while loop determines the user mode (STAFF/CUSTOMER) & runs corresponding allowable actions
        in individual do-while loops  
     */
-    	int selection;
-    	int user;
+    int selection;
+    int user;
     master Master = new master();
     Master.readMovies();
     Master.readCineplexes();
@@ -110,7 +110,21 @@ public class BookingApp {
                             break;
                     case 4:
                             break;
-                    case 5: 
+                            
+                    case 5: int id;
+                    		MovieGoerIO M = new MovieGoerIO(); 
+                    		MovieGoer moviegoer = new MovieGoer();
+                    		ArrayList<Booking> customerbookings = new ArrayList<>();
+                    		
+                    		System.out.println("Please enter Customer ID to view booking history:");
+                    		id= sc.nextInt();
+                    		
+                    		moviegoer = M.getMovieGoer(id);
+                    		customerbookings = moviegoer.getBooking();
+                    				
+                    		for(i=0; i< customerbookings.size(); i++)
+                    			System.out.println(customerbookings.get(i));
+                    		
                             break;
                     case 6: 
                             break;
@@ -124,13 +138,15 @@ public class BookingApp {
                         
                         
                         break;
+
                     case 8: System.out.println("Thank you for using our Application!");
                     		System.exit(0);
                     		break;
+
                     default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
                 
-            } while(selection != 7);
+            } while(true);
         
         }
         
