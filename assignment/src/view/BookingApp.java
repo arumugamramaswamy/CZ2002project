@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class BookingApp {
+	
 	public static void main(String[] args) throws IOException, Exception {
 
     Scanner sc= new Scanner(System.in);
@@ -21,15 +22,14 @@ public class BookingApp {
     
     ArrayList<movie> tempMovList = Master.getMovies();
     
-
     Master.readCineplexes();
 
     for (movie mov: tempMovList) {
     	mov.readShowDetails(Master);
     }
     
-//    System.out.println(Master.getCineplexes());
-//    System.out.println(Master.getCineplexes().get(0));
+    // System.out.println(Master.getCineplexes());
+    // System.out.println(Master.getCineplexes().get(0));
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
@@ -42,19 +42,19 @@ public class BookingApp {
             //do-while loop for user= CUSTOMER 
             do {   System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection:\n"
-                + " 1) List all movies and movie deatils.\n"
+                + " 1) List all movies and movie details.\n"
                 + " 2) Check seat availability and selection of seat(s).\n" 
                 + " 3) Book and purchase movie ticket(s).\n"
                 + " 4) View booking history.\n"
                 + " 5) List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.\n"
-                + " 6) Search/List all Cinplexes.\n"
+                + " 6) List all Cinplexes.\n"
                 + " 7) Quit MOBILMA.\n"
                 + " Enter your choice below:\n");
                 selection = sc.nextInt();
 
                 switch (selection)
-                {
-                    case 1:
+                {	//List all movies and movie deatils.
+                    case 1: 
                     		ArrayList<movie> movies=new ArrayList<movie>();
                     		
                     		int i;
@@ -113,10 +113,12 @@ public class BookingApp {
                             }while(selection!= 2);
                             
                             break;
-                            
+                    
+                    //Check seat availability and selection of seat(s).        
                     case 2:  
                             break;
-                            
+                    
+                    //Book and purchase movie ticket(s).
                     case 3: //Initialising variables for this case. 
                     		int customerID, movieID;
                     		String movieBooked, firstseat, lastseat;
@@ -159,7 +161,8 @@ public class BookingApp {
                     		
                     		
                             break;
-                            
+                    
+                    // View booking history.        
                     case 4: //Inititalising for this case. 
                     		int id;
                     		MovieGoerIO M = new MovieGoerIO(); 
@@ -184,8 +187,12 @@ public class BookingApp {
                     			System.out.println(customerbookings.get(i).getmovieBooked());
                     		
                             break;
+                            
+                    //List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.
                     case 5: 
                             break;
+                            
+                    //List all Cineplexes. 
                     case 6: 
                 		ArrayList<Cineplex> Cineplexes=new ArrayList<Cineplex>();
                 		
@@ -196,7 +203,8 @@ public class BookingApp {
                         
                         
                         break;
-
+                    
+                    //Quit MOBLIMA.     
                     case 7: System.out.println("Thank you for using our Application!");
                     		System.exit(0);
                     		break;
