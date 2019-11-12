@@ -120,8 +120,8 @@ public class BookingApp {
                     case 3: //Initialising variables for this case. 
                     		int customerID, movieID;
                     		String movieBooked, firstseat, lastseat;
-                    		movie m= new movie();
-                    		
+                    		movie m;
+                    		movies = Master.getMovies();
                     		//Enter customer ID. 
                     		System.out.println("Enter customer ID:");
                     		customerID = sc.nextInt();
@@ -131,10 +131,10 @@ public class BookingApp {
                     		movieID = sc.nextInt();
                     		while(true)
                     		{
-                    			if (movieID-1 > movies.size()) 
+                    			if (movieID-1 > movies.size()) {
                             		System.out.println("Please enter a valid movie number");
                             		continue;
-                            		
+                    			}
                             	m = movies.get(movieID-1);
                             	movieBooked = m.getMovieName();
                             	break; 
