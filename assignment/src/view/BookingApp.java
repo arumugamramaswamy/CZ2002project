@@ -216,17 +216,17 @@ public class BookingApp {
         
         }
         
+     // do-while loop for user = STAFF
         else if(user==2) {
 
-            // do-while loop for user = STAFF
-        	
+        	// Initializing for user= STAFF. 
         	boolean incorrectInput = true;
-        	int username = -1; // initialize as a negative 
+        	int username = -1; 
         	String password = null;
+        	// To check for Staff Login Authorization (flag==1 means authorized). 
+        	int flag = 0;
         	
         	System.out.println("Please LOGIN to continue:");
-        	
-        	int flag = 0;
         	
         	do {
         	
@@ -244,60 +244,73 @@ public class BookingApp {
 	        	}
         	}
 
-
         	PasswordHasher login = new PasswordHasher();
         	
         	if(login.checkPass(password) == false) {
         		System.err.println(LoginStatus.FAILED.returningStatus());
         
-        	} else {
+        	} 
+        	
+        	else {
         	flag = 1;
         	
         	System.out.println(LoginStatus.SUCCESSFUL.returningStatus());
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
-                + " 1) Create/Update/Remove Movie Listing\n"
-                + " 2) Create/Update/Remove cinema showtimes and movies to be shown\n"
+                + " 1) Create/Update/Remove Movie Listing.\n"
+                + " 2) Create/Update/Remove cinema showtimes and movies to be shown.\n"
                 //System settings include ticket prices, holidays
-                + " 3) Configure Ticket Prices \n"
-                + " 4) Quit MOBLIMA\n"
-                + " Enter your choice below:\n");
+                + " 3) Configure Ticket prices.\n"
+                + " 4) Configure Holidays.\n"
+                + " 5) Quit MOBLIMA.\n"
+                + " Please enter your choice below:\n");
 
                 selection= sc.nextInt();
 
                 switch (selection)
-                {
-                    case 1: 
-                    	
-                    	System.out.println("-- Create/Update/Remove Movie Listing --");
-                    	CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing(Master);
-                    	CURML.main(args);
-                        break;
-                        
-                    case 2: 
-                            break;
-                    case 3: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
-                    		CTP.main(args);
-                            break;
-                    case 4: System.out.println("Thank you for using our Application!");
-                    		System.exit(0);
-                    default: System.out.print("Invalid Input, Please Try Again!"); 
-                }
+	                {	
+                		//Create/Update/Remove Movie Listing.
+	                    case 1: 
+	                    	
+	                    		System.out.println("-- Create/Update/Remove Movie Listing --");
+	                    		CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing(Master);
+	                    		CURML.main(args);
+	                    		break;
+	                    
+	                    //Create/Update/Remove cinema showtimes and movies to be shown.
+	                    case 2: 
+	                            break;
+	                    
+	                    //Configure System settings (ticket prices, holidays).       
+	                    case 3: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
+	                    		CTP.main(args);
+	                    		break;
+	                    		
+	                    //Configure System settings (ticket prices, holidays).
+	                    case 4: 
+                            	break;
+	                    
+                        //Quit MOBLIMA.     	
+	                    case 5: System.out.println("Thank you for using our Application!");
+	                    		System.exit(0);
+	                    		
+	                    default: System.out.print("Invalid Input, Please Try Again!"); 
+	                }
 
-            } while(selection != 4);
+            	} while(true);
             
         }
         	
-        } while(flag == 1);
+        } while(flag == 1);				  // User= STAFF and authorized (flag=1).
         	
-        }
+        }								  // User= STAFF loop. 
         	
-        } while(user == 1 || user == 2);
+        } while(user == 1 || user == 2);  // Select user loop. 
 
     Master.saveCineplexes();
     Master.saveMovies();
     
-    }
+    } // public static void main(String[] args) throws IOException, Exception
 
-}
+} //class BookingApp
