@@ -31,7 +31,7 @@ public class master {
 		return cineplexList;
 	}
 	
-	public void deleteMovie(int index) {
+	public static void deleteMovie(int index) {
 		movieList.remove(index);
 	}
 	

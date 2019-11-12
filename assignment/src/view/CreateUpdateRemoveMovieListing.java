@@ -2,13 +2,12 @@ package view;
 
 import java.util.*;
 
-import model.AdminChangeStatus;
-import model.movie;
 import model.*;
 
 public class CreateUpdateRemoveMovieListing {
 
-	private master Master;
+	private static master Master;
+	
 	
 	public CreateUpdateRemoveMovieListing(master m){
 		Master = m;
@@ -18,6 +17,9 @@ public class CreateUpdateRemoveMovieListing {
 		// TODO Auto-generated method stub
 		
 		Scanner sc = new Scanner(System.in);
+		
+		ArrayList<movie> movies=new ArrayList<movie>();
+		int i;
 		
 		System.out.println("1. Create a new Movie Listing\n"
 				+ 	"2. Update a Movie Listing\n"
@@ -45,16 +47,14 @@ public class CreateUpdateRemoveMovieListing {
 			
 			boolean incorrectInput = true;
 			
-			while(incorrectInput) {
+
 				System.out.print("Enter Movie Status (COMING_SOON, PREVIEW, NOW_SHOWING): ");
 				showingStatus = sc.nextLine();
+				showingStatus = showingStatus.trim();
 				
-				if(showingStatus != "COMING_SOON" || showingStatus != "PREVIEW" || showingStatus != "NOW_SHOWING") {
-					System.err.println("Please enter a valid Movie Status!");
-				} else {
-					incorrectInput = false;
-				}
-			}
+		//		if(showingStatus != "COMING_SOON" || showingStatus != "PREVIEW" || showingStatus != "NOW_SHOWING") {
+		//			System.err.println("Please enter a valid Movie Status!");
+		
 			
 			System.out.print("Enter Synopsis: ");
 			Synopsis = sc.nextLine();
@@ -80,7 +80,7 @@ public class CreateUpdateRemoveMovieListing {
 			
 			
 			
-			for(int i = 0; i < num; i++) {
+			for(i = 0; i < num; i++) {
 				System.out.print("Enter Cast No. " + i + " Name: ");
 				Cast[i] = sc.nextLine();
 				System.out.println("");
@@ -95,6 +95,8 @@ public class CreateUpdateRemoveMovieListing {
 			
 			master.addMovieListing(newMovie);
 			
+			System.out.println("");
+			
 			System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
 			
 			System.out.println("");
@@ -103,14 +105,53 @@ public class CreateUpdateRemoveMovieListing {
 			
 			
 		case 2: 
+
+    		movies = Master.getMovies();
+    		
+            movie mov;
+            show s;
+            for(i=0; i< movies.size();i++)
+            	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
+            
+            System.out.print("Please select a Movie Number: ");
+            int mov_num = sc.nextInt();
+            
+            System.out.print("Current Status of the Movie: ");
+            
+            System.out.println(movies.get(mov_num-1).getShowingStatus());
+            
+            System.out.println("Enter new Status of the Movie (COMING_SOON, PREVIEW, NOW_SHOWING): ");
+			sc.nextLine();
+            String newStatus = sc.nextLine();
+            
+            movies.get(mov_num-1).setShowingStatus(newStatus); 
+            
+			System.out.println("");
 			
+			System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
 			
+			System.out.println("");
 			
 			break;
 			
 		case 3: 
+
+    		movies = Master.getMovies();
+            movie mov_1;
+            show s_1;
+            for(i=0; i< movies.size();i++)
+            	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
+            
+            System.out.print("Please select a Movie Number: ");
+            int mov_num_1 = sc.nextInt();
+            
+            master.deleteMovie(mov_num_1-1);
+            
+            System.out.println("");
+            
+            System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
 			
-			
+			System.out.println("");
 			
 			break;
 		
