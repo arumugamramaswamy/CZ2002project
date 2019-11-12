@@ -1,6 +1,8 @@
 package view;
 
 import java.util.*;
+
+import model.AdminChangeStatus;
 import model.movie;
 
 public class CreateUpdateRemoveMovieListing {
@@ -54,6 +56,25 @@ public class CreateUpdateRemoveMovieListing {
 			System.out.println("");
 			
 			movie newMovie = new movie(name, director, showingStatus, Synopsis, Cast);
+			
+			
+			// -- arumugam master code --
+			
+			
+			System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
+			
+			System.out.println("");
+			
+			break;
+			
+			
+		case 2: 
+			
+			
+			
+			break;
+			
+		case 3: 
 			
 			
 			
