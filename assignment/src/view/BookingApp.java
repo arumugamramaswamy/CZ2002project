@@ -18,10 +18,18 @@ public class BookingApp {
     int user;
     master Master = new master();
     Master.readMovies();
+    
+    ArrayList<movie> tempMovList = Master.getMovies();
+    
+
     Master.readCineplexes();
 
+    for (movie mov: tempMovList) {
+    	mov.readShowDetails(Master);
+    }
+    
 //    System.out.println(Master.getCineplexes());
-    System.out.println(Master.getCineplexes().get(0));
+//    System.out.println(Master.getCineplexes().get(0));
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
@@ -271,6 +279,9 @@ public class BookingApp {
         	
         } while(user == 1 || user == 2);
 
+    Master.saveCineplexes();
+    Master.saveMovies();
+    
     }
 
 }

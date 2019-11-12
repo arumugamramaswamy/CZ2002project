@@ -205,7 +205,7 @@ public class movie {
 	 * @param cineplexID ID of the CinePlex
 	 * @param is3D bool true if the movie is 3D
 	 */
-	void createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
+	public void createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
 		show s = new show(this,dt,screenNum,cineplexID,is3D);
 		Shows.add(s);
 	}
@@ -213,7 +213,7 @@ public class movie {
 	/**
 	 * save all shows to a text file under the Shows folder with file name as the movie name
 	 */
-	void saveShowDetails() {
+	public void saveShowDetails() {
 		movieIO m = new movieIO();
 		try {
 		m.saveShows("Shows/"+movieName+".txt", Shows);
@@ -225,7 +225,7 @@ public class movie {
 	/**
 	 * read show details from the shows folder with file name as movie name
 	 */
-	void readShowDetails(master Master) {
+	public void readShowDetails(master Master) {
 		show temp;
 		ArrayList<Cineplex> tempCineplexArray;
 		ArrayList<Cinema> tempCinemaArray;
@@ -233,11 +233,13 @@ public class movie {
 		Cinema tempCinema;
 		movieIO m = new movieIO();
 		try {
-		ArrayList arr = m.readShows(this,"Shows/"+movieName+".txt");
+		System.out.println("data/Shows/"+movieName+".txt");
+		ArrayList arr = m.readShows(this,"data/Shows/"+movieName+".txt");
 		Shows = arr;
 		
 		for(int i=0;i<Shows.size();i++) {
 			temp = Shows.get(i);
+			System.out.println(i);
 			tempCineplexArray = Master.getCineplexes();
 			tempCineplex = tempCineplexArray.get(temp.getCineplexID());
 			tempCinemaArray = tempCineplex.getCinemaList();

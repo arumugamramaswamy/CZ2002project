@@ -35,6 +35,7 @@ public class CineplexIO {
 	                    	c = new Cinema(temp2[0],temp2[1],Integer.parseInt(temp2[2]));
 	                        tempCinemaList.add(c);
 	                    }
+//	                    System.out.println(temp[0]);
 	                    cineplexesList.add(new Cineplex(
 	                            temp[0], Integer.parseInt(temp[1]),
 	                            tempCinemaList));

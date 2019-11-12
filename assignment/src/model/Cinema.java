@@ -29,7 +29,7 @@ public class Cinema {
         this.cinemaName = cinemaName;
         this.cinemaClass = cinemaClass;
         this.cinemaID = cinemaID;
-//        moviesList=new ArrayList<>();
+        showList=new ArrayList<show>();
 
         
     }
