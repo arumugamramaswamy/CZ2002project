@@ -19,7 +19,7 @@ public class CineplexIO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Cineplex> readCineplex(master m){
+	public ArrayList<Cineplex> readCineplex(){
 	    try{
 	    	ArrayList<Cineplex> cineplexesList = new ArrayList<Cineplex>();
 	        String[] temp;
@@ -37,9 +37,7 @@ public class CineplexIO {
 	                    }
 	                    cineplexesList.add(new Cineplex(
 	                            temp[0], Integer.parseInt(temp[1]),
-	                            tempCinemaList,
-	                            m
-	                    ));
+	                            tempCinemaList));
 	                }
 
 	        fileScanner.close();

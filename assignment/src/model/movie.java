@@ -61,7 +61,7 @@ public class movie {
 	 * @param Cast			array of actors in the movie
 	 */
 	public movie(String name,String director,String[] reviews, double[] ratings,
-								String showingStatus, String Synopsis, String[] Cast,master m) {
+								String showingStatus, String Synopsis, String[] Cast) {
 		movieName = name;
 		directorName = director;
 		this.Cast = Cast;

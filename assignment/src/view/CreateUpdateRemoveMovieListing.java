@@ -36,8 +36,19 @@ public class CreateUpdateRemoveMovieListing {
 			System.out.print("Enter Director's Name: ");
 			director = sc.nextLine();
 			
-			System.out.print("Enter showingStatus (COMING_SOON, PREVIEW, NOW_SHOWING): ");
-			showingStatus = sc.nextLine();
+			boolean incorrectInput = true;
+			
+			while(incorrectInput) {
+			
+				System.out.print("Enter Movie Status (COMING_SOON, PREVIEW, NOW_SHOWING): ");
+				showingStatus = sc.nextLine();
+				
+				if(showingStatus != "COMING_SOON" || showingStatus != "PREVIEW" || showingStatus != "NOW_SHOWING") {
+					System.err.println("Please enter a valid Movie Status!");
+				} else {
+					incorrectInput = false;
+				}
+			}
 			
 			System.out.print("Enter Synopsis: ");
 			Synopsis = sc.nextLine();
