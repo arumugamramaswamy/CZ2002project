@@ -190,24 +190,16 @@ public class MovieGoerIO{
     	return b1;
     }
     
-    public void assignseats(MovieGoer m, int row, int numseats, int firstseat){
-        for(int i=1; i<=numseats; i++){
-            if(seats[row][i+firstseat-1]==0){
-                seats[row][i+firstseat-1]=1;
-            }
-        }
-        System.out.println(numseats + " seats in row " + row + " from first seat " +  firstseat + "assigned to " + m.getCustomerName());
-    }
+    
 	
-//	public void assignFinalSeats(MovieGoer m, show s, int row, int numseats, int firstseat) {
-//    	Booking b = m.getBooking();
-//    	
-//    	b.setnumseats(numseats);
-//    	
-//    	for(int i=1; i<=numseats; i++) {
-//    		s.assignSeat(row, i+firstseat-1);
-//    	}
-//    }
+public void assignFinalSeats(MovieGoer m, Booking b, int row, int numseats, int firstseat) {
+    	show s = b.getShow();
+    	
+    	
+    	b.setnumseats(numseats);
+    	    	for(int i=1; i<=numseats; i++) {
+    		s.assignSeat(row, i+firstseat-1);
+    	}    }
 
 
 
