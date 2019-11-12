@@ -11,11 +11,11 @@ import java.io.IOException;
 public class master {
 
 	
-	private ArrayList<movie> movieList;
+	static private ArrayList<movie> movieList;
 	private ArrayList<Cineplex> cineplexList;
 	private static String filename = "data/movies.txt";
 
-	public void addMovieListing(movie m) {
+	public static void addMovieListing(movie m) {
 		movieList.add(m);
 	}
 	

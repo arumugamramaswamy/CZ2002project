@@ -18,6 +18,7 @@ public class BookingApp {
     int user;
     master Master = new master();
     Master.readMovies();
+    Master.getMovies();
     Master.readCineplexes();
 
 //    System.out.println(Master.getCineplexes());
@@ -214,7 +215,7 @@ public class BookingApp {
                     case 1: 
                     	
                     	System.out.println("-- Create/Update/Remove Movie Listing --");
-                    	CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing();
+                    	CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing(Master);
                     	CURML.main(args);
                         break;
                         
