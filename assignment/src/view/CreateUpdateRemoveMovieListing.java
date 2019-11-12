@@ -81,7 +81,7 @@ public class CreateUpdateRemoveMovieListing {
 			
 			System.out.println("");
 			
-			movie newMovie = new movie(name, director, showingStatus, Synopsis, Cast);
+			// movie newMovie = new movie(name, director, , null, showingStatus, Synopsis, Cast);
 			
 			
 			// -- arumugam master code --
