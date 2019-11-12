@@ -32,7 +32,7 @@ public class CreateUpdateRemoveMovieListing {
 		
 		case 1: 
 			
-			String name, director, showingStatus, Synopsis;
+			String name, director, showingStatus = null, Synopsis;
 			String[] Cast = new String[5];
 			
 			sc.nextLine();
@@ -60,7 +60,7 @@ public class CreateUpdateRemoveMovieListing {
 			Synopsis = sc.nextLine();
 			
 			incorrectInput = true;
-			int num;
+			int num =0;
 			
 			while(incorrectInput) {
 				
@@ -88,8 +88,9 @@ public class CreateUpdateRemoveMovieListing {
 			
 			System.out.println("");
 			
-			movie newMovie = new movie(name, director, showingStatus, Synopsis, Cast);
-			
+			String[] rev = new String[0]; 
+			double[] rat = new double[0]; 
+						
 			movie newMovie = new movie(name,director,rev,rat,showingStatus, Synopsis, Cast);
 			
 			master.addMovieListing(newMovie);
