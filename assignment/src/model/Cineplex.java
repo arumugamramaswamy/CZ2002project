@@ -15,14 +15,14 @@ public class Cineplex {
 //        cineplexName="";
 //    }
 
-    public Cineplex(String cineplexName, int cineplexId,master m) {
+    public Cineplex(String cineplexName, int cineplexId) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
         this.cinemaList = new ArrayList<Cinema>();
 //        m.addCineplex(this);
     }
 
-    public Cineplex(String cineplexName, int cineplexId, ArrayList<Cinema> cinemaList,master m) {
+    public Cineplex(String cineplexName, int cineplexId, ArrayList<Cinema> cinemaList) {
         this.cineplexName = cineplexName;
         this.cineplexId = cineplexId;
         this.cinemaList = cinemaList;

@@ -54,7 +54,7 @@ public class movieIO {
 	    }
 		
 	    // an example of reading
-		public static ArrayList readMovie(String filename,master m) throws IOException {
+		public static ArrayList readMovie(String filename) throws IOException {
 			
 			// read String from text file
 			ArrayList stringArray = (ArrayList)read(filename);
@@ -109,7 +109,7 @@ public class movieIO {
 					String[] Cast = GetStringArray(alr2);
 					
 					// create Professor object from file data
-					movie mov = new movie(movieName,directorName,reviews,ratings,showingStatus,Synopsis,Cast,m);
+					movie mov = new movie(movieName,directorName,reviews,ratings,showingStatus,Synopsis,Cast);
 					
 					// add to movie list
 					alr.add(mov) ;
