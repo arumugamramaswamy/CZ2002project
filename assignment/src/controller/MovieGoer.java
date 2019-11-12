@@ -23,10 +23,10 @@ public class MovieGoer{
     //default constructor
     public MovieGoer() {};
     
-    public MovieGoer(String customerName, int customerAge){
+    public MovieGoer(String customerName, int customerAge, ArrayList<Booking> customerbookings){
         this.customerName = customerName;
         this.customerAge = customerAge;
-        
+        this.customerbookings = customerbookings;
     }
 
 	public void setCustomerName(String customerName) {

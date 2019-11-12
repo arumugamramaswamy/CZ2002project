@@ -18,6 +18,7 @@ public class BookingApp {
     int user;
     master Master = new master();
     Master.readMovies();
+    Master.getMovies();
     Master.readCineplexes();
 
 //    System.out.println(Master.getCineplexes());

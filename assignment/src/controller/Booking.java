@@ -27,7 +27,6 @@ public class Booking{
         this.custID = custID;
     	
         //assign according to number of bookings
-        this.bookingID = 
    
         this.movieBooked = movieBooked;
         

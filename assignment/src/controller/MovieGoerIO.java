@@ -72,11 +72,13 @@ public class MovieGoerIO{
             	
             	addMovieGoer();
             	}
+    			i+=1;
+            	}
             	
-            	i+=1;
+            	
     			
     		}	
-    }
+    
     
     public void writeNewBooking() throws IOException,Exception{
 	countPreviousBookings();    
@@ -147,14 +149,31 @@ public class MovieGoerIO{
     		m1.setCustID(custID);
     		m1.setCustomerName(customerName);
     		m1.setCustomerAge(customerAge);
-    		m1.setBooking(createBooking());
+    		
+    		int length = customers.size();
+    		int flag=1;
+    		int i;
+    		for(i=0; i<length; i++) {
+    			int c = customers.get(i).getCustID();
+    			if(c==custID) {flag = 0; addBooking(i); break;}
+    		}
+    		
+    		if(flag==1){m1.setBooking(createBooking());}
     		
     		char ch = firstseat.charAt(0);
     		int row = ch - 'a' + 1;
     		int firstseatnum = Character.getNumericValue(firstseat.charAt(1));
     		
-    		
     		if(!customers.contains(m1)){customers.add(m1);}
+    		
+    	
+    }
+    
+    public void addBooking(int i) {
+    	MovieGoer m = new MovieGoer();
+    	m = customers.get(i);
+    	
+    	m.setBooking(createBooking());
     	
     }
     
