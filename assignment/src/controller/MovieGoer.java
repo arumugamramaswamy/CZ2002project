@@ -18,7 +18,7 @@ public class MovieGoer{
     private int customerAge;
 
 
-    private static ArrayList<Booking> customerbookings = new ArrayList<>();
+    private ArrayList<Booking> customerbookings = new ArrayList<>();
 
     //default constructor
     public MovieGoer() {};
@@ -54,7 +54,8 @@ public class MovieGoer{
 	}
 	
 	public void setBooking(Booking b) {
-		customerbookings.add(b);
+		if(!customerbookings.contains(b)) {
+		customerbookings.add(b);}
 	}
 	
 

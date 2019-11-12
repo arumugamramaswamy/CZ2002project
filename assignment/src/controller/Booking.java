@@ -23,8 +23,9 @@ public class Booking{
     
     public Booking() {};
 
-    public Booking(int bookingID, String movieBooked,int numseats, String firstseat, show show){
-        this.bookingID = bookingID;
+    public Booking(int custID, int bookingID, String movieBooked,int numseats, String firstseat, show show){
+        this.custID = custID;
+    	this.bookingID = bookingID;
         this.movieBooked = movieBooked;
         this.numseats = numseats;
         this.firstseat = firstseat;

@@ -152,7 +152,6 @@ public class MovieGoerIO{
     		char ch = firstseat.charAt(0);
     		int row = ch - 'a' + 1;
     		int firstseatnum = Character.getNumericValue(firstseat.charAt(1));
-    		assignseats(m1, row, numseats, firstseatnum);
     		
     		
     		if(!customers.contains(m1)){customers.add(m1);}
