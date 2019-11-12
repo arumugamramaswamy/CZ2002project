@@ -18,7 +18,6 @@ public class BookingApp {
     int user;
     master Master = new master();
     Master.readMovies();
-    Master.getMovies();
     Master.readCineplexes();
 
 //    System.out.println(Master.getCineplexes());
@@ -110,13 +109,45 @@ public class BookingApp {
                     case 2:  
                             break;
                             
-                    case 3: Booking b = new Booking();
+                    case 3: //Initialising variables for this case. 
+                    		int customerID, movieID;
+                    		String movieBooked, firstseat, lastseat;
+                    		movie m= new movie();
                     		
+                    		//Enter customer ID. 
                     		System.out.println("Enter customer ID:");
+                    		customerID = sc.nextInt();
+                    		
+                    		//Enter movie ID to be booked, retrieve movie name from movies. 
                     		System.out.println("Enter movie ID of movie to be booked:");
+                    		movieID = sc.nextInt();
+                    		while(true)
+                    		{
+                    			if (movieID-1 > movies.size()) 
+                            		System.out.println("Please enter a valid movie number");
+                            		continue;
+                            		
+                            	m = movies.get(movieID-1);
+                            	movieBooked = m.getMovieName();
+                            	break; 
+                    		}
+                    		
+                    		//Enter first seat.
                     		System.out.println("Enter first seat:");
+                    		sc.nextLine();
+        		        	firstseat = sc.nextLine();
+                    		
+        		        	//Enter last seat. 
                     		System.out.println("Enter enter last seat:");
+                    		sc.nextLine();
+        		        	lastseat = sc.nextLine();
+        		        	
+        		        	
+                    		/* Enter specific show to book for movie. 
                     		System.out.println("Enter show:");
+                    		
+                    		Call Booking
+                    		Booking b = new Booking(customerID, ) */
                     		
                     		
                             break;
@@ -129,6 +160,7 @@ public class BookingApp {
                     		System.out.println("Please enter Customer ID to view booking history:");
                     		id = sc.nextInt();
                     		
+                    		M.readBookingsFile();
                     		moviegoer = M.getMovieGoer(id);
                     		customerbookings = moviegoer.getBooking();
                     				
