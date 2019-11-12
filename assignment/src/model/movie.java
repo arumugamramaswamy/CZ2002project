@@ -250,4 +250,7 @@ public class movie {
 		}
 	}
 	
+	public ArrayList<show> getShows(){
+		return Shows;
+	}
 }

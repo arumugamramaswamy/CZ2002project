@@ -50,9 +50,58 @@ public class BookingApp {
                     		
                     		int i;
                     		movies = Master.getMovies();
-                            
+                            movie mov;
+                            show s;
                             for(i=0; i< movies.size();i++)
                             	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
+                            
+                            do {	System.out.print("\n"
+                                    + "Welcome to MOBLIMA! Please make a selection:\n"
+                                    + " 1) Select Movie.\n"
+                                    + " 2) Back.\n");
+                                    selection = sc.nextInt();
+                                    
+                                    if (selection == 1) {
+                                    	System.out.println("Please select a movie to list its details and shows");
+                                    	selection = sc.nextInt();
+                                    	if (selection-1 > movies.size()) {
+                                    		System.out.println("Please enter a valid movie number");
+                                    		continue;
+                                    	}
+                                    	mov = movies.get(selection-1);
+                    					System.out.println(mov.getMovieName());
+                    					System.out.println(mov.getDirectorName());
+                    					String [] reviews = mov.getReviews();
+                    					for(int x =0;x<reviews.length;x++) 
+                    						System.out.printf("%s ",reviews[x]);
+                    					
+                    					System.out.printf("\n");
+                    					double [] ratings = mov.getAllRatings();
+                    					for(int x =0;x<ratings.length;x++) 
+                    						System.out.printf("%f ",ratings[x]);
+                    					System.out.printf("\n");
+                    
+                    					
+                    					System.out.println(mov.getShowingStatus());
+                    					System.out.println(mov.getSynopsis());
+                    					String[] Cast = mov.getCast();
+                    					for(int x =0;x<Cast.length;x++) 
+                    						System.out.printf("%s ",Cast[x]);
+                    					System.out.printf("\n");
+
+                    					ArrayList<show> temp = mov.getShows();
+                    					
+                    					for (int k =0 ;k<temp.size();k++) {
+                    						s = temp.get(k);
+                    						System.out.printf("\n\nShow %d:\n",k+1);
+                    						System.out.println(s.getDateTime());
+                    						System.out.printf("CineplexID: %d\n",s.getCineplexID());
+                    						System.out.printf("CinemaID: %d\n",s.getScreenNum());
+                    						s.printSeats();
+                    					}
+                    					
+                                    }
+                            }while(selection!= 2);
                             
                             break;
                     case 2: 
