@@ -214,7 +214,7 @@ public class BookingApp {
                     case 1: 
                     	
                     	System.out.println("-- Create/Update/Remove Movie Listing --");
-                    	CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing();
+                    	CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing(Master);
                     	CURML.main(args);
                         break;
                         

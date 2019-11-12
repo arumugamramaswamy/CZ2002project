@@ -4,9 +4,16 @@ import java.util.*;
 
 import model.AdminChangeStatus;
 import model.movie;
+import model.*;
 
 public class CreateUpdateRemoveMovieListing {
 
+	private master Master;
+	
+	public CreateUpdateRemoveMovieListing(master m){
+		Master = m;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -81,10 +88,11 @@ public class CreateUpdateRemoveMovieListing {
 			
 			System.out.println("");
 			
-			// movie newMovie = new movie(name, director, , null, showingStatus, Synopsis, Cast);
+			movie newMovie = new movie(name, director, showingStatus, Synopsis, Cast);
 			
+			movie newMovie = new movie(name,director,rev,rat,showingStatus, Synopsis, Cast);
 			
-			// -- arumugam master code --
+			master.addMovieListing(newMovie);
 			
 			
 			System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
