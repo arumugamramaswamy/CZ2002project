@@ -123,7 +123,7 @@ public class BookingApp {
                     		customerbookings = moviegoer.getBooking();
                     				
                     		for(i=0; i< customerbookings.size(); i++)
-                    			System.out.println(customerbookings.get(i));
+                    			System.out.println(customerbookings.get(i).getmovieBooked());
                     		
                             break;
                     case 6: 
