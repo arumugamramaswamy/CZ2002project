@@ -32,14 +32,13 @@ public class BookingApp {
             //do-while loop for user= CUSTOMER 
             do {   System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection:\n"
-                + " 1) Search/List all movies.\n"
-                + " 2) View Movie details - including reviews and ratings.\n"
-                + " 3) Check seat availability and selection of seat(s).\n"
-                + " 4) Book and purchase movie ticket(s).\n"
-                + " 5) View booking history.\n"
-                + " 6) List the top 5 ranking by ticket sales OR by overall reviewers' ratings.\n"
-                + " 7) Search/List all Cinplexes.\n"
-                + " 8) Quit MOBILMA.\n"
+                + " 1) List all movies and movie deatils.\n"
+                + " 2) Check seat availability and selection of seat(s).\n"
+                + " 3) Book and purchase movie ticket(s).\n"
+                + " 4) View booking history.\n"
+                + " 5) List the top 5 ranking by ticket sales OR by overall reviewers' ratings.\n"
+                + " 6) Search/List all Cinplexes.\n"
+                + " 7) Quit MOBILMA.\n"
                 + " Enter your choice below:\n");
                 selection = sc.nextInt();
 
@@ -104,20 +103,18 @@ public class BookingApp {
                             }while(selection!= 2);
                             
                             break;
-                    case 2: 
+                    case 2:  
                             break;
-                    case 3:  
-                            break;
-                    case 4:
+                    case 3:
                             break;
                             
-                    case 5: int id;
+                    case 4: int id;
                     		MovieGoerIO M = new MovieGoerIO(); 
                     		MovieGoer moviegoer = new MovieGoer();
                     		ArrayList<Booking> customerbookings = new ArrayList<>();
                     		
                     		System.out.println("Please enter Customer ID to view booking history:");
-                    		id= sc.nextInt();
+                    		id = sc.nextInt();
                     		
                     		moviegoer = M.getMovieGoer(id);
                     		customerbookings = moviegoer.getBooking();
@@ -126,9 +123,9 @@ public class BookingApp {
                     			System.out.println(customerbookings.get(i).getmovieBooked());
                     		
                             break;
-                    case 6: 
+                    case 5: 
                             break;
-                    case 7: 
+                    case 6: 
                 		ArrayList<Cineplex> Cineplexes=new ArrayList<Cineplex>();
                 		
                 		Cineplexes = Master.getCineplexes();
@@ -139,7 +136,7 @@ public class BookingApp {
                         
                         break;
 
-                    case 8: System.out.println("Thank you for using our Application!");
+                    case 7: System.out.println("Thank you for using our Application!");
                     		System.exit(0);
                     		break;
 
