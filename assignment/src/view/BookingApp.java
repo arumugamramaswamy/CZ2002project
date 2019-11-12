@@ -61,13 +61,24 @@ public class BookingApp {
                             break;
                     case 4:
                             break;
-                    case 5: 
+                            
+                    case 5: int id;
+                    		MovieGoerIO M = new MovieGoerIO(); 
+                    		MovieGoer moviegoer = new MovieGoer();
+                    		ArrayList<Booking> customerbookings = new ArrayList<>();
+                    		
+                    		System.out.println("Please enter Customer ID to view booking history:");
+                    		id= sc.nextInt();
+                    		
+                    		moviegoer = M.getMovieGoer(id);
+                    		customerbookings = moviegoer.getBooking();
+                    				
+                    		for(i=0; i< customerbookings.size(); i++)
+                    			System.out.println(customerbookings.get(i));
+                    		
                             break;
                     case 6: 
                             break;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
                     case 7: 
                 		ArrayList<Cineplex> Cineplexes=new ArrayList<Cineplex>();
                 		
@@ -78,17 +89,15 @@ public class BookingApp {
                         
                         
                         break;
->>>>>>> master
+
                     case 8: System.out.println("Thank you for using our Application!");
                     		System.exit(0);
                     		break;
-=======
-         
->>>>>>> Stashed changes
+
                     default: System.out.print("Invalid Input, Please Try Again!"); 
                 }
                 
-            } while(selection != 7);
+            } while(true);
         
         }
         
