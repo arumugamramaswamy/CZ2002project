@@ -57,11 +57,8 @@ public class MovieGoer{
 		customerbookings.add(b);
 	}
 	
-<<<<<<< HEAD
-	public ArrayList<Booking> getBookings() {
-=======
+
 	public ArrayList<Booking> getBooking() {
->>>>>>> master
 		return customerbookings;
 	}
 

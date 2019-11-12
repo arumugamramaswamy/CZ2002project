@@ -71,7 +71,7 @@ public class MovieGoerIO{
             	this.firstseat = var[8];
             	
             	addMovieGoer();
-            	printBookings(i-1);}
+            	}
             	
             	i+=1;
     			
@@ -155,7 +155,7 @@ public class MovieGoerIO{
     		assignseats(m1, row, numseats, firstseatnum);
     		
     		
-    		customers.add(m1);
+    		if(!customers.contains(m1)){customers.add(m1);}
     	
     }
     
@@ -181,15 +181,15 @@ public class MovieGoerIO{
         System.out.println(numseats + " seats in row " + row + " from first seat " +  firstseat + "assigned to " + m.getCustomerName());
     }
 	
-	public void assignFinalSeats(MovieGoer m, show s, int row, int numseats, int firstseat) {
-    	Booking b = m.getBooking();
-    	
-    	b.setnumseats(numseats);
-    	
-    	for(int i=1; i<=numseats; i++) {
-    		s.assignSeat(row, i+firstseat-1);
-    	}
-    }
+//	public void assignFinalSeats(MovieGoer m, show s, int row, int numseats, int firstseat) {
+//    	Booking b = m.getBooking();
+//    	
+//    	b.setnumseats(numseats);
+//    	
+//    	for(int i=1; i<=numseats; i++) {
+//    		s.assignSeat(row, i+firstseat-1);
+//    	}
+//    }
 
 
 
@@ -203,7 +203,9 @@ public class MovieGoerIO{
 		this.file = file;
 	}
 	
-	public MovieGoer getMovieGoer(int custID) {
+	public MovieGoer getMovieGoer(int custID) throws IOException, Exception {
+		readBookingsFile();
+		
 		int length = customers.size();
 		int i;
 		for(i=0; i<length; i++) {
@@ -215,17 +217,17 @@ public class MovieGoerIO{
 		
 	}
 	
-	public void printBookings(int i) {
-		System.out.println("Customer Name is " + customers.get(i).getCustomerName());
-		System.out.println("Customer Age is " + customers.get(i).getCustomerAge());
-		System.out.println("Booking ID: " + customers.get(i).getBooking(i).getbookingID());
-		System.out.println("FirstSeat of the Booking: " + customers.get(i).getBooking(i).getfirstseat());
-		System.out.println("MovieBooked is: " + customers.get(i).getBooking(i).getmovieBooked());
-		System.out.println("Total Number of Seats booked: " + customers.get(i).getBooking(i).getnumseats());
-		
-		
-		
-	}
+//	public void printBookings(int i) {
+//		System.out.println("Customer Name is " + customers.get(i).getCustomerName());
+//		System.out.println("Customer Age is " + customers.get(i).getCustomerAge());
+//		System.out.println("Booking ID: " + customers.get(i).getBooking(i).getbookingID());
+//		System.out.println("FirstSeat of the Booking: " + customers.get(i).getBooking(i).getfirstseat());
+//		System.out.println("MovieBooked is: " + customers.get(i).getBooking(i).getmovieBooked());
+//		System.out.println("Total Number of Seats booked: " + customers.get(i).getBooking(i).getnumseats());
+//		
+//		
+//		
+//	}
 
 
 }
