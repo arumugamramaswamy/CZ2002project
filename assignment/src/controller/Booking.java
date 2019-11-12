@@ -17,18 +17,27 @@ public class Booking{
 
     private int numseats;
 
-    private String firstseat;
+    private String firstseat, lastseat;
     
     private show show;
     
     public Booking() {};
 
-    public Booking(int custID, int bookingID, String movieBooked,int numseats, String firstseat, show show){
+    public Booking(int custID, String movieBooked,int numseats, String firstseat, String lastseat, show show){
         this.custID = custID;
-    	this.bookingID = bookingID;
+    	
+        //assign according to number of bookings
+        this.bookingID = 
+   
         this.movieBooked = movieBooked;
+        
+        
         this.numseats = numseats;
+        
+        //check if last-first = num?
         this.firstseat = firstseat;
+        this.lastseat = lastseat;
+        
         this.setShow(show);
     }
     

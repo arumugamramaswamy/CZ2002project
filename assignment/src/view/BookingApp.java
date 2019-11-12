@@ -35,10 +35,10 @@ public class BookingApp {
             do {   System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection:\n"
                 + " 1) List all movies and movie deatils.\n"
-                + " 2) Check seat availability and selection of seat(s).\n"
+                + " 2) Check seat availability and selection of seat(s).\n" 
                 + " 3) Book and purchase movie ticket(s).\n"
                 + " 4) View booking history.\n"
-                + " 5) List the top 5 ranking by ticket sales OR by overall reviewers' ratings.\n"
+                + " 5) List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.\n"
                 + " 6) Search/List all Cinplexes.\n"
                 + " 7) Quit MOBILMA.\n"
                 + " Enter your choice below:\n");
@@ -105,9 +105,19 @@ public class BookingApp {
                             }while(selection!= 2);
                             
                             break;
+                            
                     case 2:  
                             break;
-                    case 3:
+                            
+                    case 3: Booking b = new Booking();
+                    		
+                    		System.out.println("Enter customer ID:");
+                    		System.out.println("Enter movie ID of movie to be booked:");
+                    		System.out.println("Enter first seat:");
+                    		System.out.println("Enter enter last seat:");
+                    		System.out.println("Enter show:");
+                    		
+                    		
                             break;
                             
                     case 4: int id;
