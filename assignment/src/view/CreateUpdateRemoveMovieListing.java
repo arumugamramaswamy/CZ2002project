@@ -4,16 +4,9 @@ import java.util.*;
 
 import model.AdminChangeStatus;
 import model.movie;
-import model.*;
 
 public class CreateUpdateRemoveMovieListing {
 
-	private master Master;
-	
-	public CreateUpdateRemoveMovieListing(master m){
-		Master = m;
-	}
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -88,12 +81,17 @@ public class CreateUpdateRemoveMovieListing {
 			
 			System.out.println("");
 			
+<<<<<<< Updated upstream
 			String[] rev = new String[0]; 
 			double[] rat = new double[0]; 
 						
 			movie newMovie = new movie(name,director,rev,rat,showingStatus, Synopsis, Cast);
+=======
+			// movie newMovie = new movie(name, director, , null, showingStatus, Synopsis, Cast);
 			
-			master.addMovieListing(newMovie);
+>>>>>>> Stashed changes
+			
+			// -- arumugam master code --
 			
 			
 			System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
