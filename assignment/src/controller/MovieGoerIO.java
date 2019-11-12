@@ -6,12 +6,27 @@ import java.util.ArrayList;
 
 import model.show;
 
+/**
+ * 
+ * @version 1.0
+ * Used to read and write bookings made by a MovieGoer
+ */
+
 public class MovieGoerIO{
     
+	/**
+	 * text file for the input and output
+	 */
     private File file = new File("src/controller/Customers.txt");
     
+    /**
+     * ArrayList of the MovieGoers
+     */
     private static ArrayList<MovieGoer> customers = new ArrayList<>();
     
+    /**
+     * Different parameters to be recorded with the booking
+     */
     private int custID; 
     
     private int bookingID;
@@ -29,13 +44,18 @@ public class MovieGoerIO{
 	private String customerName;
     
     private int customerAge;
-    
+   
     private static int linecounter=0;
     
     public int [][] seats = new int[9][9];
     
     public MovieGoerIO() {};
 	
+    /**
+     * to count the number of previous bookings in the Bookings file
+     * @throws IOException
+     * @throws Exception
+     */
     public void countPreviousBookings() throws IOException,Exception {
     	FileReader fw = new FileReader("src/controller/Customers.txt");
 		BufferedReader br = new BufferedReader(fw);
@@ -47,6 +67,11 @@ public class MovieGoerIO{
 		br.close();
     }	
     
+    /**
+     * to read all the previous bookings from the text file
+     * @throws IOException
+     * @throws Exception
+     */
     public void readBookingsFile() throws IOException,Exception {
     	
     		countPreviousBookings();
@@ -80,6 +105,11 @@ public class MovieGoerIO{
     		}	
     
     
+    /**
+     * to write a new bookings into the text file
+     * @throws IOException
+     * @throws Exception
+     */
     public void writeNewBooking() throws IOException,Exception{
 	countPreviousBookings();    
     	file = getCustomerFile();
@@ -143,6 +173,9 @@ public class MovieGoerIO{
     }
     
     
+    /**
+     * to add a movieGoer to the ArrayList of customers
+     */
     public void addMovieGoer() {
     		MovieGoer m1 = new MovieGoer();
     		
@@ -169,6 +202,10 @@ public class MovieGoerIO{
     	
     }
     
+    /**
+     * to add a booking to an existing customer
+     * @param i index of the existing customer in the ArrayList
+     */
     public void addBooking(int i) {
     	MovieGoer m = new MovieGoer();
     	m = customers.get(i);
@@ -177,6 +214,10 @@ public class MovieGoerIO{
     	
     }
     
+    /**
+     * to create a Booking object to be associated with the customer
+     * @return booking
+     */
     public Booking createBooking() {
     	Booking b1 = new Booking();	
     	
@@ -191,8 +232,15 @@ public class MovieGoerIO{
     }
     
     
-	
-public void assignFinalSeats(MovieGoer m, Booking b, int row, int numseats, int firstseat) {
+	/**
+	 * assign seats to a customer
+	 * @param m MovieGoer object
+	 * @param b Booking details of the movie-goer
+	 * @param row row of the theater to be booked
+	 * @param numseats number of seats to be booked
+	 * @param firstseat first seat of the booking
+	 */
+    public void assignFinalSeats(MovieGoer m, Booking b, int row, int numseats, int firstseat) {
     	show s = b.getShow();
     	
     	
@@ -201,18 +249,21 @@ public void assignFinalSeats(MovieGoer m, Booking b, int row, int numseats, int 
     		s.assignSeat(row, i+firstseat-1);
     	}    }
 
-
-
-	public File getCustomerFile() {
+    /**
+     * get the bookings file
+     * @return customer file
+     */
+    public File getCustomerFile() {
 		return file;
 	}
 
-
-
-	public void setCustomerFile(File file) {
-		this.file = file;
-	}
-	
+	/**
+	 * search and return the movieGoer object by customer ID
+	 * @param custID customer ID of the movie-goer
+	 * @return MovieGoer Object
+	 * @throws IOException
+	 * @throws Exception
+	 */
 	public MovieGoer getMovieGoer(int custID) throws IOException, Exception {
 		try{
 		readBookingsFile();
