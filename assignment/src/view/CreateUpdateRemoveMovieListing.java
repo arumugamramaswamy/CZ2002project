@@ -39,7 +39,6 @@ public class CreateUpdateRemoveMovieListing {
 			boolean incorrectInput = true;
 			
 			while(incorrectInput) {
-			
 				System.out.print("Enter Movie Status (COMING_SOON, PREVIEW, NOW_SHOWING): ");
 				showingStatus = sc.nextLine();
 				
@@ -53,10 +52,26 @@ public class CreateUpdateRemoveMovieListing {
 			System.out.print("Enter Synopsis: ");
 			Synopsis = sc.nextLine();
 			
-			System.out.println("Enter the number of Cast in the movie (MAX 5): ");
-			int num = sc.nextInt();
+			incorrectInput = true;
+			int num;
 			
-			sc.nextLine();
+			while(incorrectInput) {
+				
+				try {
+				System.out.println("Enter the number of Cast in the movie (MAX 5): ");
+				num = sc.nextInt();
+				sc.nextLine();
+					if(num <= 5) {
+					incorrectInput = false;
+					} else {
+						System.err.println("Please enter a valid number!");
+					}
+				} catch(Exception e) {
+					System.err.println("Please enter a valid number!");
+				}
+			}
+			
+			
 			
 			for(int i = 0; i < num; i++) {
 				System.out.print("Enter Cast No. " + i + " Name: ");

@@ -117,7 +117,7 @@ public class BookingApp {
                     		ArrayList<Booking> customerbookings = new ArrayList<>();
                     		
                     		System.out.println("Please enter Customer ID to view booking history:");
-                    		id= sc.nextInt();
+                    		id = sc.nextInt();
                     		
                     		moviegoer = M.getMovieGoer(id);
                     		customerbookings = moviegoer.getBooking();
