@@ -27,6 +27,7 @@ public class BookingApp {
 		    user= sc.nextInt();
         
         if(user==1) {
+        	
 
             //do-while loop for user= CUSTOMER 
             do {   System.out.print("\n"
