@@ -37,7 +37,7 @@ public class MovieGoerIO{
     public MovieGoerIO() {};
 	
     public void countPreviousBookings() throws IOException,Exception {
-    	FileReader fw = new FileReader("src/people/Customers.txt");
+    	FileReader fw = new FileReader("src/controller/Customers.txt");
 		BufferedReader br = new BufferedReader(fw);
 		
 		String s;
@@ -49,7 +49,7 @@ public class MovieGoerIO{
     
     public void readBookingsFile() throws IOException,Exception {
     	
-    	
+    		countPreviousBookings();
     		
     		FileReader fw = new FileReader("src/controller/Customers.txt");
     		BufferedReader br = new BufferedReader(fw);

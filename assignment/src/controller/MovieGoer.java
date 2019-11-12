@@ -57,8 +57,8 @@ public class MovieGoer{
 		customerbookings.add(b);
 	}
 	
-	public Booking getBooking(int i) {
-		return customerbookings.get(i);
+	public ArrayList<Booking> getBookings() {
+		return customerbookings;
 	}
 
 }
