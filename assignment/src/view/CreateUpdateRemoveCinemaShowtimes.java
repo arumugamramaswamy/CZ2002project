@@ -93,7 +93,7 @@ private static master Master;
 			String[] rev = new String[0]; 
 			double[] rat = new double[0]; 
 						
-			movie newMovie = new movie(name,director,rev,rat,showingStatus, Synopsis, Cast);
+			movie newMovie = new movie(name,director,rev,rat,showingStatus, Synopsis, Cast, 0);
 			
 			master.addMovieListing(newMovie);
 			
