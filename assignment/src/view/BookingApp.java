@@ -133,10 +133,31 @@ public class BookingApp {
                     
                     //Check seat availability and selection of seat(s).        
                     case 2:  
+                    	
+                    	System.out.println("");
+                        System.out.println("-- Check seat availability --");
+                        System.out.println("");
+                        
+                		ArrayList<Cineplex> Cineplexes_1 =new ArrayList<Cineplex>();
+                		
+                		Cineplexes_1 = Master.getCineplexes();
+                        
+                        for(i=0; i< Cineplexes_1.size();i++)
+                        	System.out.printf("%d) "+Cineplexes_1.get(i).getCineplexName()+"\n",i+1);
+                        
+                        System.out.print("Select a Cinema: ");
+                        int choice_1 = sc.nextInt();
+                        
+                        
+                        
                             break;
                     
                     //Book and purchase movie ticket(s).
                     case 3: //Initialising variables for this case. 
+                    	
+                    	System.out.println("");
+                        System.out.println("-- Book and purchase movie ticket(s) --");
+                        
                     		int customerID, movieID;
                     		String movieBooked, firstseat, lastseat;
                     		movie m;
