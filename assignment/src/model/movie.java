@@ -206,9 +206,10 @@ public class movie {
 	 * @param cineplexID ID of the CinePlex
 	 * @param is3D bool true if the movie is 3D
 	 */
-	public void createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
+	public show createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
 		show s = new show(this,dt,screenNum,cineplexID,is3D);
 		Shows.add(s);
+		return s;
 	}
 	
 	/**

@@ -70,4 +70,8 @@ public class master {
 			
 		}
 	}
+	
+	public void setCineplexes(ArrayList<Cineplex> c) {
+		cineplexList = c;
+	}
 }
