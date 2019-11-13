@@ -168,8 +168,8 @@ public class BookingApp {
                     	System.out.println("");
                         System.out.println("-- Book and purchase movie ticket(s) --");
                         
-                    		int customerID, movieID;
-                    		String movieBooked, firstseat, lastseat;
+                    		int customerID, movieID, firstseat;
+                    		String movieBooked;
                     		movie m;
                     		movies = Master.getMovies();
                     		//Enter customer ID. 
@@ -195,13 +195,6 @@ public class BookingApp {
                     		sc.nextLine();
         		        	firstseat = sc.nextLine();
         		        	
-        		        	
-                    		/* Enter specific show to book for movie. 
-                    		System.out.println("Enter show:");
-                    		
-                    		Call Booking
-                    		Booking b = new Booking(customerID, ) */
-                    		
                     		
                             break;
                     
