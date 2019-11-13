@@ -271,6 +271,17 @@ public class movie {
 		   /*For ascending order*/
 		   return (int) rating1- (int) rating2; } };
 
+	//method to get top five movies with highest ticketsales
+	public static Comparator<movie> topticketsales = new Comparator<movie>() {
+
+	public int compare(movie m1, movie m2) {
+
+		int ts1 = m1.getTsales();
+		int ts2 = m2.getTsales();
+
+		/*For ascending order*/
+		return ts1-ts2; } };
+
 	public void deleteShow(master m, int ind) {
 		show s = Shows.get(ind);
 		ArrayList<Cineplex> temp = m.getCineplexes();

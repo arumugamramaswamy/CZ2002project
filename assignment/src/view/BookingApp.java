@@ -169,12 +169,18 @@ public class BookingApp {
                         System.out.println("-- Book and purchase movie ticket(s) --");
                         
                     		int customerID, movieID;
-                    		String movieBooked, firstseat, lastseat;
+                    		String movieBooked;
+                    		int firstseat, row, numseats;
                     		movie m;
                     		movies = Master.getMovies();
+                    		
+                    		MovieGoerIO mgio = new MovieGoerIO();
                     		//Enter customer ID. 
                     		System.out.println("Enter customer ID:");
                     		customerID = sc.nextInt();
+                    		
+                    		System.out.println("Enter customer Name:");
+                    		String customerName = sc.nextLine();
                     		
                     		//Enter movie ID to be booked, retrieve movie name from movies. 
                     		System.out.println("Enter movie ID of movie to be booked:");
@@ -193,15 +199,21 @@ public class BookingApp {
                     		//Enter first seat.
                     		System.out.println("Enter first seat:");
                     		sc.nextLine();
-        		        	firstseat = sc.nextLine();
+        		        	firstseat = sc.nextInt();
         		        	
+        		        	System.out.println("Enter row:");
+                    		sc.nextLine();
+        		        	row = sc.nextInt();
+        		        	
+        		        	
+        		        	System.out.println("Enter row:");
+                    		sc.nextLine();
+        		        	numseats = sc.nextInt();
+        		        	
+        		        	mgio.assignFinalSeatsbyMovie(m, 1, customerName, customerID, row, numseats, firstseat);
         		        	
                     		/* Enter specific show to book for movie. 
                     		System.out.println("Enter show:");
-                    		
-                    		Call Booking
-                    		Booking b = new Booking(customerID, ) */
-                    		
                     		
                             break;
                     
@@ -236,30 +248,37 @@ public class BookingApp {
 			                + " 1) Ticket sales.\n"
 			                + " 2) Overall reviewers' ratings.\n"
 			                + " 3) Back.\n");
-                    
-                    		selection= sc.nextInt();
                     		
+                    		//getting user's selected option
+                    		selection= sc.nextInt();
+                    		 
+                    		//extracting list of all movies (movie objects)
                     		movies = Master.getMovies();
                     		
                     		if(selection==1)
                     		{
-                    			
+                    			//sort movies ArrayList according to ticket sales.
+                        		Collections.sort(movies,movie.topticketsales);
+                        		
+                        		//Iterating through movies list to print top five movies
+                        		System.out.println("The top 5 movies ranking by total ticket sales are:");
+                        		for(i= movies.size() -1 ; i >=0 ; i--)
+                        			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTsales());
                     		}
                     		else if(selection==2)
                     		{
-                    		//sort movies ArrayList according to reviewers' ratings.
-                    		Collections.sort(movies,movie.topratings);
-                    		
-                    		//Iterating through movies list to print top five movies
-                    		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
-                    		for(i= movies.size() -1 ; i >=0 ; i--)
-                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
+	                    		//sort movies ArrayList according to reviewers' ratings.
+	                    		Collections.sort(movies,movie.topratings);
+	                    		
+	                    		//Iterating through movies list to print top five movies
+	                    		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
+	                    		for(i= movies.size() -1 ; i >=0 ; i--)
+	                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
                     		}
                     		else
                     			System.out.println("Invalid input!"); 
                     		
                     		} while(selection!=3);
-                            break;
                             
                             
                     //List all Cineplexes. 
