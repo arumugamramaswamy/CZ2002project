@@ -14,7 +14,7 @@ import model.Cinema;
  */
 
 public class movie {
-	
+	private int tSales;
 	/**
 	 * name of the movie
 	 */
@@ -61,7 +61,7 @@ public class movie {
 	 * @param Cast			array of actors in the movie
 	 */
 	public movie(String name,String director,String[] reviews, double[] ratings,
-								String showingStatus, String Synopsis, String[] Cast) {
+								String showingStatus, String Synopsis, String[] Cast,int tSales) {
 		movieName = name;
 		directorName = director;
 		this.Cast = Cast;
@@ -70,6 +70,7 @@ public class movie {
 		this.ratings = ratings;
 		this.reviews = reviews;
 		this.Shows = new ArrayList<show>();
+		this.tSales =tSales;
 //		m.addMovieListing(this);
 	}
 	
@@ -286,5 +287,12 @@ public class movie {
 		temp3.remove(s);
 		Shows.remove(s);
 	}
->>>>>>> master
+	
+	public void incTsales() {
+		tSales++;
+	}
+	
+	public int getTsales() {
+		return tSales;
+	}
 }

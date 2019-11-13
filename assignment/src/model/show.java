@@ -118,8 +118,10 @@ public class show { // figure out how to implement extends movie
 	 * @param s2 y co-ordinate of the seat
 	 */
 	public void assignSeat(int s1,int s2) {
-		if (seats[s1][s2] == 0)
+		if (seats[s1][s2] == 0) {
 			seats[s1][s2] = 1;
+			mov.incTsales();
+		}
 		else
 			System.out.println("Error");
 	}
