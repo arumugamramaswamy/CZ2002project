@@ -169,12 +169,18 @@ public class BookingApp {
                         System.out.println("-- Book and purchase movie ticket(s) --");
                         
                     		int customerID, movieID;
-                    		String movieBooked, firstseat, lastseat;
+                    		String movieBooked;
+                    		int firstseat, row, numseats;
                     		movie m;
                     		movies = Master.getMovies();
+                    		
+                    		MovieGoerIO mgio = new MovieGoerIO();
                     		//Enter customer ID. 
                     		System.out.println("Enter customer ID:");
                     		customerID = sc.nextInt();
+                    		
+                    		System.out.println("Enter customer Name:");
+                    		String customerName = sc.nextLine();
                     		
                     		//Enter movie ID to be booked, retrieve movie name from movies. 
                     		System.out.println("Enter movie ID of movie to be booked:");
@@ -193,8 +199,18 @@ public class BookingApp {
                     		//Enter first seat.
                     		System.out.println("Enter first seat:");
                     		sc.nextLine();
-        		        	firstseat = sc.nextLine();
+        		        	firstseat = sc.nextInt();
         		        	
+        		        	System.out.println("Enter row:");
+                    		sc.nextLine();
+        		        	row = sc.nextInt();
+        		        	
+        		        	
+        		        	System.out.println("Enter row:");
+                    		sc.nextLine();
+        		        	numseats = sc.nextInt();
+        		        	
+        		        	mgio.assignFinalSeatsbyMovie(m, 1, customerName, customerID, row, numseats, firstseat);
         		        	
                     		/* Enter specific show to book for movie. 
                     		System.out.println("Enter show:");

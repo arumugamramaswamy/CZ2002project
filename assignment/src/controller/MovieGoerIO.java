@@ -35,7 +35,7 @@ public class MovieGoerIO{
 
     private int numseats;
     
-    private String cinema;
+    private String cineplexID;
     
     private String time;
 
@@ -90,7 +90,7 @@ public class MovieGoerIO{
             	this.customerName = var[2];
             	this.customerAge = Integer.parseInt(var[3]);
             	this.movieBooked = var[4];
-            	this.cinema = var[5];
+            	this.cineplexID = var[5];
             	this.time = var[6];
             	this.numseats = Integer.parseInt(var[7]);
             	this.firstseat = var[8];
@@ -110,7 +110,7 @@ public class MovieGoerIO{
      * @throws IOException
      * @throws Exception
      */
-    public void writeNewBooking(int custID, int bookingID, String customerName, int customerAge, String movieBooked, String cinema, String time, int numseats, String firstseat) throws IOException,Exception{
+    public void writeNewBooking(int custID, int bookingID, String customerName, int customerAge, String movieBooked, int cineplexID, String time, int numseats, String firstseat) throws IOException,Exception{
 	countPreviousBookings();    
     	file = getCustomerFile();
     	String temp;
@@ -127,7 +127,7 @@ public class MovieGoerIO{
 			bw.write(customerName + "|");
 			bw.write(Integer.toString(customerAge) + "|");
 			bw.write(movieBooked + "|");
-			bw.write(cinema + "|");
+			bw.write(Integer.toString(cineplexID) + "|");
 			bw.write(time + "|");
 			bw.write(Integer.toString(numseats) + "|");
 			bw.write(firstseat + "|");
@@ -211,7 +211,7 @@ public class MovieGoerIO{
 	 * @throws Exception 
 	 * @throws IOException 
 	 */
-    public void assignFinalSeats(movie mo, String custName, int custID, int row, int numseats, int firstseat) throws IOException, Exception {
+    public void assignFinalSeatsbyMovie(movie mo, int index, String custName, int custID, int row, int numseats, int firstseat) throws IOException, Exception {
     	try{
     		readBookingsFile();
     		
@@ -250,14 +250,15 @@ public class MovieGoerIO{
     	ArrayList<show> shows = new ArrayList<>();
     	
     	shows = mo.getShows();
-    	show s = shows.get(0);
-    	String cinema = "";
+    	
+    	show s = shows.get(index);
+    	int cineplexID = s.getCineplexID()+1;
     
     	    	for(int j=1; j<=numseats; j++) {
     		s.assignSeat(row, j+firstseat-1);
     	}   
     	    	
-    	 writeNewBooking(custID, 0, custName, 0, movieBooked, cinema, " ", numseats, " ")  ; 	
+    	 writeNewBooking(custID, 0, custName, 0, movieBooked, cineplexID, " ", numseats, " ")  ; 	
     	}finally{customers.clear();}
     	    	//write new booking after assigning seats
     }
