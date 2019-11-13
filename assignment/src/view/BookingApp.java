@@ -193,7 +193,7 @@ public class BookingApp {
                     		//Enter first seat.
                     		System.out.println("Enter first seat:");
                     		sc.nextLine();
-        		        	firstseat = sc.nextLine();
+        		        	firstseat = sc.nextInt();
         		        	
                     		
                             break;
@@ -252,7 +252,6 @@ public class BookingApp {
                     			System.out.println("Invalid input!"); 
                     		
                     		} while(selection!=3);
-                            break;
                             
                             
                     //List all Cineplexes. 
