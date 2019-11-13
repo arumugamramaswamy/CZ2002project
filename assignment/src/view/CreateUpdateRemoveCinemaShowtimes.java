@@ -65,7 +65,7 @@ private static master Master;
         
         movie m = movies.get(mov_num-1);
         
-        s = m.createShowListing(s_1, cinema_id, choice_1, threed);
+        s = m.createShowListing(s_1, cinema_id-1, choice_1-1, threed);
         
         Cineplexes_1.get(choice_1-1).getCinemaList().get(cinema_id-1).addShow(s);
         
