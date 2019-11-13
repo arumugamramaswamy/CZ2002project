@@ -17,6 +17,7 @@ public class BookingApp {
     */
     int selection;
     int user;
+    int i;	//common variable for any instance of iteration in this class
     master Master = new master();
     Master.readMovies();
     
@@ -28,8 +29,7 @@ public class BookingApp {
     	mov.readShowDetails(Master);
     }
     
-    // System.out.println(Master.getCineplexes());
-    // System.out.println(Master.getCineplexes().get(0));
+    
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
@@ -53,11 +53,10 @@ public class BookingApp {
                 selection = sc.nextInt();
 
                 switch (selection)
-                {	//List all movies and movie deatils.
+                {	//List all movies and movie details.
                     case 1: 
                     		ArrayList<movie> movies=new ArrayList<movie>();
                     		
-                    		int i;
                     		movies = Master.getMovies();
                             movie mov;
                             show s;
@@ -189,6 +188,16 @@ public class BookingApp {
                             
                     //List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.
                     case 5: 
+                    		movies = Master.getMovies();
+                    		
+                    		//sort movies ArrayList according to reviewers' ratings.
+                    		Collections.sort(movies,movie.topratings);
+                    		
+                    		//Iterating through movies list to print top five movies
+                    		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
+                    		for(i= movies.size() -1 ; i >=0 ; i--)
+                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
+                    		
                             break;
                             
                     //List all Cineplexes. 
