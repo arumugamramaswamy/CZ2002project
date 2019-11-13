@@ -141,10 +141,24 @@ public class BookingApp {
                         for(i=0; i< Cineplexes_1.size();i++)
                         	System.out.printf("%d) "+Cineplexes_1.get(i).getCineplexName()+"\n",i+1);
                         
-                        System.out.print("Select a Cinema: ");
+                        System.out.println("");
+                        
+                        System.out.print("Select a Cineplex: ");
                         int choice_1 = sc.nextInt();
                         
+                        System.out.print("Select a Screen (1 / 2 / 3): ");
+                        int cinema_id = sc.nextInt();
                         
+                        System.out.println("");
+                        
+                        System.out.println("-- All Movies in the Selected Cinema: --");
+                        System.out.println("");
+                        
+                        ArrayList<show> s1 = Master.getCineplexes().get(choice_1-1).getCinemaList().get(cinema_id-1).getCinemaShows();
+                        
+                        for(show s_1:s1) {
+                        	s_1.printSeats();
+                        }
                         
                             break;
                     
@@ -345,7 +359,7 @@ public class BookingApp {
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
                 + " 1) Create/Update/Remove Movie Listing\n"
-                + " 2) Create/Update/Remove cinema showtimes and movies to be shown\n"
+                + " 2) Create/Update/Remove Cinema Showtimes and movies to be shown\n"
                 //System settings include ticket prices, holidays
                 + " 3) Configure Ticket prices\n"
                 + " 4) Configure Holidays\n"

@@ -107,9 +107,9 @@ public class movieIO {
 				         alr2.add(star2.nextToken());
 				     }
 					String[] Cast = GetStringArray(alr2);
-					
+					int tSales = Integer.parseInt(star.nextToken());
 					// create Professor object from file data
-					movie mov = new movie(movieName,directorName,reviews,ratings,showingStatus,Synopsis,Cast);
+					movie mov = new movie(movieName,directorName,reviews,ratings,showingStatus,Synopsis,Cast,tSales);
 					
 					// add to movie list
 					alr.add(mov) ;
@@ -204,7 +204,8 @@ public class movieIO {
 						if(j<temp.length-1)
 						st.append(",");
 					}
-
+					st.append(SEPARATOR);
+					st.append(String.valueOf(mov.getTsales()));
 					alw.add(st.toString());
 				}
 				write(filename,alw);

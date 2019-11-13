@@ -84,9 +84,9 @@ public class show { // figure out how to implement extends movie
 	 * print Seats 
 	 */
 	public void printSeats() {
-		System.out.printf("%s by %s\n",mov.getMovieName(),mov.getDirectorName());
-		System.out.printf("Show location: Cineplex id: %d, Screen number: %d\n",cineplexID,screenNum);
-		System.out.printf("Show time: %s\n\n\n",dateTime);
+		System.out.printf("Movie %s by Director %s\n",mov.getMovieName(),mov.getDirectorName());
+		System.out.printf("Show Location: Cineplex ID: %d, Screen Number: %d\n",cineplexID+1,screenNum+1);
+		System.out.printf("Show Time: %s\n\n\n",dateTime);
 		System.out.printf("      1 2 3   4 5 6   7 8 9\n");
 		
 		for(int i=0;i<9;i++) {
@@ -118,8 +118,10 @@ public class show { // figure out how to implement extends movie
 	 * @param s2 y co-ordinate of the seat
 	 */
 	public void assignSeat(int s1,int s2) {
-		if (seats[s1][s2] == 0)
+		if (seats[s1][s2] == 0) {
 			seats[s1][s2] = 1;
+			mov.incTsales();
+		}
 		else
 			System.out.println("Error");
 	}
