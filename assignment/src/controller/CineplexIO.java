@@ -73,9 +73,10 @@ public class CineplexIO {
 					st.append(cm.getCinemaClass());
 					st.append("|");
 					st.append(String.valueOf(cm.getCinemaID()));
-				}
-				st.append(SEPARATOR);
+					st.append(SEPARATOR);
 
+				}
+				
 
 				alw.add(st.toString());
 			}
