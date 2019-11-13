@@ -216,7 +216,7 @@ public class movie {
 	public void saveShowDetails() {
 		movieIO m = new movieIO();
 		try {
-		m.saveShows("Shows/"+movieName+".txt", Shows);
+		m.saveShows("data/Shows/"+movieName+".txt", Shows);
 		}catch(IOException e) {
 			System.out.println("IOException > " + e.getMessage());
 		}
@@ -233,13 +233,11 @@ public class movie {
 		Cinema tempCinema;
 		movieIO m = new movieIO();
 		try {
-		System.out.println("data/Shows/"+movieName+".txt");
 		ArrayList arr = m.readShows(this,"data/Shows/"+movieName+".txt");
 		Shows = arr;
 		
 		for(int i=0;i<Shows.size();i++) {
 			temp = Shows.get(i);
-			System.out.println(i);
 			tempCineplexArray = Master.getCineplexes();
 			tempCineplex = tempCineplexArray.get(temp.getCineplexID());
 			tempCinemaArray = tempCineplex.getCinemaList();
@@ -267,5 +265,13 @@ public class movie {
 		ArrayList<show> temp3 = temp2.get(s.getScreenNum()).getCinemaShows();
 		temp3.remove(s);
 		Shows.remove(ind);
+	}
+	
+	public void deleteShow(master m, show s) {
+		ArrayList<Cineplex> temp = m.getCineplexes();
+		ArrayList<Cinema> temp2 = temp.get(s.getCineplexID()).getCinemaList();
+		ArrayList<show> temp3 = temp2.get(s.getScreenNum()).getCinemaShows();
+		temp3.remove(s);
+		Shows.remove(s);
 	}
 }
