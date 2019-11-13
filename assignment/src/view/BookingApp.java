@@ -42,18 +42,19 @@ public class BookingApp {
             //do-while loop for user= CUSTOMER 
             do {   System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection:\n"
-                + " 1) List all movies and movie details.\n"
-                + " 2) Check seat availability and selection of seat(s).\n" 
-                + " 3) Book and purchase movie ticket(s).\n"
-                + " 4) View booking history.\n"
-                + " 5) List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.\n"
-                + " 6) List all Cinplexes.\n"
-                + " 7) Quit MOBILMA.\n"
-                + " Enter your choice below:\n");
+                + " 1) List all movies and movie details\n"
+                + " 2) Check seat availability\n" 
+                + " 3) Book and purchase movie ticket(s)\n"
+                + " 4) View booking history\n"
+                + " 5) List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings\n"
+                + " 6) List all Cinplexes\n"
+                + " 7) Quit MOBILMA\n");
+            
+                System.out.print("Enter your choice below: ");
                 selection = sc.nextInt();
 
                 switch (selection)
-                {	//List all movies and movie deatils.
+                {	//List all movies and movie details.
                     case 1: 
                     		ArrayList<movie> movies=new ArrayList<movie>();
                     		
@@ -61,22 +62,33 @@ public class BookingApp {
                     		movies = Master.getMovies();
                             movie mov;
                             show s;
+                            System.out.println("");
+                            System.out.println("-- All Movies --");
                             for(i=0; i< movies.size();i++)
                             	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
                             
                             do {	System.out.print("\n"
-                                    + "Welcome to MOBLIMA! Please make a selection:\n"
-                                    + " 1) Select Movie.\n"
-                                    + " 2) Back.\n");
+                                    + "Please make a selection:\n"
+                                    + " 1) Select Movie\n"
+                                    + " 2) Back\n");
                                     selection = sc.nextInt();
                                     
+                                    if (selection == 3) {
+                                    	System.out.println("");
+                                    	System.err.print("Invalid Input, Please Try Again!"); 
+                                    	System.out.println("");
+                                    }
+                                    
                                     if (selection == 1) {
-                                    	System.out.println("Please select a movie to list its details and shows");
+                                    	System.out.print("Please select a Movie Index to list its details and shows: ");
                                     	selection = sc.nextInt();
                                     	if (selection-1 > movies.size()) {
-                                    		System.out.println("Please enter a valid movie number");
+                                    		System.out.println("");
+                                    		System.err.println("Please enter a valid movie number");
                                     		continue;
                                     	}
+                                    	
+                                    	System.out.println("");
                                     	mov = movies.get(selection-1);
                     					System.out.println(mov.getMovieName());
                     					System.out.println(mov.getDirectorName());
@@ -110,7 +122,7 @@ public class BookingApp {
                     					}
                     					
                                     }
-                            }while(selection!= 2);
+                            } while(selection!= 2);
                             
                             break;
                     
@@ -208,7 +220,10 @@ public class BookingApp {
                     		System.exit(0);
                     		break;
 
-                    default: System.out.print("Invalid Input, Please Try Again!"); 
+                    default: 
+                    	System.out.println("");
+                    	System.err.print("Invalid Input, Please Try Again!"); 
+                    	System.out.println("");
                 }
                 
             } while(true);
