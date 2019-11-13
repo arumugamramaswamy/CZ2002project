@@ -169,7 +169,7 @@ public class BookingApp {
                         System.out.println("-- Book and purchase movie ticket(s) --");
                         
                     		int customerID, movieID;
-                    		String movieBooked;
+                    		String movieBooked, temp;
                     		int firstseat, row, numseats;
                     		movie m;
                     		movies = Master.getMovies();
@@ -177,13 +177,16 @@ public class BookingApp {
                     		MovieGoerIO mgio = new MovieGoerIO();
                     		//Enter customer ID. 
                     		System.out.println("Enter customer ID:");
+                    		sc.nextLine();
                     		customerID = sc.nextInt();
                     		
                     		System.out.println("Enter customer Name:");
+                    		sc.nextLine();
                     		String customerName = sc.nextLine();
                     		
                     		//Enter movie ID to be booked, retrieve movie name from movies. 
                     		System.out.println("Enter movie ID of movie to be booked:");
+                    		sc.hasNextLine();
                     		movieID = sc.nextInt();
                     		while(true)
                     		{
@@ -202,18 +205,18 @@ public class BookingApp {
         		        	firstseat = sc.nextInt();
         		        	
         		        	System.out.println("Enter row:");
-                    		sc.nextLine();
+        		        	sc.nextLine();
         		        	row = sc.nextInt();
         		        	
         		        	
-        		        	System.out.println("Enter row:");
+        		        	System.out.println("Enter number of seats:");
                     		sc.nextLine();
         		        	numseats = sc.nextInt();
         		        	
-        		        	mgio.assignFinalSeatsbyMovie(m, 1, customerName, customerID, row, numseats, firstseat);
+        		        	mgio.assignFinalSeatsbyMovie(m, 0, customerName, customerID, row, numseats, firstseat);
         		        	
-                    		/* Enter specific show to book for movie. 
-                    		System.out.println("Enter show:");
+                    		/* Enter specific show to book for movie. */
+                    		/*System.out.println("Enter show:");*/
                     		
                             break;
                     
