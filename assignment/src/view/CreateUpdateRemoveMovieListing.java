@@ -65,7 +65,7 @@ public class CreateUpdateRemoveMovieListing {
 			while(incorrectInput) {
 				
 				try {
-				System.out.println("Enter the number of Cast in the movie (MAX 5): ");
+				System.out.print("Enter the number of Cast in the movie (MAX 5): ");
 				num = sc.nextInt();
 				sc.nextLine();
 					if(num <= 5) {
@@ -81,12 +81,10 @@ public class CreateUpdateRemoveMovieListing {
 			
 			
 			for(i = 0; i < num; i++) {
-				System.out.print("Enter Cast No. " + i + " Name: ");
+				System.out.print("Enter Cast No. " + i+1 + " Name: ");
 				Cast[i] = sc.nextLine();
 				System.out.println("");
 			}
-			
-			System.out.println("");
 			
 			String[] rev = new String[0]; 
 			double[] rat = new double[0]; 

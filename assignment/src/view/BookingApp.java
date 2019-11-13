@@ -17,6 +17,7 @@ public class BookingApp {
     */
     int selection;
     int user;
+    int i;	//common variable for any instance of iteration in this class
     master Master = new master();
     Master.readMovies();
     
@@ -28,16 +29,16 @@ public class BookingApp {
     	mov.readShowDetails(Master);
     }
     
-    // System.out.println(Master.getCineplexes());
-    // System.out.println(Master.getCineplexes().get(0));
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
-                            + "2) Staff\n");  
+                            + "2) Staff\n"
+                            + "3) Quit MOBLIMA\n");  
 		    user= sc.nextInt();
         
         if(user==1) {
         	
+        	boolean back_cust = false;
 
             //do-while loop for user= CUSTOMER 
             do {   System.out.print("\n"
@@ -48,7 +49,8 @@ public class BookingApp {
                 + " 4) View booking history\n"
                 + " 5) List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings\n"
                 + " 6) List all Cinplexes\n"
-                + " 7) Quit MOBILMA\n");
+                + " 7) Quit MOBILMA\n"
+                + " 8) Back\n");
             
                 System.out.print("Enter your choice below: ");
                 selection = sc.nextInt();
@@ -58,7 +60,6 @@ public class BookingApp {
                     case 1: 
                     		ArrayList<movie> movies=new ArrayList<movie>();
                     		
-                    		int i;
                     		movies = Master.getMovies();
                             movie mov;
                             show s;
@@ -84,7 +85,7 @@ public class BookingApp {
                                     	selection = sc.nextInt();
                                     	if (selection-1 > movies.size()) {
                                     		System.out.println("");
-                                    		System.err.println("Please enter a valid movie number");
+                                    		System.err.println("Please enter a valid movie number!");
                                     		continue;
                                     	}
                                     	
@@ -128,10 +129,31 @@ public class BookingApp {
                     
                     //Check seat availability and selection of seat(s).        
                     case 2:  
+                    	
+                    	System.out.println("");
+                        System.out.println("-- Check seat availability --");
+                        System.out.println("");
+                        
+                		ArrayList<Cineplex> Cineplexes_1 =new ArrayList<Cineplex>();
+                		
+                		Cineplexes_1 = Master.getCineplexes();
+                        
+                        for(i=0; i< Cineplexes_1.size();i++)
+                        	System.out.printf("%d) "+Cineplexes_1.get(i).getCineplexName()+"\n",i+1);
+                        
+                        System.out.print("Select a Cinema: ");
+                        int choice_1 = sc.nextInt();
+                        
+                        
+                        
                             break;
                     
                     //Book and purchase movie ticket(s).
                     case 3: //Initialising variables for this case. 
+                    	
+                    	System.out.println("");
+                        System.out.println("-- Book and purchase movie ticket(s) --");
+                        
                     		int customerID, movieID;
                     		String movieBooked, firstseat, lastseat;
                     		movie m;
@@ -201,6 +223,16 @@ public class BookingApp {
                             
                     //List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.
                     case 5: 
+                    		movies = Master.getMovies();
+                    		
+                    		//sort movies ArrayList according to reviewers' ratings.
+                    		Collections.sort(movies,movie.topratings);
+                    		
+                    		//Iterating through movies list to print top five movies
+                    		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
+                    		for(i= movies.size() -1 ; i >=0 ; i--)
+                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
+                    		
                             break;
                             
                     //List all Cineplexes. 
@@ -216,8 +248,28 @@ public class BookingApp {
                         break;
                     
                     //Quit MOBLIMA.     
-                    case 7: System.out.println("Thank you for using our Application!");
-                    		System.exit(0);
+                    
+                    case 7: 
+                    	
+                    	Master.saveCineplexes();
+                	    Master.saveMovies();
+                	    tempMovList = Master.getMovies();
+                	    for (movie mov1: tempMovList) {
+                	    	mov1.saveShowDetails();
+                	    }
+                    	System.out.println("Thank you for using our Application!");
+                		System.exit(0);
+                	    break;
+                	    
+                    
+                    case 8: 
+                    	Master.saveCineplexes();
+                	    Master.saveMovies();
+                	    tempMovList = Master.getMovies();
+                	    for (movie mov2: tempMovList) {
+                	    	mov2.saveShowDetails();
+                	    }
+                    	back_cust = true;
                     		break;
 
                     default: 
@@ -226,7 +278,11 @@ public class BookingApp {
                     	System.out.println("");
                 }
                 
-            } while(true);
+            } while(!back_cust);
+            
+            if (back_cust == true) {
+            	break;
+            }
         
         }
         
@@ -239,7 +295,7 @@ public class BookingApp {
         	String password = null;
         	// To check for Staff Login Authorization (flag==1 means authorized). 
         	int flag = 0;
-        	
+        	System.out.println("");
         	System.out.println("Please LOGIN to continue:");
         	
         	do {
@@ -268,17 +324,21 @@ public class BookingApp {
         	else {
         	flag = 1;
         	
+        	boolean back = false;
+        	
+        	System.out.println("");
         	System.out.println(LoginStatus.SUCCESSFUL.returningStatus());
         	
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
-                + " 1) Create/Update/Remove Movie Listing.\n"
-                + " 2) Create/Update/Remove cinema showtimes and movies to be shown.\n"
+                + " 1) Create/Update/Remove Movie Listing\n"
+                + " 2) Create/Update/Remove cinema showtimes and movies to be shown\n"
                 //System settings include ticket prices, holidays
-                + " 3) Configure Ticket prices.\n"
-                + " 4) Configure Holidays.\n"
-                + " 5) Quit MOBLIMA.\n"
-                + " Please enter your choice below:\n");
+                + " 3) Configure Ticket prices\n"
+                + " 4) Configure Holidays\n"
+                + " 5) Quit MOBLIMA\n"
+                + " 6) Back\n"
+                + " Please enter your choice below: ");
 
                 selection= sc.nextInt();
 
@@ -306,19 +366,44 @@ public class BookingApp {
                             	break;
 	                    
                         //Quit MOBLIMA.     	
-	                    case 5: System.out.println("Thank you for using our Application!");
+	                    case 5: 
+	                    	 	Master.saveCineplexes();
+	                    	    Master.saveMovies();
+	                    	    tempMovList = Master.getMovies();
+	                    	    for (movie mov: tempMovList) {
+	                    	    	mov.saveShowDetails();
+	                    	    }
+	                    		System.out.println("Thank you for using our Application!");
 	                    		System.exit(0);
-	                    		
+	                    
+	                    case 6: 
+	                    	Master.saveCineplexes();
+                    	    Master.saveMovies();
+                    	    tempMovList = Master.getMovies();
+                    	    for (movie mov: tempMovList) {
+                    	    	mov.saveShowDetails();
+                    	    }
+	                    	back = true;
+	                    	break;
 	                    default: System.out.print("Invalid Input, Please Try Again!"); 
 	                }
 
-            	} while(true);
+            	} while(!back);
+            
+            if (back == true) {
+            	break;
+            }
             
         }
         	
         } while(flag == 1);				  // User= STAFF and authorized (flag=1).
         	
-        }								  // User= STAFF loop. 
+        } else if (user == 3) {
+        	System.out.println("");
+        	System.out.println("Thank you for using our Application!");
+        	System.out.println("");
+    		System.exit(0);
+        }
         	
         } while(user == 1 || user == 2);  // Select user loop. 
 

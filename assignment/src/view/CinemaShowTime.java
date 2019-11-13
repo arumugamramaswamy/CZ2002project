@@ -62,7 +62,7 @@ public class CinemaShowTime {
 							if(k<cinemasList.size()) {
 								selectedCinema = cinemasList.get(k);
 								System.out.println("1. Create a new Cinema Show Time"
-										+ 	"2. Update a Cinema Show Time"
+//										+ 	"2. Update a Cinema Show Time"
 										+ 	"3. Remove a Cinema Show Time");
 								System.out.print("Select an option: ");
 								int choice = sc.nextInt();
@@ -83,32 +83,32 @@ public class CinemaShowTime {
 							            dateTime = sc.nextLine();
 							         cineplexID=cineplexesList.get(temp).getCineplexId();
 							         show newShow = new show(mov,dateTime,cineplexID,screenNum,is3D);
-							        
-								case 2: 
-
-						    		
-									cineplexesList = Master.getCineplexes();
-						            show s;
-						            for(int i=0; i< showList.size();i++)
-						            	System.out.printf("%d) "+cinemasList.get(k).getCinemaShows()+"\n",i+1);
-						            
-						            System.out.print("Please select a Show Number: ");
-						            int show_num = sc.nextInt();
-						       
-						            
-						            System.out.println("Enter new Show Time for the movie ");
-									sc.nextLine();
-						            String newTime = sc.nextLine();
-						            
-						            cinemasList.get(k).getCinemaShows(show_num).setShowingTime(newTime); 
-						            
-									System.out.println("");
-									
-									System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
-									
-									System.out.println("");
-									
-									break;
+							         break;
+//								case 2: 
+//
+//						    		
+//									cineplexesList = Master.getCineplexes();
+//						            show s;
+//						            for(int i=0; i< showList.size();i++)
+//						            	System.out.printf("%d) "+cinemasList.get(k).getCinemaShows()+"\n",i+1);
+//						            
+//						            System.out.print("Please select a Show Number: ");
+//						            int show_num = sc.nextInt();
+//						       
+//						            
+//						            System.out.println("Enter new Show Time for the movie ");
+//									sc.nextLine();
+//						            String newTime = sc.nextLine();
+//						            
+//						            (cinemasList.get(k)).getCinemaShows().get(show_num).setShowingTime(newTime); 
+//						            
+//									System.out.println("");
+//									
+//									System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
+//									
+//									System.out.println("");
+//									
+//									break;
 									
 								case 3: 
 
@@ -151,4 +151,5 @@ public class CinemaShowTime {
 			}
 		}
 	
+}
 }
