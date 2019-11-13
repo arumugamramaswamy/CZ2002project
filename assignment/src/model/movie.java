@@ -259,4 +259,13 @@ public class movie {
 	public void setShowingStatus(String st) {
 		showingStatus = st;
 	}
+	
+	public void deleteShow(master m, int ind) {
+		show s = Shows.get(ind);
+		ArrayList<Cineplex> temp = m.getCineplexes();
+		ArrayList<Cinema> temp2 = temp.get(s.getCineplexID()).getCinemaList();
+		ArrayList<show> temp3 = temp2.get(s.getScreenNum()).getCinemaShows();
+		temp3.remove(s);
+		Shows.remove(ind);
+	}
 }
