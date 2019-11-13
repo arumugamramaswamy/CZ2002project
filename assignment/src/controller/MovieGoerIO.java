@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-import model.show;
+import model.*;
 
 /**
  * 
@@ -17,7 +17,7 @@ public class MovieGoerIO{
 	/**
 	 * text file for the input and output
 	 */
-    private File file = new File("src/controller/Customers.txt");
+    private File file = new File("data/Customers.txt");
     
     /**
      * ArrayList of the MovieGoers
@@ -57,7 +57,7 @@ public class MovieGoerIO{
      * @throws Exception
      */
     public void countPreviousBookings() throws IOException,Exception {
-    	FileReader fw = new FileReader("src/controller/Customers.txt");
+    	FileReader fw = new FileReader("data/Customers.txt");
 		BufferedReader br = new BufferedReader(fw);
 		
 		String s;
@@ -76,7 +76,7 @@ public class MovieGoerIO{
     	
     		countPreviousBookings();
     		
-    		FileReader fw = new FileReader("src/controller/Customers.txt");
+    		FileReader fw = new FileReader("data/Customers.txt");
     		BufferedReader br = new BufferedReader(fw);
     		
     		String s;
@@ -247,7 +247,9 @@ public class MovieGoerIO{
     	b.setnumseats(numseats);
     	    	for(int i=1; i<=numseats; i++) {
     		s.assignSeat(row, i+firstseat-1);
-    	}    }
+    	}    
+    	    	//write new booking after assigning seats
+    }
 
     /**
      * get the bookings file
