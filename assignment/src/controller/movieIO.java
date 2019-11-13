@@ -81,20 +81,30 @@ public class movieIO {
 					
 					String all_rev = star.nextToken().trim();	// third token String[] reviews
 					StringTokenizer star2 = new StringTokenizer(all_rev , ",");
+					String[] reviews;
+					if (all_rev !="No Reviews")
+					{
 					while (star2.hasMoreTokens()) {
 				         alr2.add(star2.nextToken());
 				     }
 					
-					String[] reviews = GetStringArray(alr2);
-					
+					reviews = GetStringArray(alr2);
+					}
+					else {
+						reviews = new String[0];
+					}
 					alr2 = new ArrayList() ;
 					String all_ratings = star.nextToken().trim();	// 4th token double[] ratings
+					double[] ratings;
+					if (all_ratings !="No Ratings") {
 					star2 = new StringTokenizer(all_ratings , ",");
 					while (star2.hasMoreTokens()) {
 				         alr2.add(star2.nextToken());
 				     }
-					double[] ratings = GetDoubleArray(alr2);
-					
+					ratings = GetDoubleArray(alr2);
+					}else {
+						ratings = new double[0];
+					}
 					alr2 = new ArrayList() ;
 					
 					String showingStatus = star.nextToken().trim(); //5th token String showingStatus
@@ -179,18 +189,26 @@ public class movieIO {
 					st.append(mov.getDirectorName().trim());
 					st.append(SEPARATOR);
 					String[] temp = mov.getReviews();
+					if (temp.length == 0) {
+						st.append("No Reviews");
+					}else {
 					for (int j =0;j<temp.length;j++) {
 						
 						st.append(temp[j]);
 						if(j<temp.length-1)
 						st.append(",");
 					}
+					}
 					st.append(SEPARATOR);
 					double[] temp2 = mov.getAllRatings();
+					if (temp2.length == 0) {
+						st.append("No Ratings");
+					}else {
 					for (int j =0;j<temp2.length;j++) {
 						st.append(String.valueOf(temp2[j]));
 						if(j<temp2.length-1)
 						st.append(",");
+					}
 					}
 					st.append(SEPARATOR);
 					st.append(mov.getShowingStatus());
