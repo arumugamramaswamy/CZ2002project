@@ -259,7 +259,6 @@ public class movie {
 		showingStatus = st;
 	}
 	
-
 	//method to get top five movies with highest rankings
 	public static Comparator<movie> topratings = new Comparator<movie>() {
 
@@ -288,6 +287,7 @@ public class movie {
 		Shows.remove(s);
 	}
 	
+	public void incTsales() {
 		tSales++;
 	}
 	
