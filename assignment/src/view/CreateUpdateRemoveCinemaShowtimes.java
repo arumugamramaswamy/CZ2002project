@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.AdminChangeStatus;
+import model.Cineplex;
 import model.master;
 import model.movie;
 import model.show;
@@ -25,144 +26,50 @@ private static master Master;
 		ArrayList<movie> movies=new ArrayList<movie>();
 		int i;
 		
-		System.out.println("1. Create a new Movie Listing\n"
-				+ 	"2. Update a Movie Listing\n"
-				+ 	"3. Remove a Movie Listing");
+		ArrayList<Cineplex> Cineplexes_1 =new ArrayList<Cineplex>();
 		
-		System.out.println("");
+		Cineplexes_1 = Master.getCineplexes();
+        
+        for(i=0; i< Cineplexes_1.size();i++)
+        	System.out.printf("%d) "+Cineplexes_1.get(i).getCineplexName()+"\n",i+1);
+        
+        System.out.println("");
+        
+        System.out.print("Select a Cineplex: ");
+        int choice_1 = sc.nextInt();
+        
+        System.out.print("Select a Screen (1 / 2 / 3): ");
+        int cinema_id = sc.nextInt();
+       
+        System.out.print("Is the Movie 3D? (true/false): ");
+        boolean threed = sc.nextBoolean();
+        
+        System.out.print("Enter the Date Time:  ");
+        String s_1 = sc.nextLine(); 
 		
-		System.out.print("Select an option: ");
-		int choice = sc.nextInt();
+        System.out.println("");
+        
+        movies = Master.getMovies();
 		
-		switch(choice) {
-		
-		case 1: 
-			
-			String name, director, showingStatus = null, Synopsis;
-			String[] Cast = new String[5];
-			
-			sc.nextLine();
-			
-			System.out.print("Enter Movie Name: ");
-			name = sc.nextLine();
-			
-			System.out.print("Enter Director's Name: ");
-			director = sc.nextLine();
-			
-			boolean incorrectInput = true;
-			
-
-				System.out.print("Enter Movie Status (COMING_SOON, PREVIEW, NOW_SHOWING): ");
-				showingStatus = sc.nextLine();
-				showingStatus = showingStatus.trim();
-				
-		//		if(showingStatus != "COMING_SOON" || showingStatus != "PREVIEW" || showingStatus != "NOW_SHOWING") {
-		//			System.err.println("Please enter a valid Movie Status!");
-		
-			
-			System.out.print("Enter Synopsis: ");
-			Synopsis = sc.nextLine();
-			
-			incorrectInput = true;
-			int num =0;
-			
-			while(incorrectInput) {
-				
-				try {
-				System.out.print("Enter the number of Cast in the movie (MAX 5): ");
-				num = sc.nextInt();
-				sc.nextLine();
-					if(num <= 5) {
-					incorrectInput = false;
-					} else {
-						System.err.println("Please enter a valid number!");
-					}
-				} catch(Exception e) {
-					System.err.println("Please enter a valid number!");
-				}
-			}
-			
-			
-			
-			for(i = 0; i < num; i++) {
-				System.out.print("Enter Cast No. " + i+1 + " Name: ");
-				Cast[i] = sc.nextLine();
-				System.out.println("");
-			}
-			
-			String[] rev = new String[0]; 
-			double[] rat = new double[0]; 
-						
-			movie newMovie = new movie(name,director,rev,rat,showingStatus, Synopsis, Cast, 0);
-			
-			master.addMovieListing(newMovie);
-			
-			System.out.println("");
-			
-			System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
-			
-			System.out.println("");
-			
-			break;
-			
-			
-		case 2: 
-
-    		movies = Master.getMovies();
-    		
-            movie mov;
-            show s;
-            for(i=0; i< movies.size();i++)
-            	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
-            
-            System.out.print("Please select a Movie Number: ");
-            int mov_num = sc.nextInt();
-            
-            System.out.print("Current Status of the Movie: ");
-            
-            System.out.println(movies.get(mov_num-1).getShowingStatus());
-            
-            System.out.println("Enter new Status of the Movie (COMING_SOON, PREVIEW, NOW_SHOWING): ");
-			sc.nextLine();
-            String newStatus = sc.nextLine();
-            
-            movies.get(mov_num-1).setShowingStatus(newStatus); 
-            
-			System.out.println("");
-			
-			System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
-			
-			System.out.println("");
-			
-			break;
-			
-		case 3: 
-
-    		movies = Master.getMovies();
-            movie mov_1;
-            show s_1;
-            for(i=0; i< movies.size();i++)
-            	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
-            
-            System.out.print("Please select a Movie Number: ");
-            int mov_num_1 = sc.nextInt();
-            
-            master.deleteMovie(mov_num_1-1);
-            
-            System.out.println("");
-            
-            System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
-			
-			System.out.println("");
-			
-			break;
-		
-		default: System.out.print("Invalid Input, Please Try Again!");
-				 break;
-		
-		}
-		
-		
+        movie mov;
+        show s;
+        System.out.println("-- All Movies --");
+        
+        for(i=0; i< movies.size();i++)
+        	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
+        
+        System.out.println("");
+        
+        System.out.print("Please select a Movie to be added: ");
+        int mov_num = sc.nextInt();
+        
+        movie m = movies.get(mov_num-1);
+        
+        s = m.createShowListing(s_1, cinema_id, choice_1, threed);
+        
+        Cineplexes_1.get(choice_1-1).getCinemaList().get(cinema_id-1).addShow(s);
+        
+        Master.setCineplexes(Cineplexes_1);
 	}
 
 
