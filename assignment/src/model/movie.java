@@ -1,7 +1,7 @@
 package model;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 import controller.movieIO;
 import model.master;
 import model.Cineplex;
@@ -258,6 +258,18 @@ public class movie {
 		showingStatus = st;
 	}
 	
+<<<<<<< HEAD
+	//method to get top five movies with highest rankings
+	public static Comparator<movie> topratings = new Comparator<movie>() {
+
+		public int compare(movie m1, movie m2) {
+
+		   double rating1 = m1.getTotalRating();
+		   double rating2 = m2.getTotalRating();
+
+		   /*For ascending order*/
+		   return (int) rating1- (int) rating2; } };
+=======
 	public void deleteShow(master m, int ind) {
 		show s = Shows.get(ind);
 		ArrayList<Cineplex> temp = m.getCineplexes();
@@ -274,4 +286,5 @@ public class movie {
 		temp3.remove(s);
 		Shows.remove(s);
 	}
+>>>>>>> master
 }

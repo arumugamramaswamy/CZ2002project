@@ -17,6 +17,7 @@ public class BookingApp {
     */
     int selection;
     int user;
+    int i;	//common variable for any instance of iteration in this class
     master Master = new master();
     Master.readMovies();
     
@@ -27,10 +28,6 @@ public class BookingApp {
     for (movie mov: tempMovList) {
     	mov.readShowDetails(Master);
     }
-    
-    // System.out.println(Master.getCineplexes());
-    // System.out.println(Master.getCineplexes().get(0));
-    
     
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
@@ -63,7 +60,6 @@ public class BookingApp {
                     case 1: 
                     		ArrayList<movie> movies=new ArrayList<movie>();
                     		
-                    		int i;
                     		movies = Master.getMovies();
                             movie mov;
                             show s;
@@ -240,7 +236,34 @@ public class BookingApp {
                             break;
                             
                     //List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.
-                    case 5: 
+                    case 5: do {System.out.println("\n"
+			                + "List top 5 movies according to:\n"
+			                + " 1) Ticket sales.\n"
+			                + " 2) Overall reviewers' ratings.\n"
+			                + " 3) Back.\n");
+                    
+                    		selection= sc.nextInt();
+                    		
+                    		movies = Master.getMovies();
+                    		
+                    		if(selection==1)
+                    		{
+                    			
+                    		}
+                    		else if(selection==2)
+                    		{
+                    		//sort movies ArrayList according to reviewers' ratings.
+                    		Collections.sort(movies,movie.topratings);
+                    		
+                    		//Iterating through movies list to print top five movies
+                    		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
+                    		for(i= movies.size() -1 ; i >=0 ; i--)
+                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
+                    		}
+                    		else
+                    			System.out.println("Invalid input!"); 
+                    		
+                    		} while(selection!=3)
                             break;
                             
                     //List all Cineplexes. 

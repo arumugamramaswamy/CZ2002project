@@ -1,3 +1,11 @@
-/model/
+<<<<<<< HEAD
+/.DS_Store
+/cineplex/
+=======
+/view/
 /controller/
+/model/
+>>>>>>> master
+/controller/
+/model/
 /view/
