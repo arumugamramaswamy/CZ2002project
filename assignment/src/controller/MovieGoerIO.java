@@ -162,9 +162,7 @@ public class MovieGoerIO{
     		
     		if(flag==1){m1.setBooking(createBooking());}
     		
-    		char ch = firstseat.charAt(0);
-    		int row = ch - 'a' + 1;
-    		int firstseatnum = Character.getNumericValue(firstseat.charAt(1));
+   
     		
     		if(!customers.contains(m1)){customers.add(m1);}
     		
@@ -255,7 +253,7 @@ public class MovieGoerIO{
     	int cineplexID = s.getCineplexID()+1;
     
     	    	for(int j=1; j<=numseats; j++) {
-    		s.assignSeat(row, j+firstseat-1);
+    		s.assignSeat(row-1, j+firstseat-1-1);
     	}   
     	    	
     	 writeNewBooking(custID, 0, custName, 0, movieBooked, cineplexID, " ", numseats, " ")  ; 	
