@@ -236,22 +236,9 @@ public class BookingApp {
                             break;
                             
                     //List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.
-                    case 5: do {System.out.println("\n"
-			                + "List top 5 movies according to:\n"
-			                + " 1) Ticket sales.\n"
-			                + " 2) Overall reviewers' ratings.\n"
-			                + " 3) Back.\n");
-                    
-                    		selection= sc.nextInt();
-                    		
+                    case 5: 
                     		movies = Master.getMovies();
                     		
-                    		if(selection==1)
-                    		{
-                    			
-                    		}
-                    		else if(selection==2)
-                    		{
                     		//sort movies ArrayList according to reviewers' ratings.
                     		Collections.sort(movies,movie.topratings);
                     		
@@ -259,11 +246,7 @@ public class BookingApp {
                     		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
                     		for(i= movies.size() -1 ; i >=0 ; i--)
                     			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
-                    		}
-                    		else
-                    			System.out.println("Invalid input!"); 
                     		
-                    		} while(selection!=3)
                             break;
                             
                     //List all Cineplexes. 
@@ -363,7 +346,7 @@ public class BookingApp {
             do { System.out.print("\n"
                 + "Welcome to MOBLIMA! Please make a selection\n"
                 + " 1) Create/Update/Remove Movie Listing\n"
-                + " 2) Create/Update/Remove Cinema Showtimes and movies to be shown\n"
+                + " 2) Create/Update/Remove Cinema Showtimes and Movies to be Shown\n"
                 //System settings include ticket prices, holidays
                 + " 3) Configure Ticket prices\n"
                 + " 4) Configure Holidays\n"
@@ -385,6 +368,13 @@ public class BookingApp {
 	                    
 	                    //Create/Update/Remove cinema showtimes and movies to be shown.
 	                    case 2: 
+	                    	
+	                    	System.out.println("");
+	                    	System.out.println("-- Create/Update/Remove Cinema Showtimes and Movies to be Shown --");
+                    		CreateUpdateRemoveCinemaShowtimes CURCS = new CreateUpdateRemoveCinemaShowtimes(Master);
+                    		
+                    		CURCS.main(args);
+	                    	
 	                            break;
 	                    
 	                    //Configure System settings (ticket prices, holidays).       

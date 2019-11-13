@@ -258,7 +258,6 @@ public class movie {
 		showingStatus = st;
 	}
 	
-<<<<<<< HEAD
 	//method to get top five movies with highest rankings
 	public static Comparator<movie> topratings = new Comparator<movie>() {
 
@@ -269,7 +268,7 @@ public class movie {
 
 		   /*For ascending order*/
 		   return (int) rating1- (int) rating2; } };
-=======
+
 	public void deleteShow(master m, int ind) {
 		show s = Shows.get(ind);
 		ArrayList<Cineplex> temp = m.getCineplexes();
@@ -286,5 +285,5 @@ public class movie {
 		temp3.remove(s);
 		Shows.remove(s);
 	}
->>>>>>> master
+
 }
