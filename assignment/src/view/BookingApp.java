@@ -29,13 +29,6 @@ public class BookingApp {
     	mov.readShowDetails(Master);
     }
     
-<<<<<<< HEAD
-=======
-    // System.out.println(Master.getCineplexes());
-    // System.out.println(Master.getCineplexes().get(0));
-    
->>>>>>> master
-    
     do { System.out.print("\n"
                             + "Welcome to MOBLIMA! Please select a user mode:\n"
                             + "1) Customer\n"
