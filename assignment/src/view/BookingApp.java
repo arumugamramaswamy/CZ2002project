@@ -231,9 +231,22 @@ public class BookingApp {
                             break;
                             
                     //List the top 5 movies ranking by ticket sales OR by overall reviewers' ratings.
-                    case 5: 
+                    case 5: do {System.out.println("\n"
+			                + "List top 5 movies according to:\n"
+			                + " 1) Ticket sales.\n"
+			                + " 2) Overall reviewers' ratings.\n"
+			                + " 3) Back.\n");
+                    
+                    		selection= sc.nextInt();
+                    		
                     		movies = Master.getMovies();
                     		
+                    		if(selection==1)
+                    		{
+                    			
+                    		}
+                    		else if(selection==2)
+                    		{
                     		//sort movies ArrayList according to reviewers' ratings.
                     		Collections.sort(movies,movie.topratings);
                     		
@@ -241,7 +254,11 @@ public class BookingApp {
                     		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
                     		for(i= movies.size() -1 ; i >=0 ; i--)
                     			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
+                    		}
+                    		else
+                    			System.out.println("Invalid input!"); 
                     		
+                    		} while(selection!=3);
                             break;
                             
                             
