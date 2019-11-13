@@ -215,10 +215,6 @@ public class BookingApp {
                     		/* Enter specific show to book for movie. 
                     		System.out.println("Enter show:");
                     		
-                    		Call Booking
-                    		Booking b = new Booking(customerID, ) */
-                    		
-                    		
                             break;
                     
                     // View booking history.        
@@ -259,23 +255,28 @@ public class BookingApp {
                     		
                     		if(selection==1)
                     		{
-                    			
+                    			//sort movies ArrayList according to ticket sales.
+                        		Collections.sort(movies,movie.topticketsales);
+                        		
+                        		//Iterating through movies list to print top five movies
+                        		System.out.println("The top 5 movies ranking by total ticket sales are:");
+                        		for(i= movies.size() -1 ; i >=0 ; i--)
+                        			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTsales());
                     		}
                     		else if(selection==2)
                     		{
-                    		//sort movies ArrayList according to reviewers' ratings.
-                    		Collections.sort(movies,movie.topratings);
-                    		
-                    		//Iterating through movies list to print top five movies
-                    		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
-                    		for(i= movies.size() -1 ; i >=0 ; i--)
-                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
+	                    		//sort movies ArrayList according to reviewers' ratings.
+	                    		Collections.sort(movies,movie.topratings);
+	                    		
+	                    		//Iterating through movies list to print top five movies
+	                    		System.out.println("The top 5 movies ranking by overall reviwers' ratings are:");
+	                    		for(i= movies.size() -1 ; i >=0 ; i--)
+	                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
                     		}
                     		else
                     			System.out.println("Invalid input!"); 
                     		
                     		} while(selection!=3);
-                            break;
                             
                             
                     //List all Cineplexes. 
