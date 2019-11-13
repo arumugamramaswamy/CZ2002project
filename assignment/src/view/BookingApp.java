@@ -324,7 +324,11 @@ public class BookingApp {
 
     Master.saveCineplexes();
     Master.saveMovies();
+    tempMovList = Master.getMovies();
     
+    for (movie mov: tempMovList) {
+    	mov.saveShowDetails();
+    }
     } // public static void main(String[] args) throws IOException, Exception
 
 } //class BookingApp
