@@ -76,7 +76,7 @@ public class CineplexIO {
 					st.append(SEPARATOR);
 
 				}
-				
+				st.append(SEPARATOR);
 
 				alw.add(st.toString());
 			}

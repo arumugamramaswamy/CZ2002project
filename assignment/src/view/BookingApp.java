@@ -194,11 +194,6 @@ public class BookingApp {
                     		System.out.println("Enter first seat:");
                     		sc.nextLine();
         		        	firstseat = sc.nextLine();
-                    		
-        		        	//Enter last seat. 
-                    		System.out.println("Enter enter last seat:");
-                    		sc.nextLine();
-        		        	lastseat = sc.nextLine();
         		        	
         		        	
                     		/* Enter specific show to book for movie. 
@@ -248,6 +243,7 @@ public class BookingApp {
                     			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
                     		
                             break;
+                            
                             
                     //List all Cineplexes. 
                     case 6: 
