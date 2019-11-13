@@ -248,9 +248,11 @@ public class BookingApp {
 			                + " 1) Ticket sales.\n"
 			                + " 2) Overall reviewers' ratings.\n"
 			                + " 3) Back.\n");
-                    
-                    		selection= sc.nextInt();
                     		
+                    		//getting user's selected option
+                    		selection= sc.nextInt();
+                    		 
+                    		//extracting list of all movies (movie objects)
                     		movies = Master.getMovies();
                     		
                     		if(selection==1)
