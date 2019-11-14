@@ -285,10 +285,6 @@ public class BookingApp {
                         
                    	 
                		 if(choice_1 != (i+1)) {
-               			
-               		 
-               		 
-                    	
                         
                         inputValidation = true;	
                         
@@ -547,6 +543,13 @@ public class BookingApp {
                 	    	mov1.saveShowDetails();
                 	    }
                     	System.out.println("Thank you for using our Application!");
+                        Master.saveCineplexes();
+                        Master.saveMovies();
+                        tempMovList = Master.getMovies();
+                        
+                        for (movie movi: tempMovList) {
+                        	movi.saveShowDetails();
+                        }
                 		System.exit(0);
                 	    break;
                 	    
@@ -698,6 +701,13 @@ public class BookingApp {
         	System.out.println("");
         	System.out.println("Thank you for using our Application!");
         	System.out.println("");
+            Master.saveCineplexes();
+            Master.saveMovies();
+            tempMovList = Master.getMovies();
+            
+            for (movie mov: tempMovList) {
+            	mov.saveShowDetails();
+            }
     		System.exit(0);
         }
         	

@@ -46,7 +46,7 @@ public class Booking{
      * @param lastseat last seat of the booking
      * @param show show object of the show to be booked
      */
-    public Booking(int custID, String movieBooked,int numseats, String firstseat, String lastseat, show show){
+    public Booking(int custID, String movieBooked,int numseats, String firstseat, show show){
         this.custID = custID;
     	
         //assign according to number of bookings
@@ -58,7 +58,6 @@ public class Booking{
         
         //check if last-first = num?
         this.firstseat = firstseat;
-        this.lastseat = lastseat;
         
         this.setShow(show);
     }
