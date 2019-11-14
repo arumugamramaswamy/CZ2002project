@@ -231,11 +231,7 @@ public class BookingApp {
                     		sc.nextLine();
         		        	firstseat = sc.nextLine();
         		        	
-        		   
-        		        	
-        		        	
         		        	System.out.println("Enter number of seats:");
-                    		sc.nextLine();
         		        	numseats = sc.nextInt();
         		        	
         		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, numseats, firstseat);
