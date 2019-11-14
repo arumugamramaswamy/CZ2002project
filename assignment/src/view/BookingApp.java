@@ -342,10 +342,13 @@ public class BookingApp {
                     //Book and purchase movie ticket(s).
                     case 3: //Initialising variables for this case. 
                     	
+                    	ArrayList<movie> movies_2 =new ArrayList<movie>();
+                    	movies_2 = Master.getMovies();
+                    	
                     	System.out.println("");
                         System.out.println("-- Book and purchase movie ticket(s) --");
                         
-                    		int customerID = 0, movieID;
+                    		int customerID = 0, movieID = 0;
                     		String movieBooked, temp, firstseat;
                     		int numseats;
                     		movie m;
@@ -380,25 +383,59 @@ public class BookingApp {
                              }
                              
        
-                    		System.out.println("Enter customer Name:");
+                    		System.out.print ("Enter customer Name: ");
                     		sc.nextLine();
                     		String customerName = sc.nextLine();
                     		
+                    		System.out.println("");
+                    		
+                    		System.out.println("-- All Movies --");
+                    		
+                    		for(i=0; i< movies_2.size();i++)
+                            	System.out.printf("%d) "+movies_2.get(i).getMovieName()+"\n",i+1);
+                    		
+                    		System.out.println("");
+                    		
                     		//Enter movie ID to be booked, retrieve movie name from movies. 
-                    		System.out.println("Enter movie ID of movie to be booked:");
-                    		sc.hasNextLine();
-                    		movieID = sc.nextInt();
+                    		
+                    		inputValidation = true;	
+                             
+                             while(inputValidation) {
+                            
+                             	try {
+                             	      
+                             		System.out.print("Enter Movie ID to be booked: ");
+                            		sc.hasNextLine();
+                            		movieID = sc.nextInt();
+ 
+                             	inputValidation = false;
+                             	
+                             	} catch (Exception e) {
+                             		
+                             		System.out.println("");
+                             		System.err.println("Invalid Input, Please Try Again!");
+                             		System.out.println("");
+                             		sc.nextLine();
+                             		
+                             	}
+                             }
+                             
+                             inputValidation = true;
+                    		
                     		while(true)
                     		{
-                    			if (movieID-1 > movies.size()) {
-                            		System.out.println("Please enter a valid movie number");
+                    			if (movieID > movies.size()) {
+                    				
+                             		System.err.println("Invalid Input, Please Try Again!");
+                             		
+                            		sc.nextLine();
                             		continue;
                     			}
                             	m = movies.get(movieID-1);
                             	movieBooked = m.getMovieName();
                             	break; 
                     		}
-                    		System.out.println("Enter show index:");
+                    		System.out.println("Enter Show Index:");
                     		sc.nextLine();
         		        	int index = sc.nextInt();
         		        	int showindex = index-1;
