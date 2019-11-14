@@ -16,7 +16,7 @@ public class BookingApp {
        in individual do-while loops  
     */
     int selection;
-    int user;
+    int user = 0;
     int i;	//common variable for any instance of iteration in this class
     master Master = new master();
     Master.readMovies();
@@ -34,7 +34,30 @@ public class BookingApp {
                             + "1) Customer\n"
                             + "2) Staff\n"
                             + "3) Quit MOBLIMA\n");  
-		    user= sc.nextInt();
+    
+    boolean inputValidation = true;	
+    
+    while(inputValidation) {
+   
+ 
+    	
+    	try {
+    	
+    		System.out.print("Enter your choice: ");
+    		
+    	user = sc.nextInt();
+    	
+    	inputValidation = false;
+    	
+    	} catch (Exception e) {
+    		
+    		System.out.println("");
+    		System.err.println("Invalid Input, Please Try Again!");
+    		System.out.println("");
+    		sc.nextLine();
+    		
+    	}
+    }
         
         if(user==1) {
         	
