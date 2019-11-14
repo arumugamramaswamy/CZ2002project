@@ -37,7 +37,7 @@ public class MovieGoerIO{
     
     private String cineplexID;
     
-    private String time;
+    private String dateTime;
 
     private String firstseat;
     
@@ -91,7 +91,7 @@ public class MovieGoerIO{
             	this.customerAge = Integer.parseInt(var[3]);
             	this.movieBooked = var[4];
             	this.cineplexID = var[5];
-            	this.time = var[6];
+            	this.dateTime = var[6];
             	this.numseats = Integer.parseInt(var[7]);
             	this.firstseat = var[8];
             	
@@ -193,6 +193,7 @@ public class MovieGoerIO{
     	b1.setfirstseat(firstseat);
     	b1.setmovieBooked(movieBooked);
     	b1.setnumseats(numseats);
+    	b1.setDateTime(dateTime);
     	
     	
     	return b1;
@@ -260,7 +261,7 @@ public class MovieGoerIO{
     		s.assignSeat(row-1, j+firstseatnum-1-1);
     	}   
     	String time = s.getDateTime(); 	
-    	 writeNewBooking(custID, 0, custName, 0, movieBooked, cineplexID, time, numseats, firstseat)  ; 	
+    	writeNewBooking(custID, 0, custName, 0, movieBooked, cineplexID, time, numseats, firstseat); 	
     	}finally{customers.clear();}
     	    	//write new booking after assigning seats
     }

@@ -28,11 +28,13 @@ public class Booking{
     /**
      * first and last seat to be booked
      */
-    private String firstseat, lastseat;
+    private String firstseat;
     /**
      * show object of the show to booked
      */
     private show show;
+    
+    private String dateTime;
     
     public Booking() {};
     /**
@@ -143,6 +145,12 @@ public class Booking{
 	 */
 	public void setShow(show show) {
 		this.show = show;
+	}
+	public String getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
 	}
 }
 
