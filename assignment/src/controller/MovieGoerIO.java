@@ -209,7 +209,7 @@ public class MovieGoerIO{
 	 * @throws Exception 
 	 * @throws IOException 
 	 */
-    public void assignFinalSeatsbyMovie(movie mo, int index, String custName, int custID, int row, int numseats, int firstseat) throws IOException, Exception {
+    public void assignFinalSeatsbyMovie(movie mo, int index, String custName, int custID, int numseats, String firstseat) throws IOException, Exception {
     	try{
     		readBookingsFile();
     		
@@ -249,14 +249,18 @@ public class MovieGoerIO{
     	
     	shows = mo.getShows();
     	
+    	char ch = firstseat.charAt(0);
+		int row = ch - 'a' + 1;
+		int firstseatnum = Character.getNumericValue(firstseat.charAt(1));
+    	
     	show s = shows.get(index);
     	int cineplexID = s.getCineplexID()+1;
     
     	    	for(int j=1; j<=numseats; j++) {
-    		s.assignSeat(row-1, j+firstseat-1-1);
+    		s.assignSeat(row-1, j+firstseatnum-1-1);
     	}   
     	    	
-    	 writeNewBooking(custID, 0, custName, 0, movieBooked, cineplexID, " ", numseats, " ")  ; 	
+    	 writeNewBooking(custID, 0, custName, 0, movieBooked, cineplexID, " ", numseats, firstseat)  ; 	
     	}finally{customers.clear();}
     	    	//write new booking after assigning seats
     }
