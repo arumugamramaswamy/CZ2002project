@@ -198,7 +198,11 @@ public class BookingApp {
                             	movieBooked = m.getMovieName();
                             	break; 
                     		}
-                    		
+                    		System.out.println("Enter show index:");
+                    		sc.nextLine();
+        		        	int index = sc.nextInt();
+        		        	int showindex = index-1;
+        		        	
                     		//Enter first seat.
                     		System.out.println("Enter first seat:");
                     		sc.nextLine();
@@ -213,7 +217,7 @@ public class BookingApp {
                     		sc.nextLine();
         		        	numseats = sc.nextInt();
         		        	
-        		        	mgio.assignFinalSeatsbyMovie(m, 0, customerName, customerID, row, numseats, firstseat);
+        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, row, numseats, firstseat);
         		        	
                     		/* Enter specific show to book for movie. */
                     		/*System.out.println("Enter show:");*/
