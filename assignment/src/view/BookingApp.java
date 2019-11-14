@@ -154,7 +154,7 @@ public class BookingApp {
                                     }
                                     
                                     if (selection == 1) {
-                                    	System.out.print("Please select a Movie Index to list its Details and Shows: ");
+                                    	
                                     	
 
                                         inputValidation = true;	
@@ -163,7 +163,8 @@ public class BookingApp {
                                        
                                         	try {
                                         	
-                                        		System.out.print("Enter your choice: ");
+                                        		System.out.print("Please select a Movie Index to list its Details and Shows: ");
+                                      
                                         		
                                        selection = sc.nextInt();
                                         	
@@ -431,20 +432,45 @@ public class BookingApp {
                             	movieBooked = m.getMovieName();
                             	break; 
                     		}
+                    		
+                    		
+
+        					ArrayList<show> temp_1 = m.getShows();
+        					
+        					for (int k =0 ;k<temp_1.size();k++) {
+        						s = temp_1.get(k);
+        						System.out.printf("\n\nShow %d:\n",k+1);
+        						System.out.println("Date Time: " + s.getDateTime());
+        						System.out.printf("CineplexID: %d\n",s.getCineplexID());
+        						System.out.printf("CinemaID: %d\n",s.getScreenNum());
+        						System.out.println("----------------");
+        						
+        					}
+                    		
+        					System.out.println("");
+                    		
                     		System.out.println("Enter Show Index:");
                     		sc.nextLine();
         		        	int index = sc.nextInt();
         		        	int showindex = index-1;
         		        	
                     		//Enter first seat.
-                    		System.out.println("Enter first seat (Enter as 'a1' for row-1 seat-1 or 'd5' for row-4 seat-5:");
+        		        	s = temp_1.get(showindex);
+        		        	s.printSeats();
+        		        	
+        		        	
+                    		System.out.print("Enter first seat (Enter as 'a1' for row-1 seat-1 or 'd5' for row-4 seat-5: ");
                     		sc.nextLine();
         		        	firstseat = sc.nextLine();
         		        	
-        		        	System.out.println("Enter number of seats:");
+        		        	System.out.print("Enter number of seats: ");
         		        	numseats = sc.nextInt();
         		        	
         		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, numseats, firstseat);
+        		        	
+        		        	System.out.println("");
+        		        	System.out.println("Your Movie Tickets have been successfuly booked!");
+        		        	System.out.println("");
         		        	
                     		/* Enter specific show to book for movie. */
                     		/*System.out.println("Enter show:");*/
