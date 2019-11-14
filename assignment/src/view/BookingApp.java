@@ -15,7 +15,7 @@ public class BookingApp {
     /* outer do-while loop determines the user mode (STAFF/CUSTOMER) & runs corresponding allowable actions
        in individual do-while loops  
     */
-    int selection;
+    int selection = 0;
     int user = 0;
     int i;	//common variable for any instance of iteration in this class
     master Master = new master();
@@ -74,9 +74,32 @@ public class BookingApp {
                 + " 6) List all Cinplexes\n"
                 + " 7) Quit MOBILMA\n"
                 + " 8) Back\n");
-            
-                System.out.print("Enter your choice below: ");
-                selection = sc.nextInt();
+                
+                
+                inputValidation = true;	
+                
+                while(inputValidation) {
+               
+             
+                	
+                	try {
+                	
+                		System.out.print("Enter your choice: ");
+                		
+                    selection = sc.nextInt();
+                	
+                	inputValidation = false;
+                	
+                	} catch (Exception e) {
+                		
+                		System.out.println("");
+                		System.err.println("Invalid Input, Please Try Again!");
+                		System.out.println("");
+                		sc.nextLine();
+                		
+                	}
+                }
+                
 
                 switch (selection)
                 {	//List all movies and movie details.
@@ -86,29 +109,80 @@ public class BookingApp {
                     		movies = Master.getMovies();
                             movie mov;
                             show s;
-                            System.out.println("");
-                            System.out.println("-- All Movies --");
-                            for(i=0; i< movies.size();i++)
-                            	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
+
                             
-                            do {	System.out.print("\n"
+                            do {	
+                            	
+                                System.out.println("");
+                                System.out.println("-- All Movies --");
+                                for(i=0; i< movies.size();i++)
+                                	System.out.printf("%d) "+movies.get(i).getMovieName()+"\n",i+1);
+                            	
+                            	System.out.print("\n"
                                     + "Please make a selection:\n"
                                     + " 1) Select Movie\n"
                                     + " 2) Back\n");
-                                    selection = sc.nextInt();
+                            
+
+                            inputValidation = true;	
+                            
+                            while(inputValidation) {
+                           
+                            	try {
+                            	
+                            		System.out.print("Enter your choice: ");
+                            		
+                           selection = sc.nextInt();
+                            	
+                            	inputValidation = false;
+                            	
+                            	} catch (Exception e) {
+                            		
+                            		System.out.println("");
+                            		System.err.println("Invalid Input, Please Try Again!");
+                            		System.out.println("");
+                            		sc.nextLine();
+                            		
+                            	}
+                            }
+                                  
                                     
-                                    if (selection == 3) {
+                                    if (selection >= 3) {
                                     	System.out.println("");
                                     	System.err.print("Invalid Input, Please Try Again!"); 
                                     	System.out.println("");
                                     }
                                     
                                     if (selection == 1) {
-                                    	System.out.print("Please select a Movie Index to list its details and shows: ");
-                                    	selection = sc.nextInt();
-                                    	if (selection-1 > movies.size()) {
+                                    	System.out.print("Please select a Movie Index to list its Details and Shows: ");
+                                    	
+
+                                        inputValidation = true;	
+                                        
+                                        while(inputValidation) {
+                                       
+                                        	try {
+                                        	
+                                        		System.out.print("Enter your choice: ");
+                                        		
+                                       selection = sc.nextInt();
+                                        	
+                                        	inputValidation = false;
+                                        	
+                                        	} catch (Exception e) {
+                                        		
+                                        		System.out.println("");
+                                        		System.err.println("Invalid Input, Please Try Again!");
+                                        		System.out.println("");
+                                        		sc.nextLine();
+                                        		
+                                        	}
+                                        }
+                                    	
+                                    	
+                                    	if (selection > movies.size()) {
                                     		System.out.println("");
-                                    		System.err.println("Please enter a valid movie number!");
+                                    		System.err.println("Invalid Input, Please Try Again!");
                                     		continue;
                                     	}
                                     	
@@ -153,6 +227,13 @@ public class BookingApp {
                     //Check seat availability and selection of seat(s).        
                     case 2:  
                     	
+                    	boolean looper = true;
+                    	
+                    
+                    	
+                    	int choice_1 = 0;
+                    	int cinema_id = 0;
+                    	
                     	System.out.println("");
                         System.out.println("-- Check seat availability --");
                         System.out.println("");
@@ -164,14 +245,85 @@ public class BookingApp {
                         for(i=0; i< Cineplexes_1.size();i++)
                         	System.out.printf("%d) "+Cineplexes_1.get(i).getCineplexName()+"\n",i+1);
                         
+                        System.out.println(i+1 + ") Back");
+                        
                         System.out.println("");
                         
-                        System.out.print("Select a Cineplex: ");
-                        int choice_1 = sc.nextInt();
+                       
                         
-                        System.out.print("Select a Screen (1 / 2 / 3): ");
-                        int cinema_id = sc.nextInt();
+                        inputValidation = true;	
                         
+                        while(inputValidation) {
+                       
+                        	try {
+                        	
+                        		 System.out.print("Select a Cineplex: ");
+                        	
+                        		
+                        		 choice_1 = sc.nextInt();
+                        	
+                        		 if ((choice_1-1) > Cineplexes_1.size()) {
+                        			 System.out.println("");
+                             		System.err.println("Invalid Input, Please Try Again!");
+                             		System.out.println("");
+                             		sc.nextLine();
+                             		continue;
+                        		 }
+                        	
+                        	inputValidation = false;
+                        	
+                        	} catch (Exception e) {
+                        		
+                        		System.out.println("");
+                        		System.err.println("Invalid Input, Please Try Again!");
+                        		System.out.println("");
+                        		sc.nextLine();
+                        		
+                        	}
+                        }
+                        
+                        
+                   	 
+               		 if(choice_1 != (i+1)) {
+               			
+               		 
+               		 
+                    	
+                        
+                        inputValidation = true;	
+                        
+                        while(inputValidation) {
+                       
+                        	try {
+                        	      
+                                System.out.print("Select a Screen (1 / 2 / 3): ");
+                        		
+                        	    cinema_id = sc.nextInt();
+                                 
+                        	    if (cinema_id > 3) {
+                       			 System.out.println("");
+                            		System.err.println("Invalid Input, Please Try Again!");
+                            		System.out.println("");
+                            		sc.nextLine();
+                            		continue;
+                       		 }
+                       	
+                        	    
+                        	    
+                        	inputValidation = false;
+                        	
+                        	} catch (Exception e) {
+                        		
+                        		System.out.println("");
+                        		System.err.println("Invalid Input, Please Try Again!");
+                        		System.out.println("");
+                        		sc.nextLine();
+                        		
+                        	}
+                        }
+                        
+                        
+                   
                         System.out.println("");
                         
                         System.out.println("-- All Movies in the Selected Cinema: --");
@@ -183,6 +335,8 @@ public class BookingApp {
                         	s_1.printSeats();
                         }
                         
+               		 }
+                        
                             break;
                     
                     //Book and purchase movie ticket(s).
@@ -191,7 +345,7 @@ public class BookingApp {
                     	System.out.println("");
                         System.out.println("-- Book and purchase movie ticket(s) --");
                         
-                    		int customerID, movieID;
+                    		int customerID = 0, movieID;
                     		String movieBooked, temp, firstseat;
                     		int numseats;
                     		movie m;
@@ -199,10 +353,33 @@ public class BookingApp {
                     		
                     		MovieGoerIO mgio = new MovieGoerIO();
                     		//Enter customer ID. 
-                    		System.out.println("Enter customer ID:");
-                    		sc.nextLine();
-                    		customerID = sc.nextInt();
                     		
+                    		 inputValidation = true;	
+                             
+                             while(inputValidation) {
+                            
+                             	try {
+                             	      
+                            		System.out.print("Enter customer ID: ");
+
+                             		
+                             		sc.nextLine();
+                             		customerID = sc.nextInt();
+
+                             	    
+                             	inputValidation = false;
+                             	
+                             	} catch (Exception e) {
+                             		
+                             		System.out.println("");
+                             		System.err.println("Invalid Input, Please Try Again!");
+                             		System.out.println("");
+                             		sc.nextLine();
+                             		
+                             	}
+                             }
+                             
+       
                     		System.out.println("Enter customer Name:");
                     		sc.nextLine();
                     		String customerName = sc.nextLine();
