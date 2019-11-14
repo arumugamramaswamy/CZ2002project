@@ -192,8 +192,8 @@ public class BookingApp {
                         System.out.println("-- Book and purchase movie ticket(s) --");
                         
                     		int customerID, movieID;
-                    		String movieBooked, temp;
-                    		int firstseat, row, numseats;
+                    		String movieBooked, temp, firstseat;
+                    		int numseats;
                     		movie m;
                     		movies = Master.getMovies();
                     		
@@ -227,20 +227,18 @@ public class BookingApp {
         		        	int showindex = index-1;
         		        	
                     		//Enter first seat.
-                    		System.out.println("Enter first seat:");
+                    		System.out.println("Enter first seat (Enter as 'a1' for row-1 seat-1 or 'd5' for row-4 seat-5:");
                     		sc.nextLine();
-        		        	firstseat = sc.nextInt();
+        		        	firstseat = sc.nextLine();
         		        	
-        		        	System.out.println("Enter row:");
-        		        	sc.nextLine();
-        		        	row = sc.nextInt();
+        		   
         		        	
         		        	
         		        	System.out.println("Enter number of seats:");
                     		sc.nextLine();
         		        	numseats = sc.nextInt();
         		        	
-        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, row, numseats, firstseat);
+        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, numseats, firstseat);
         		        	
                     		/* Enter specific show to book for movie. */
                     		/*System.out.println("Enter show:");*/
@@ -266,7 +264,7 @@ public class BookingApp {
                     		
                     		//Iterate through customerbookings ArrayList to print movie names of bookings made by customer. 
                     		for(i=0; i< customerbookings.size(); i++)
-                    			System.out.println(customerbookings.get(i).getmovieBooked());
+                    			System.out.println("Movie Booked: " + customerbookings.get(i).getmovieBooked());
 				
 				//have to handle case of invalid custID
                     		
