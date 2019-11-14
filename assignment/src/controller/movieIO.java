@@ -82,7 +82,7 @@ public class movieIO {
 					String all_rev = star.nextToken().trim();	// third token String[] reviews
 					StringTokenizer star2 = new StringTokenizer(all_rev , ",");
 					String[] reviews;
-					if (all_rev !="No Reviews")
+					if (!all_rev.equals("No Reviews"))
 					{
 					while (star2.hasMoreTokens()) {
 				         alr2.add(star2.nextToken());
@@ -96,7 +96,7 @@ public class movieIO {
 					alr2 = new ArrayList() ;
 					String all_ratings = star.nextToken().trim();	// 4th token double[] ratings
 					double[] ratings;
-					if (all_ratings !="No Ratings") {
+					if (!all_ratings.equals("No Ratings")) {
 					star2 = new StringTokenizer(all_ratings , ",");
 					while (star2.hasMoreTokens()) {
 				         alr2.add(star2.nextToken());
