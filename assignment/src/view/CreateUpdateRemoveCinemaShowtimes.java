@@ -54,7 +54,8 @@ private static master Master;
 	        System.out.print("Is the Movie 3D? (true/false): ");
 	        boolean threed = sc.nextBoolean();
 	        
-	        System.out.print("Enter the Date Time:  ");
+	        System.out.print("Enter the Date Time (e.g. 13/12/11 12:30):  ");
+	        sc.nextLine();
 	        String s_1 = sc.nextLine(); 
 			
 	        System.out.println("");
@@ -82,6 +83,8 @@ private static master Master;
 	        Cineplexes_1.get(choice_1-1).getCinemaList().get(cinema_id-1).addShow(s);
 	        
 	        Master.setCineplexes(Cineplexes_1);
+	        
+	        System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
 	        }
 	        else {
 	        	System.err.println("Please set the showing status to now showing");
