@@ -75,19 +75,19 @@ public class MovieTicket {
 		/**
 		 * Increase price based on different class of Cinema
 		 */
-		if(classOfCinema == "Standard")
+		if(classOfCinema.equals("Standard"))
 			Price = Price + getQuotation.getStandardPrice();
-		else if(classOfCinema == "Premium")
+		else if(classOfCinema.equals("Premium"))
 			Price = Price + getQuotation.getPremiumPrice();
-		else if(classOfCinema == "Platinum")
+		else if(classOfCinema.equals("Platinum"))
 			Price = Price + getQuotation.getPlatinumPrice();
 		
 		/**
 		 * Decrease the price if ticket is of a child or a senior citizen
 		 */
-		if(movieGoerCategory == "Child")
+		if(movieGoerCategory.equals("Child"))
 			Price = Price - getQuotation.getChildPrice();
-		else if(movieGoerCategory == "SeniorCitizen")
+		else if(movieGoerCategory.equals("SeniorCitizen"))
 			Price = Price - getQuotation.getSeniorCitizenPrice();
 		
 		/**

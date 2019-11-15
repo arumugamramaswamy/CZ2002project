@@ -414,10 +414,9 @@ public class BookingApp {
                     			 if(movieGoerCategory.equals("Adult") || movieGoerCategory.equals("SeniorCitizen" )|| movieGoerCategory.equals("Child")) {
                     				
                     				 inputValidation = false;
-                    			
                                  	
                     			 } else {
-                    				 System.out.println("");
+                    				System.out.println("");
                               		System.err.println("Invalid Input, Please Try Again!");
                               		System.out.println("");
                     			 }
@@ -447,7 +446,15 @@ public class BookingApp {
                             		sc.hasNextLine();
                             		movieID = sc.nextInt();
  
+                            		if(movieID > movies_2.size()) {
+                            			System.out.println("");
+                                 		System.err.println("Invalid Input, Please Try Again!");
+                                 		System.out.println("");
+                                 		sc.nextLine();
+                            		} else {
+                            		
                              	inputValidation = false;
+                            		}
                              	
                              	} catch (Exception e) {
                              		
@@ -495,6 +502,7 @@ public class BookingApp {
                     		
         					System.out.println("");
                     		
+        					
                     		System.out.print("Enter Show Index: ");
                     		sc.nextLine();
         		        	int index = sc.nextInt();
@@ -517,6 +525,8 @@ public class BookingApp {
         		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, bookingID, numseats, firstseat);
         		        	
         		        	System.out.println("");
+
+        		        
         		        	System.out.println("Your Movie Tickets have been successfuly booked!");
         		        	System.out.println("");
         		        	
