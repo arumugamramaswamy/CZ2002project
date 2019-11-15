@@ -143,7 +143,7 @@ public class CreateUpdateRemoveMovieListing {
             System.out.print("Please select a Movie Number: ");
             int mov_num_1 = sc.nextInt();
             
-            master.deleteMovie(mov_num_1-1);
+            Master.deleteMovie(mov_num_1-1);
             
             System.out.println("");
             

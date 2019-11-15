@@ -75,11 +75,17 @@ private static master Master;
 	        
 	        movie m = movies.get(mov_num-1);
 	        
+	        if (m.getShowingStatus().equals("NOW_SHOWING")||m.getShowingStatus().equals("PREVIEW"))
+	        {
 	        s = m.createShowListing(s_1, cinema_id-1, choice_1-1, threed);
 	        
 	        Cineplexes_1.get(choice_1-1).getCinemaList().get(cinema_id-1).addShow(s);
 	        
 	        Master.setCineplexes(Cineplexes_1);
+	        }
+	        else {
+	        	System.err.println("Please set the showing status to now showing");
+	        }
 	     break;   
 		
 		case 2:
