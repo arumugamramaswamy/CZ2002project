@@ -398,7 +398,6 @@ public class BookingApp {
                     		String customerName = sc.nextLine();
                     		
                     		System.out.print ("Enter Phone Number: ");
-                    		sc.nextLine();
                     		int phoneNumber = sc.nextInt();
                     		
                     		
@@ -410,7 +409,7 @@ public class BookingApp {
                     		
                     			System.out.print ("Enter Movie Goer Category (Adult / SeniorCitizen / Child): ");
         
-                         		
+                         		 sc.nextLine();
                     			 movieGoerCategory = sc.nextLine();
                     			 
                     			

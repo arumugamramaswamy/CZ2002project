@@ -210,7 +210,7 @@ public class MovieGoerIO{
 	 * @throws Exception 
 	 * @throws IOException 
 	 */
-    public void assignFinalSeatsbyMovie(movie mo, int index, String custName, int custID, int phoneNumber, String bookingID, int numseats, String firstseat) throws IOException, Exception {
+   public void assignFinalSeatsbyMovie(movie mo, int index, String custName, int custID, int phoneNumber, String bookingID, int numseats, String firstseat) throws IOException, Exception {
     	try{
     		readBookingsFile();
     		
