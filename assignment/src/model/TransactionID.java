@@ -8,9 +8,9 @@ public class TransactionID {
 	private String CinCode = null;
 		
 	public TransactionID(int cineplexID) {
-		if(cineplexID-1 == 1) {
+		if(cineplexID+1 == 1) {
 			CinCode = "FGB";
-		} else if (cineplexID-1 == 2) {
+		} else if (cineplexID+1 == 2) {
 			CinCode = "GVV";
 		} else {
 			CinCode = "SWT";
