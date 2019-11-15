@@ -397,6 +397,10 @@ public class BookingApp {
                     		sc.nextLine();
                     		String customerName = sc.nextLine();
                     		
+                    		System.out.print ("Enter Phone Number: ");
+                    		sc.nextLine();
+                    		int phoneNumber = sc.nextInt();
+                    		
                     		
                     		 inputValidation = true;	
                     		 
@@ -527,7 +531,7 @@ public class BookingApp {
         		     
         		        	String bookingID = TID;
         		        	
-        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, bookingID, numseats, firstseat);
+        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, phoneNumber, bookingID, numseats, firstseat);
         		        	
         		        	System.out.println("");
         		        
@@ -563,6 +567,7 @@ public class BookingApp {
                     			System.out.println("Date & Time: " + customerbookings.get(i).getDateTime());
                     			System.out.println("Number of Seats booked: " + customerbookings.get(i).getnumseats());
                     			System.out.println("FirstSeat booked: " + customerbookings.get(i).getfirstseat());
+                    			System.out.println("Transaction ID: " + customerbookings.get(i).getbookingID());
                     			System.out.println();
                     		}
 				

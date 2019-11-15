@@ -21,7 +21,7 @@ public class MovieGoer{
 	
 	private String customerName;
     
-    private int customerAge;
+    private int phoneNumber;
 
     /**
      * ArrayList of all the bookings made by the particular customer
@@ -36,9 +36,9 @@ public class MovieGoer{
      * @param customerAge age of the customer
      * @param customerbookings All the bookings made by the customer
      */
-    public MovieGoer(String customerName, int customerAge, ArrayList<Booking> customerbookings){
+    public MovieGoer(String customerName, int phoneNumber, ArrayList<Booking> customerbookings){
         this.customerName = customerName;
-        this.customerAge = customerAge;
+        this.phoneNumber = phoneNumber;
         this.customerbookings = customerbookings;
     }
     
@@ -53,8 +53,8 @@ public class MovieGoer{
 	 * sets the age of the customer
 	 * @param customerAge age of the customer
 	 */
-	public void setCustomerAge(int customerAge) {
-		this.customerAge = customerAge;
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	/**
 	 * gets the name of the customer
@@ -67,8 +67,8 @@ public class MovieGoer{
 	 * gets the age of the customer
 	 * @return age of the customer
 	 */
-	public int getCustomerAge() {
-		return customerAge;
+	public int getphoneNumber() {
+		return phoneNumber;
 	}
 	/**
 	 * gets the customer ID of the customer
