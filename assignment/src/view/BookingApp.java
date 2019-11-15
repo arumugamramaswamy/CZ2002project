@@ -397,6 +397,10 @@ public class BookingApp {
                     		sc.nextLine();
                     		String customerName = sc.nextLine();
                     		
+                    		System.out.print ("Enter Phone Number: ");
+                    		sc.nextLine();
+                    		int phoneNumber = sc.nextInt();
+                    		
                     		
                     		 inputValidation = true;	
                     		 
@@ -522,7 +526,7 @@ public class BookingApp {
         		        	
         		        	String bookingID = "";
         		        	
-        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, bookingID, numseats, firstseat);
+        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, phoneNumber, bookingID, numseats, firstseat);
         		        	
         		        	System.out.println("");
 
