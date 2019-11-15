@@ -14,9 +14,12 @@ public class holidyIO {
 	    		FileReader fw = new FileReader("data/Holidays.txt");
 	    		BufferedReader br = new BufferedReader(fw);
 	    		
-
+	    		try {
     			return br.readLine().split("[|]");
-	            	
+	    		}catch(Exception e) {
+	    			String[] temp = new String[0];
+	    			return temp;
+	    		}
 	            	
 	    			
 	    		}	
