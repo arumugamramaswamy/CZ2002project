@@ -17,6 +17,8 @@ public class BookingApp {
     */
     int selection = 0;
     int user = 0;
+	boolean flag1 = false;
+
     int i;	//common variable for any instance of iteration in this class
     master Master = new master();
     Master.readMovies();
@@ -494,7 +496,7 @@ public class BookingApp {
         					
         					for (int k =0 ;k<temp_1.size();k++) {
         						s = temp_1.get(k);
-        						MovieTicket price = new MovieTicket(s.get3D(), "Standard", movieGoerCategory, publicHoliday);
+        						MovieTicket price = new MovieTicket(s.get3D(), Master.getCineplexes().get(s.getCineplexID()).getCinemaList().get(s.getScreenNum()).getCinemaClass(), movieGoerCategory, publicHoliday);
         						System.out.printf("\n\nShow %d:\n",k+1);
         						System.out.println("Date Time: " + s.getDateTime());
         						System.out.printf("Cineplex ID: %d\n",s.getCineplexID()+1);
@@ -530,7 +532,15 @@ public class BookingApp {
         		        	String TID = T.getTID();
         		     
         		        	String bookingID = TID;
-        		        	
+        		        	char ch = firstseat.charAt(0);
+        		    		int firstseatnum = Character.getNumericValue(firstseat.charAt(1))-1;
+        		        	int row = ch - 'a';
+        		        	for (int t =0;t<numseats;t++) {
+        		        		if (s.checkSeat(row, firstseatnum+t)){
+        		        			flag1 = true;
+        		        		}
+        		        	}
+        		        	if (!flag1) {
         		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, phoneNumber, bookingID, numseats, firstseat);
         		        	
         		        	System.out.println("");
@@ -543,7 +553,10 @@ public class BookingApp {
                     		/*System.out.println("Enter show:");*/
                     		
                             break;
-                    
+        		        	}
+        		        	else {
+        		        		System.err.println("Please select different seats, a few of these seats are occupied.");
+        		        	}
                     // View booking history.        
                     case 4: //Inititalising for this case. 
                     		int id;

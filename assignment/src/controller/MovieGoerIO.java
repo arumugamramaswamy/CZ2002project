@@ -260,7 +260,7 @@ public class MovieGoerIO{
     	int cineplexID = s.getCineplexID()+1;
     
     	    	for(int j=1; j<=numseats; j++) {
-    		s.assignSeat(row-1, j+firstseatnum-1-1);
+    		s.assignSeat(row-1, j+firstseatnum-2);
     	}   
     	String time = s.getDateTime(); 	
     	writeNewBooking(custID, bookingID, custName, phoneNumber, movieBooked, cineplexID, time, numseats, firstseat); 	

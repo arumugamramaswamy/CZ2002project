@@ -126,6 +126,13 @@ public class show { // figure out how to implement extends movie
 			System.out.println("Error");
 	}
 	
+	public boolean checkSeat(int s1,int s2) {
+		if (seats[s1][s2] == 0) {
+			return true;
+		}
+		else return false;
+	}
+	
 	/**
 	 * get the date and time of the show
 	 * @return date-time of the movie show
