@@ -619,7 +619,8 @@ public class BookingApp {
                 		ArrayList<Cineplex> Cineplexes=new ArrayList<Cineplex>();
                 		
                 		Cineplexes = Master.getCineplexes();
-                        
+                        System.out.println("");
+                        System.out.println("--- All Cineplexes ---");
                         for(i=0; i< Cineplexes.size();i++)
                         	System.out.printf("%d) "+Cineplexes.get(i).getCineplexName()+"\n",i+1);
                         
