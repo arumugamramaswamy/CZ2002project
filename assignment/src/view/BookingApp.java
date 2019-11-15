@@ -524,8 +524,6 @@ public class BookingApp {
         		        	System.out.print("Enter number of seats: ");
         		        	numseats = sc.nextInt();
         		        	
-        		        	
-        		        	
         		        	TransactionID T = new TransactionID(s.getCineplexID());
         		        	String TID = T.getTID();
         		     
