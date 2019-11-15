@@ -50,8 +50,6 @@ public class BookingApp {
     	inputValidation = false;
     	
     	} catch (Exception e) {
-    		
-    		System.out.println("");
     		System.err.println("Invalid Input, Please Try Again!");
     		System.out.println("");
     		sc.nextLine();
@@ -92,7 +90,7 @@ public class BookingApp {
                 	
                 	} catch (Exception e) {
                 		
-                		System.out.println("");
+                		
                 		System.err.println("Invalid Input, Please Try Again!");
                 		System.out.println("");
                 		sc.nextLine();
@@ -188,36 +186,51 @@ public class BookingApp {
                                     	}
                                     	
                                     	System.out.println("");
+                                    	System.out.println("-------------------");
                                     	mov = movies.get(selection-1);
-                    					System.out.println(mov.getMovieName());
-                    					System.out.println(mov.getDirectorName());
+                    					System.out.println("Movie Name: " + mov.getMovieName());
+                    					System.out.println("Director Name: " + mov.getDirectorName());
+                    					System.out.print("Review(s): ");
                     					String [] reviews = mov.getReviews();
                     					for(int x =0;x<reviews.length;x++) 
                     						System.out.printf("%s ",reviews[x]);
                     					
                     					System.out.printf("\n");
+                    					
+                    					System.out.print("Rating(s): ");
                     					double [] ratings = mov.getAllRatings();
                     					for(int x =0;x<ratings.length;x++) 
                     						System.out.printf("%f ",ratings[x]);
                     					System.out.printf("\n");
                     
-                    					
+                    					System.out.print("Movie Status: ");
                     					System.out.println(mov.getShowingStatus());
+                    					
+                    					System.out.print("Synopsis: ");
                     					System.out.println(mov.getSynopsis());
                     					String[] Cast = mov.getCast();
+                    					
+                    					System.out.print("Cast: ");
                     					for(int x =0;x<Cast.length;x++) 
                     						System.out.printf("%s ",Cast[x]);
-                    					System.out.printf("\n");
+                    					
+                    					System.out.println("");
+                    					System.out.println("-------------------");
 
                     					ArrayList<show> temp = mov.getShows();
                     					
+                    					
                     					for (int k =0 ;k<temp.size();k++) {
                     						s = temp.get(k);
-                    						System.out.printf("\n\nShow %d:\n",k+1);
+                    						System.out.printf("\n\nShow No: %d\n",k+1);
+                    						System.out.print("Show Time: ");
                     						System.out.println(s.getDateTime());
-                    						System.out.printf("CineplexID: %d\n",s.getCineplexID());
-                    						System.out.printf("CinemaID: %d\n",s.getScreenNum());
-                    						s.printSeats();
+                    						System.out.printf("Cineplex ID: %d\n",s.getCineplexID()+1);
+                    						System.out.printf("Cinema ID: %d\n",s.getScreenNum()+1);
+                    						// s.printSeats();
+                    						System.out.println("");
+                    						System.out.println("-------------------");
+                    						
                     					}
                     					
                                     }
@@ -384,7 +397,14 @@ public class BookingApp {
                     		sc.nextLine();
                     		String customerName = sc.nextLine();
                     		
+                    		System.out.print ("Enter Movie Goer Category (Adult / SeniorCitizen / Child): ");
+                    		sc.nextLine();
+                    		String movieGoerCategory = sc.nextLine();
+                    		
+                    		
                     		System.out.println("");
+                    		
+                    		boolean publicHoliday = true;
                     		
                     		System.out.println("-- All Movies --");
                     		
@@ -439,17 +459,21 @@ public class BookingApp {
         					
         					for (int k =0 ;k<temp_1.size();k++) {
         						s = temp_1.get(k);
+        						MovieTicket price = new MovieTicket(s.get3D(), "Standard", movieGoerCategory, publicHoliday);
         						System.out.printf("\n\nShow %d:\n",k+1);
         						System.out.println("Date Time: " + s.getDateTime());
-        						System.out.printf("CineplexID: %d\n",s.getCineplexID());
-        						System.out.printf("CinemaID: %d\n",s.getScreenNum());
+        						System.out.printf("Cineplex ID: %d\n",s.getCineplexID()+1);
+        						System.out.printf("Cinema ID: %d\n",s.getScreenNum()+1);
+        						System.out.printf("Cinema Class: %s\n", s.getClass());
+        						System.out.printf("3D: %s\n", s.get3D());
+        						System.out.printf("Ticket Price: S$%s (Inclusive of GST)\n", price.getPrice());
         						System.out.println("----------------");
         						
         					}
                     		
         					System.out.println("");
                     		
-                    		System.out.println("Enter Show Index:");
+                    		System.out.print("Enter Show Index: ");
                     		sc.nextLine();
         		        	int index = sc.nextInt();
         		        	int showindex = index-1;
@@ -458,7 +482,7 @@ public class BookingApp {
         		        	s = temp_1.get(showindex);
         		        	s.printSeats();
         		        	
-        		        	
+        		        	System.out.println("");
                     		System.out.print("Enter first seat (Enter as 'a1' for row-1 seat-1 or 'd5' for row-4 seat-5: ");
                     		sc.nextLine();
         		        	firstseat = sc.nextLine();
