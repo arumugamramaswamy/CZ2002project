@@ -1,0 +1,49 @@
+package controller;
+
+import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+import model.*;
+
+public class holidyIO {
+
+	    public String[] readHolidays() throws IOException,Exception {
+	    	
+	    		
+	    		FileReader fw = new FileReader("data/Holidays.txt");
+	    		BufferedReader br = new BufferedReader(fw);
+	    		
+
+    			return br.readLine().split("[|]");
+	            	
+	            	
+	    			
+	    		}	
+	    
+
+	    /**
+	     * to write a new bookings into the text file
+	     * @throws IOException
+	     * @throws Exception
+	     */
+	    public void writeHoliday(String[] holidays) throws IOException,Exception{
+	    	
+	    	try {
+				
+				
+				FileWriter fw = new FileWriter("data/Holidays.txt", false);
+				BufferedWriter bw = new BufferedWriter(fw);
+				
+				for(int i=0;i<holidays.length;i++)
+					bw.write(holidays[i] + "|");
+
+				bw.close();
+								
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	    	
+	    }
+	    
+}
