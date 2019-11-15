@@ -397,8 +397,11 @@ public class BookingApp {
                     		sc.nextLine();
                     		String customerName = sc.nextLine();
                     		
+                    		
                     		System.out.print ("Enter Phone Number: ");
+                    		
                     		int phoneNumber = sc.nextInt();
+                    		
                     		
                     		
                     		 inputValidation = true;	
@@ -408,8 +411,8 @@ public class BookingApp {
                     		 while(inputValidation) {
                     		
                     			System.out.print ("Enter Movie Goer Category (Adult / SeniorCitizen / Child): ");
-        
-                         		 sc.nextLine();
+        sc.nextLine();
+                         	
                     			 movieGoerCategory = sc.nextLine();
                     			 
                     			
