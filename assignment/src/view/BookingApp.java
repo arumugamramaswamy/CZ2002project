@@ -7,16 +7,22 @@ import java.io.IOException;
 import java.util.*;
 
 public class BookingApp {
-	
+
+    
+    
 	public static void main(String[] args) throws IOException, Exception {
 
+
+		
     Scanner sc= new Scanner(System.in);
-    
+
     /* outer do-while loop determines the user mode (STAFF/CUSTOMER) & runs corresponding allowable actions
        in individual do-while loops  
     */
     int selection = 0;
     int user = 0;
+    String str;
+    int v;
 	boolean flag1 = false;
 
     int i;	//common variable for any instance of iteration in this class
@@ -433,7 +439,7 @@ public class BookingApp {
                     		
                     		System.out.println("");
                     		
-                    		boolean publicHoliday = true;
+                    		boolean publicHoliday = false;
                     		
                     		System.out.println("-- All Movies --");
                     		
@@ -489,19 +495,35 @@ public class BookingApp {
                             	movieBooked = m.getMovieName();
                             	break; 
                     		}
+                    		String[] holidays = null;
+                    	    holidyIO h = new holidyIO();
+                    	    try {
+                    	    holidays = h.readHolidays();
+                    	    }catch(Exception e) {
+                    	    	System.out.println(e);
+                    	    }
                     		
-                    		
-
+                    	    String tempstring;
+                    	    
         					ArrayList<show> temp_1 = m.getShows();
         					
         					for (int k =0 ;k<temp_1.size();k++) {
+        						publicHoliday = false;
         						s = temp_1.get(k);
-        						MovieTicket price = new MovieTicket(s.get3D(), Master.getCineplexes().get(s.getCineplexID()).getCinemaList().get(s.getScreenNum()).getCinemaClass(), movieGoerCategory, publicHoliday);
+        						tempstring = s.getDateTime().split(" ")[0];
+        						for (v=0;v<holidays.length;v++) {
+        							if (holidays[v].equals(tempstring)) {
+        								publicHoliday = true;
+        								break;
+        							}
+        						}
+        						str = Master.getCineplexes().get(s.getCineplexID()).getCinemaList().get(s.getScreenNum()).getCinemaClass();
+        						MovieTicket price = new MovieTicket(s.get3D(), str, movieGoerCategory, publicHoliday);
         						System.out.printf("\n\nShow %d:\n",k+1);
         						System.out.println("Date Time: " + s.getDateTime());
         						System.out.printf("Cineplex ID: %d\n",s.getCineplexID()+1);
         						System.out.printf("Cinema ID: %d\n",s.getScreenNum()+1);
-        						System.out.printf("Cinema Class: %s\n", s.getClass());
+        						System.out.printf("Cinema Class: %s\n", str);
         						System.out.printf("3D: %s\n", s.get3D());
         						System.out.printf("Ticket Price: S$%s (Inclusive of GST)\n", price.getPrice());
         						System.out.println("----------------");
@@ -555,8 +577,12 @@ public class BookingApp {
                             break;
         		        	}
         		        	else {
+        		        		System.out.println("");
         		        		System.err.println("Please select different seats, a few of these seats are occupied.");
+        		        		System.out.println("");
+        		        		break;
         		        	}
+        		      
                     // View booking history.        
                     case 4: //Inititalising for this case. 
                     		int id;

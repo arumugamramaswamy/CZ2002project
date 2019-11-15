@@ -128,9 +128,9 @@ public class show { // figure out how to implement extends movie
 	
 	public boolean checkSeat(int s1,int s2) {
 		if (seats[s1][s2] == 0) {
-			return true;
+			return false;
 		}
-		else return false;
+		else return true;
 	}
 	
 	/**
