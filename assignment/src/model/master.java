@@ -31,7 +31,11 @@ public class master {
 		return cineplexList;
 	}
 	
-	public static void deleteMovie(int index) {
+	public void deleteMovie(int index) {
+		movie mov = movieList.get(index);
+		for (show sh:mov.getShows()) {
+			mov.deleteShow(this, sh);
+		}
 		movieList.remove(index);
 	}
 	
