@@ -200,17 +200,32 @@ public class BookingApp {
                     					System.out.println("Director Name: " + mov.getDirectorName());
                     					System.out.print("Review(s): ");
                     					String [] reviews = mov.getReviews();
+                    					
+                    					if(reviews.length == 0) {
+                    					
+                    						System.out.println("No Reviews");
+                    						
+                    					} else {
                     					for(int x =0;x<reviews.length;x++) 
                     						System.out.printf("%s ",reviews[x]);
                     					
                     					System.out.printf("\n");
                     					
+                    					}
+                    					
                     					System.out.print("Rating(s): ");
                     					double [] ratings = mov.getAllRatings();
+                    					
+                    					if (ratings.length == 0) {
+                    						System.out.println("No Ratings");
+                    					} else {
+                    		
                     					for(int x =0;x<ratings.length;x++) 
                     						System.out.printf("%f ",ratings[x]);
                     					System.out.printf("\n");
-                    
+                    					
+                    					}
+                    					
                     					System.out.print("Movie Status: ");
                     					System.out.println(mov.getShowingStatus());
                     					
@@ -219,8 +234,13 @@ public class BookingApp {
                     					String[] Cast = mov.getCast();
                     					
                     					System.out.print("Cast: ");
-                    					for(int x =0;x<Cast.length;x++) 
-                    						System.out.printf("%s ",Cast[x]);
+                    					for(int x = 0;x < Cast.length; x++) {
+                    						if(Cast[x].equals("null")) {
+                    							continue;
+                    						}
+                    						System.out.printf("%s # ",Cast[x]);
+                    						
+                    					}
                     					
                     					System.out.println("");
                     					System.out.println("-------------------");
@@ -566,9 +586,10 @@ public class BookingApp {
         		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, phoneNumber, bookingID, numseats, firstseat);
         		        	
         		        	System.out.println("");
-        		        
+        		        	System.out.println("--------------------------------------------");
         		        	System.out.println("Your Movie Tickets have been successfuly booked!");
         		        	System.out.println("Transaction ID: " + bookingID);
+        		        	System.out.println("--------------------------------------------");
         		        	System.out.println("");
         		        	
                     		/* Enter specific show to book for movie. */
@@ -585,13 +606,16 @@ public class BookingApp {
         		      
                     // View booking history.        
                     case 4: //Inititalising for this case. 
+                    		
+                    		System.out.println("");
+                    		System.out.println("-- View Booking History --");
                     		int id;
                     		MovieGoerIO M = new MovieGoerIO(); 
                     		MovieGoer moviegoer = new MovieGoer();
                     		ArrayList<Booking> customerbookings = new ArrayList<>();
                     		
                     		//Accepting Customer ID to retrieve booking history. 
-                    		System.out.println("Please enter Customer ID to view booking history:");
+                    		System.out.print("Please enter Customer ID to view booking history: ");
                     		id = sc.nextInt();
                     		
                     		//Get corresponding MovieGoer object from MoverGoerIO class using CustomerID. 
@@ -599,14 +623,16 @@ public class BookingApp {
                     		
                     		//Use MovieGoer object to retrieve customerbooking ArrayList for corresponding cutomer ID. 
                     		customerbookings = moviegoer.getBooking();
-                    		
+                    		System.out.println("");
                     		//Iterate through customerbookings ArrayList to print movie names of bookings made by customer. 
                     		for(i=0; i< customerbookings.size(); i++) {
+                    			System.out.println("----------------------------");
                     			System.out.println("Movie Booked: " + customerbookings.get(i).getmovieBooked());
                     			System.out.println("Date & Time: " + customerbookings.get(i).getDateTime());
                     			System.out.println("Number of Seats booked: " + customerbookings.get(i).getnumseats());
                     			System.out.println("FirstSeat booked: " + customerbookings.get(i).getfirstseat());
                     			System.out.println("Transaction ID: " + customerbookings.get(i).getbookingID());
+                    			System.out.println("----------------------------");
                     			System.out.println();
                     		}
 				
@@ -622,13 +648,15 @@ public class BookingApp {
 			                + " 3) Back.\n");
                     		
                     		//getting user's selected option
+                    		System.out.print("Enter a Choice: ");
                     		selection= sc.nextInt();
                     		 
                     		//extracting list of all movies (movie objects)
                     		movies = Master.getMovies();
-                    		
+                    		System.out.println("");
                     		if(selection==1)
                     		{
+                    			
                     			//sort movies ArrayList according to ticket sales.
                         		Collections.sort(movies,movie.topticketsales);
                         		
