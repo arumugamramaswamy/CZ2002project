@@ -16,7 +16,7 @@ public class Booking{
 	/**
 	 * unique booking ID of the booking
 	 */
-    private int bookingID;
+    String bookingID;
     /**
      * movie name booked by the customer
      */
@@ -46,12 +46,14 @@ public class Booking{
      * @param lastseat last seat of the booking
      * @param show show object of the show to be booked
      */
-    public Booking(int custID, String movieBooked,int numseats, String firstseat, show show){
+    public Booking(int custID, String bookingID, String movieBooked,int numseats, String firstseat, show show){
         this.custID = custID;
     	
         //assign according to number of bookings
    
         this.movieBooked = movieBooked;
+        
+        this.bookingID = bookingID;
         
         
         this.numseats = numseats;
@@ -72,7 +74,7 @@ public class Booking{
      * gets the ID of the booking made
      * @return ID of the booking
      */
-    public int getbookingID() {
+    public String getbookingID() {
     	return bookingID;
     }
     /**
@@ -100,7 +102,7 @@ public class Booking{
      * sets the booking ID of the booking
      * @param bookingID
      */
-    public void setbookingID(int bookingID ) {
+    public void setbookingID(String bookingID ) {
     	this.bookingID = bookingID;
     }
     /**

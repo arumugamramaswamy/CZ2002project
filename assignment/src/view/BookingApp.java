@@ -512,7 +512,9 @@ public class BookingApp {
         		        	System.out.print("Enter number of seats: ");
         		        	numseats = sc.nextInt();
         		        	
-        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, numseats, firstseat);
+        		        	String bookingID = "";
+        		        	
+        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, bookingID, numseats, firstseat);
         		        	
         		        	System.out.println("");
         		        	System.out.println("Your Movie Tickets have been successfuly booked!");
