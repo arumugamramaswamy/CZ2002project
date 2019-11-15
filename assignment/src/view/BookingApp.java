@@ -397,10 +397,32 @@ public class BookingApp {
                     		sc.nextLine();
                     		String customerName = sc.nextLine();
                     		
-                    		System.out.print ("Enter Movie Goer Category (Adult / SeniorCitizen / Child): ");
-                    		sc.nextLine();
-                    		String movieGoerCategory = sc.nextLine();
                     		
+                    		 inputValidation = true;	
+                    		 
+                    		 String movieGoerCategory = null;
+                    		 
+                    		 while(inputValidation) {
+                    		
+                    			System.out.print ("Enter Movie Goer Category (Adult / SeniorCitizen / Child): ");
+        
+                         		
+                    			 movieGoerCategory = sc.nextLine();
+                    			 
+                    			
+                    			 
+                    			 if(movieGoerCategory.equals("Adult") || movieGoerCategory.equals("SeniorCitizen" )|| movieGoerCategory.equals("Child")) {
+                    				
+                    				 inputValidation = false;
+                    			
+                                 	
+                    			 } else {
+                    				 System.out.println("");
+                              		System.err.println("Invalid Input, Please Try Again!");
+                              		System.out.println("");
+                    			 }
+                    		
+                    		 }
                     		
                     		System.out.println("");
                     		
@@ -483,7 +505,7 @@ public class BookingApp {
         		        	s.printSeats();
         		        	
         		        	System.out.println("");
-                    		System.out.print("Enter first seat (Enter as 'a1' for row-1 seat-1 or 'd5' for row-4 seat-5: ");
+                    		System.out.print("Enter first seat (Enter as 'a1' for row-1 seat-1 or 'd5' for row-4 seat-5): ");
                     		sc.nextLine();
         		        	firstseat = sc.nextLine();
         		        	
