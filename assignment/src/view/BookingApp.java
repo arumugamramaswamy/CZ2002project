@@ -562,6 +562,7 @@ public class BookingApp {
                     			System.out.println("Date & Time: " + customerbookings.get(i).getDateTime());
                     			System.out.println("Number of Seats booked: " + customerbookings.get(i).getnumseats());
                     			System.out.println("FirstSeat booked: " + customerbookings.get(i).getfirstseat());
+                    			System.out.println("Transaction ID: " + customerbookings.get(i).getbookingID());
                     			System.out.println();
                     		}
 				
