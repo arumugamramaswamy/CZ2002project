@@ -1,7 +1,7 @@
 package view;
 
 import java.util.*;
-
+import java.io.*;
 import model.*;
 
 public class CreateUpdateRemoveMovieListing {
@@ -142,9 +142,9 @@ public class CreateUpdateRemoveMovieListing {
             
             System.out.print("Please select a Movie Number: ");
             int mov_num_1 = sc.nextInt();
-            
+            File file = new File("data/Shows/"+movies.get(mov_num_1-1).getMovieName()+".txt");
+            file.delete();
             Master.deleteMovie(mov_num_1-1);
-            
             System.out.println("");
             
             System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());

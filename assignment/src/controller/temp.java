@@ -10,7 +10,7 @@ public class temp {
 		holidyIO h =new holidyIO();
 		try {
 		String[] holidays = h.readHolidays();
-		System.out.println(holidays[2]);
+		System.out.println(holidays.length);
 		h.writeHoliday(holidays);
 		}catch(Exception e) {
 			System.out.println(e);

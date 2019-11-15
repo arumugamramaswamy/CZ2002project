@@ -1,7 +1,8 @@
 package model;
 
 import model.show;
-
+import controller.*;
+import java.io.*;
 /**
  * holds information about a particular booking
  * @version 1.0
@@ -33,7 +34,7 @@ public class Booking{
      * show object of the show to booked
      */
     private show show;
-    
+    private String[] holidays;
     private String dateTime;
     
     public Booking() {};
@@ -54,8 +55,12 @@ public class Booking{
         this.movieBooked = movieBooked;
         
         this.bookingID = bookingID;
-        
-        
+        holidyIO h = new holidyIO();
+        try {
+        this.holidays = h.readHolidays();
+        }catch(Exception e) {
+        	System.out.println(e);
+        }
         this.numseats = numseats;
         
         //check if last-first = num?
