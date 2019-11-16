@@ -774,11 +774,13 @@ public class BookingApp {
                     	System.out.println("");
                 }
                 
+                if (back_cust == true) {
+                	break;
+                }
+                
             } while(!back_cust);
             
-            if (back_cust == true) {
-            	break;
-            }
+            
         
         }
         
