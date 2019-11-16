@@ -271,7 +271,7 @@ public class BookingApp {
                                         		+ "3)Continue\n");
                                         sc2 = sc.nextInt();
                                         if (sc2 == 1) {
-                                        	System.out.println("Please type out your review");
+                                        	System.out.print("Please type out your review: ");
                                         	sc.nextLine();
                                         	inp = sc.nextLine();
                                         	mov.writeReview(inp);
