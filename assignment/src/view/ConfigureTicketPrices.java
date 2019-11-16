@@ -118,7 +118,6 @@ public class ConfigureTicketPrices {
 				updatePrice.writePrices(prices);
 				System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
 				System.out.println("");
-				System.exit(0);
 				break;
 				
 			case 10: 
