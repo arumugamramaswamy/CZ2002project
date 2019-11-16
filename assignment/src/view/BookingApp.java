@@ -210,7 +210,7 @@ public class BookingApp {
                     						
                     					} else {
                     					for(int x =0;x<reviews.length;x++) 
-                    						System.out.printf("%s ",reviews[x]);
+                    						System.out.printf("%s # ",reviews[x]);
                     					
                     					System.out.printf("\n");
                     					
@@ -224,7 +224,7 @@ public class BookingApp {
                     					} else {
                     		
                     					for(int x =0;x<ratings.length;x++) 
-                    						System.out.printf("%f ",ratings[x]);
+                    						System.out.printf("%f # ",ratings[x]);
                     					System.out.printf("\n");
                     					
                     					}
@@ -266,23 +266,28 @@ public class BookingApp {
                     					
                                         
                                         System.out.println("Please choose on of the following options:\n"
-                                        		+ "1)Write review\n"
-                                        		+ "2)Give ratings\n"
-                                        		+ "3)Continue\n"
+                                        		+ "1) Write review\n"
+                                        		+ "2) Give ratings\n"
+                                        		+ "3) Continue\n"
                                         		+ "\n"
-                                        		+ "Please enter your choice:\n");
+                                        		+ "Please enter your choice: ");
                                         sc2 = sc.nextInt();
                                         if (sc2 == 1) {
                                         	System.out.print("Please type out your review: ");
                                         	sc.nextLine();
                                         	inp = sc.nextLine();
                                         	mov.writeReview(inp);
+                                        	System.out.println("");
+                                        	System.out.println("Your review has been added!");
+                                        	System.out.println("");
                                         }else if(sc2 == 2) {
-                                        	System.out.println("Please give your rating on a scale from 0-5");
+                                        	System.out.print("Please give your rating on a scale from 0-5: ");
                                         	mov.giveRating(sc.nextDouble());
+                                        	System.out.println("");
+                                        	System.out.println("Your review has been added!");
+                                        	System.out.println("");
                                     }
                                     
-
                                     	
                                     }
                             } while(selection!= 2);
@@ -718,7 +723,12 @@ public class BookingApp {
 	                    		for(i= movies.size() -1 ; i >=0 ; i--)
 	                    			System.out.println(movies.get(i).getMovieName() + ": " + movies.get(i).getTotalRating());
                     		}
-                    		else
+                    		else if(selection == 3){
+                    			
+                    		}
+                    		else{
+                    			
+                    		}
                     			System.out.println("Invalid input!"); 
                     		
                     		} while(selection!=3);
