@@ -20,6 +20,9 @@ public class BookingApp {
        in individual do-while loops  
     */
     int selection = 0;
+    int sc2;
+    String inp;
+
     int user = 0;
     String str;
     int v;
@@ -261,6 +264,24 @@ public class BookingApp {
                     						
                     					}
                     					
+                                        
+                                        System.out.println("Please choose on of the following options:\n"
+                                        		+ "1)Write review\n"
+                                        		+ "2)Give ratings\n"
+                                        		+ "3)Continue\n");
+                                        sc2 = sc.nextInt();
+                                        if (sc2 == 1) {
+                                        	System.out.println("Please type out your review");
+                                        	sc.nextLine();
+                                        	inp = sc.nextLine();
+                                        	mov.writeReview(inp);
+                                        }else if(sc2 == 2) {
+                                        	System.out.println("Please give your rating on a scale from 0-5");
+                                        	mov.giveRating(sc.nextDouble());
+                                    }
+                                    
+
+                                    	
                                     }
                             } while(selection!= 2);
                             
