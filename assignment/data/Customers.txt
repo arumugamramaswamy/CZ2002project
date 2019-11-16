@@ -1,18 +1,4 @@
-<<<<<<< Updated upstream
-14|0|Jay|0|YOYO|1|Friday|3|d3|
-14|0|Jay|0|YOYO|1|Friday|2|e1|
-14|0|Jay|0|YOYO|1|Friday|2|f3|
-4|0|Mehul|0|Jay's life|2||2|h7|
-2|0|Mehul|0|YOYO|1|Friday|4|b1|
-4|0|Mehul|0|YOYO|2|Satrurday|3|d2|
-4|0|Jay|0|YOYO|2|Satrurday|1|a1|
-999|GVV2019101744|Jay|989|YOYO|2|13/12/11 12:30|3|h2|
-4|SWT201910198|Aru|94499400|Crazy Rich Asians|3|13/12/11 12:30|4|i4|
-1|FGB201910203|Jay|9899|The Godfather|1|08/11/19 17:00|8|a1|
-5|SWT201910209|Jay Gupta|9899|Crazy Rich Asians|3|13/12/11 12:30|1|b2|
 4|SWT2019101442|Jay|9091890|Crazy Rich Asians|jay@gmail.com|13/12/11 12:30|2|a2|
 4|SWT2019101443|Jay|90989812|Crazy Rich Asians|jay@gmail.com|13/12/11 12:30|2|a3|
 9|SWT2019101523|Jay|98993043|Crazy Rich Asians|jaygupta@gmail.com|13/12/11 12:30|1|a1|
-=======
 4|FGB2019101522|Anusha|91262826|The Godfather|anushadatta@gmail.com|08/11/19 17:00|3|c4|
->>>>>>> Stashed changes

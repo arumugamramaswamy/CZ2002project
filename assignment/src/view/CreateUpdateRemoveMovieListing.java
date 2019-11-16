@@ -85,7 +85,7 @@ public class CreateUpdateRemoveMovieListing {
 			
 			
 			for(i = 0; i < num; i++) {
-				System.out.print("Enter Cast No. " + i+1 + " Name: ");
+				System.out.printf("Enter Cast No. %d Name: ",(i+1));
 				Cast[i] = sc.nextLine();
 				System.out.println("");
 			}
