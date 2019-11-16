@@ -704,6 +704,7 @@ public class BookingApp {
                 	    for (movie mov1: tempMovList) {
                 	    	mov1.saveShowDetails();
                 	    }
+                	    System.out.println("");
                     	System.out.println("Thank you for using our Application!");
                         Master.saveCineplexes();
                         Master.saveMovies();
@@ -800,7 +801,7 @@ public class BookingApp {
 	                {	
                 		//Create/Update/Remove Movie Listing.
 	                    case 1: 
-	                    	
+	                    		System.out.println("");
 	                    		System.out.println("-- Create/Update/Remove Movie Listing --");
 	                    		CreateUpdateRemoveMovieListing CURML = new CreateUpdateRemoveMovieListing(Master);
 	                    		CURML.main(args);
@@ -817,8 +818,11 @@ public class BookingApp {
 	                    	
 	                            break;
 	                    
-	                    //Configure System settings (ticket prices, holidays).       
-	                    case 3: ConfigureTicketPrices CTP = new ConfigureTicketPrices();
+	                    //Configure System settings (ticket prices, holidays). 
+	                            
+	                    case 3: 
+	                    	System.out.println("");
+	                    	ConfigureTicketPrices CTP = new ConfigureTicketPrices();
 	                    		CTP.main(args);
 	                    		break;
 	                    		
@@ -834,6 +838,7 @@ public class BookingApp {
 	                    	    for (movie mov: tempMovList) {
 	                    	    	mov.saveShowDetails();
 	                    	    }
+	                    	    System.out.println("");
 	                    		System.out.println("Thank you for using our Application!");
 	                    		System.exit(0);
 	                    

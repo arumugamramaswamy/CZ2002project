@@ -20,15 +20,15 @@ private static master Master;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("");
 		Scanner sc = new Scanner(System.in);
 		int selection;
 		boolean flag = true;
 		
 		while (flag) {
 		System.out.println("Please select an option:\n"
-				+ "1) Create show listing"
-				+ "2) Delete show listing"
+				+ "1) Create show listing\n"
+				+ "2) Delete show listing\n"
 				+ "3) Back");
         selection = sc.nextInt();
 		switch(selection) {

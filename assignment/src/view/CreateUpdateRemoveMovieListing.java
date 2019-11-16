@@ -18,12 +18,16 @@ public class CreateUpdateRemoveMovieListing {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		boolean back_btn = false;
+		int flag = 0;
+		
 		ArrayList<movie> movies=new ArrayList<movie>();
 		int i;
 		
 		System.out.println("1. Create a new Movie Listing\n"
 				+ 	"2. Update a Movie Listing\n"
-				+ 	"3. Remove a Movie Listing");
+				+ 	"3. Remove a Movie Listing\n"
+				+   "4. Back");
 		
 		System.out.println("");
 		
@@ -152,12 +156,19 @@ public class CreateUpdateRemoveMovieListing {
 			System.out.println("");
 			
 			break;
+			
+		case 4: back_btn = true;
+			
+				break;
 		
 		default: System.out.print("Invalid Input, Please Try Again!");
 				 break;
 		
 		}
 		
+		if(back_btn == true) {
+			return;
+		}
 		
 	}
 

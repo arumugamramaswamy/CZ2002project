@@ -27,6 +27,7 @@ public class ConfigureTicketPrices {
 		
 		Scanner input = new Scanner(System.in);
 		
+		boolean back = false;
 		double newPrice;
 		
 		TicketPrice oldPrices = new TicketPrice();
@@ -49,7 +50,7 @@ public class ConfigureTicketPrices {
 			System.out.println("7. Public Holiday Surcharge");
 			System.out.println("8. GST %");
 			System.out.println("9. IMPLEMENT ALL CHANGES");
-			System.out.println("10. Exit");
+			System.out.println("10. Back");
 			System.out.println("");
 			
 			System.out.print("Select an option: ");
@@ -122,9 +123,20 @@ public class ConfigureTicketPrices {
 				
 			case 10: 
 				// temporary
-				System.exit(0);
+				back = true;
 				break;
+				
+			default: System.out.println("");
+					 System.err.println("Invalid Input, Please Try Again!");
+					 System.out.println("");
+					 break;
+			
 			}
+			
+			if (back == true) {
+				return;
+			}
+			
 		}
 		
 	}
