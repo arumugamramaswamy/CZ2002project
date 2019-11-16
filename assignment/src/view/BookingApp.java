@@ -574,6 +574,12 @@ public class BookingApp {
         		        	System.out.print("Enter number of seats: ");
         		        	numseats = sc.nextInt();
         		        	
+        		        	System.out.print("Confirmation: Book the tickets? (y/n) ");
+        		        	sc.nextLine();
+        		        	String confirmation = sc.nextLine();
+        		        	
+        		        	if(confirmation.equals("y")) {
+        		        	
         		        	TransactionID T = new TransactionID(s.getCineplexID());
         		        	String TID = T.getTID();
         		     
@@ -595,6 +601,15 @@ public class BookingApp {
         		        	System.out.println("Transaction ID: " + bookingID);
         		        	System.out.println("--------------------------------------------");
         		        	System.out.println("");
+        		        	
+        		        	} else {
+        		        		
+        		        		System.out.println("");
+        		        		System.err.println("The Ticket Purchase was cancelled!");
+        		        		System.out.println("");
+        		        		continue;
+        		        		
+        		        	}
         		        	
                     		/* Enter specific show to book for movie. */
                     		/*System.out.println("Enter show:");*/
