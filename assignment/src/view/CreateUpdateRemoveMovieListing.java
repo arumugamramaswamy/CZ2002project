@@ -4,11 +4,19 @@ import java.util.*;
 import java.io.*;
 import model.*;
 
+/**
+ * UI Class to Create, Update, Remove Movie Listings
+ * @version 1.0
+ *
+ */
 public class CreateUpdateRemoveMovieListing {
 
 	private static master Master;
 	
-	
+	/**
+	 * Initialises the master class which calls the backend of the application
+	 * @param m
+	 */
 	public CreateUpdateRemoveMovieListing(master m){
 		Master = m;
 	}
@@ -18,10 +26,12 @@ public class CreateUpdateRemoveMovieListing {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		/**
+		 * used to go back to the main program
+		 */
 		boolean back_btn = false;
-		int flag = 0;
 		
-		ArrayList<movie> movies=new ArrayList<movie>();
+		ArrayList<movie> movies = new ArrayList<movie>();
 		int i;
 		
 		System.out.println("1. Create a new Movie Listing\n"
@@ -55,11 +65,7 @@ public class CreateUpdateRemoveMovieListing {
 				System.out.print("Enter Movie Status (COMING_SOON, PREVIEW, NOW_SHOWING): ");
 				showingStatus = sc.nextLine();
 				showingStatus = showingStatus.trim();
-				
-		//		if(showingStatus != "COMING_SOON" || showingStatus != "PREVIEW" || showingStatus != "NOW_SHOWING") {
-		//			System.err.println("Please enter a valid Movie Status!");
-		
-			
+
 			System.out.print("Enter Synopsis: ");
 			Synopsis = sc.nextLine();
 			
@@ -81,8 +87,7 @@ public class CreateUpdateRemoveMovieListing {
 					System.err.println("Please enter a valid number!");
 				}
 			}
-			
-			
+
 			
 			for(i = 0; i < num; i++) {
 				System.out.printf("Enter Cast No. %d Name: ",(i+1));

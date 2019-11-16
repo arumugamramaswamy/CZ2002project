@@ -1,14 +1,10 @@
-/**
- * 
- */
 package view;
-import java.util.*;
 
+import java.util.*;
 import controller.GetPrice;
 import model.TicketPrice;
 import controller.UpdateTicketPrices;
 import model.AdminChangeStatus;
-import static model.AdminChangeStatus.*;
 
 /**
  * 
@@ -23,16 +19,13 @@ public class ConfigureTicketPrices {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Scanner input = new Scanner(System.in);
 		
 		boolean back = false;
 		double newPrice;
-		
-		TicketPrice oldPrices = new TicketPrice();
 		ArrayList<Double> prices = new ArrayList<>();
-		prices = oldPrices.readPrices();
+		prices = TicketPrice.readPrices();
 		
 		System.out.println("-- Configure Ticket Prices --");
 		
@@ -118,27 +111,21 @@ public class ConfigureTicketPrices {
 				updatePrice.writePrices(prices);
 				System.out.println(AdminChangeStatus.SUCCESSFUL.returningStatus());
 				System.out.println("");
-				System.exit(0);
 				break;
 				
 			case 10: 
-				// temporary
 				back = true;
 				break;
 				
-			default: System.out.println("");
-					 System.err.println("Invalid Input, Please Try Again!");
-					 System.out.println("");
-					 break;
-			
+			default:
+				System.out.println("");
+				System.err.println("Invalid Input, Please Try Again!");
+				System.out.println("");
+				break;
 			}
 			
-			if (back == true) {
+			if (back == true)
 				return;
-			}
-			
 		}
-		
 	}
-
 }

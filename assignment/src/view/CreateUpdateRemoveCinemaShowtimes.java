@@ -9,11 +9,19 @@ import model.master;
 import model.movie;
 import model.show;
 
+/**
+ * UI Class to Create, Update and Remove Cinema Showtimes
+ * @version 1.0
+ */
+
 public class CreateUpdateRemoveCinemaShowtimes {
 	
 private static master Master;
 	
-	
+	/**
+	 * Initialises the master class which calls the backend of the application
+	 * @param m
+	 */
 	public CreateUpdateRemoveCinemaShowtimes(master m){
 		Master = m;
 	}

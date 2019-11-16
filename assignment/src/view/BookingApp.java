@@ -6,13 +6,14 @@ import controller.*;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * Main UI to run the program.
+ * @version 1.0
+ */
+
 public class BookingApp {
 
-    
-    
 	public static void main(String[] args) throws IOException, Exception {
-
-
 		
     Scanner sc= new Scanner(System.in);
 
