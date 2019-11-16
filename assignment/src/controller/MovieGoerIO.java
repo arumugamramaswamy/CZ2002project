@@ -106,7 +106,16 @@ public class MovieGoerIO{
     
     
     /**
-     * to write a new bookings into the text file
+     * to write a new booking to the customers.txt file
+     * @param custID	customer ID of the customer
+     * @param bookingID	transaction ID of the booking
+     * @param customerName	Name of the customer
+     * @param phoneNumber	Phone number of the customer
+     * @param movieBooked	Name of the movie booked
+     * @param emailID	email ID of the customer
+     * @param time	time of the show booked
+     * @param numseats	number of seats booked
+     * @param firstseat	first-seat of the booking
      * @throws IOException
      * @throws Exception
      */
@@ -297,18 +306,6 @@ public class MovieGoerIO{
 		
 		
 	}
-	
-//	public void printBookings(int i) {
-//		System.out.println("Customer Name is " + customers.get(i).getCustomerName());
-//		System.out.println("Customer Age is " + customers.get(i).getCustomerAge());
-//		System.out.println("Booking ID: " + customers.get(i).getBooking(i).getbookingID());
-//		System.out.println("FirstSeat of the Booking: " + customers.get(i).getBooking(i).getfirstseat());
-//		System.out.println("MovieBooked is: " + customers.get(i).getBooking(i).getmovieBooked());
-//		System.out.println("Total Number of Seats booked: " + customers.get(i).getBooking(i).getnumseats());
-//		
-//		
-//		
-//	}
 
 
 }
