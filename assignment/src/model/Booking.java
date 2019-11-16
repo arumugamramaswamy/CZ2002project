@@ -34,6 +34,8 @@ public class Booking{
      * show object of the show to booked
      */
     private show show;
+    
+    private String emailID;
     private String dateTime;
     
     public Booking() {};
@@ -46,7 +48,7 @@ public class Booking{
      * @param lastseat last seat of the booking
      * @param show show object of the show to be booked
      */
-    public Booking(int custID, String bookingID, String movieBooked,int numseats, String firstseat, show show){
+    public Booking(int custID, String bookingID, String movieBooked,int numseats, String firstseat, show show, String emailID){
         this.custID = custID;
     	
         //assign according to number of bookings
@@ -58,6 +60,8 @@ public class Booking{
         this.numseats = numseats;
        
         this.firstseat = firstseat;
+        
+        this.emailID = emailID;
         
         this.setShow(show);
     }
@@ -144,6 +148,16 @@ public class Booking{
 	 */
 	public void setShow(show show) {
 		this.show = show;
+	}
+	public String getemailID() {
+		return emailID;
+	}
+	/**
+	 * sets the customer email ID of the customer
+	 * @param emailID customer ID of the customer
+	 */
+	public void setemailID(String emailID) {
+		this.emailID = emailID;
 	}
 	
 	public String getDateTime() {

@@ -151,7 +151,6 @@ public class MovieGoerIO{
     		m1.setCustID(custID);
     		m1.setCustomerName(customerName);
     		m1.setPhoneNumber(phoneNumber);
-    		m1.setemailID(emailID);
     		
     		int length = customers.size();
     		int flag=1;
@@ -195,6 +194,7 @@ public class MovieGoerIO{
     	b1.setmovieBooked(movieBooked);
     	b1.setnumseats(numseats);
     	b1.setDateTime(dateTime);
+    	b1.setemailID(emailID);
     	
     	
     	return b1;

@@ -631,6 +631,7 @@ public class BookingApp {
                     		//Iterate through customerbookings ArrayList to print movie names of bookings made by customer. 
                     		for(i=0; i< customerbookings.size(); i++) {
                     			System.out.println("----------------------------");
+                    			System.out.println("Customer Email ID: " + customerbookings.get(i).getemailID());
                     			System.out.println("Movie Booked: " + customerbookings.get(i).getmovieBooked());
                     			System.out.println("Date & Time: " + customerbookings.get(i).getDateTime());
                     			System.out.println("Number of Seats booked: " + customerbookings.get(i).getnumseats());
