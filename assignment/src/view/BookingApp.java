@@ -268,7 +268,9 @@ public class BookingApp {
                                         System.out.println("Please choose on of the following options:\n"
                                         		+ "1)Write review\n"
                                         		+ "2)Give ratings\n"
-                                        		+ "3)Continue\n");
+                                        		+ "3)Continue\n"
+                                        		+ "\n"
+                                        		+ "Please enter your choice:\n");
                                         sc2 = sc.nextInt();
                                         if (sc2 == 1) {
                                         	System.out.print("Please type out your review: ");
