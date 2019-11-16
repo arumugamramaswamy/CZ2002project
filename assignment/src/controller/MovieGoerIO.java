@@ -35,7 +35,7 @@ public class MovieGoerIO{
 
     private int numseats;
     
-    private String cineplexID;
+    private String emailID;
     
     private String dateTime;
 
@@ -90,7 +90,7 @@ public class MovieGoerIO{
             	this.customerName = var[2];
             	this.phoneNumber = Integer.parseInt(var[3]);
             	this.movieBooked = var[4];
-            	this.cineplexID = var[5];
+            	this.emailID = var[5];
             	this.dateTime = var[6];
             	this.numseats = Integer.parseInt(var[7]);
             	this.firstseat = var[8];
@@ -110,7 +110,7 @@ public class MovieGoerIO{
      * @throws IOException
      * @throws Exception
      */
-    public void writeNewBooking(int custID, String bookingID, String customerName, int phoneNumber, String movieBooked, int cineplexID, String time, int numseats, String firstseat) throws IOException,Exception{
+    public void writeNewBooking(int custID, String bookingID, String customerName, int phoneNumber, String movieBooked, String emailID, String time, int numseats, String firstseat) throws IOException,Exception{
 	countPreviousBookings();    
     	file = getCustomerFile();
     	String temp;
@@ -127,7 +127,7 @@ public class MovieGoerIO{
 			bw.write(customerName + "|");
 			bw.write(Integer.toString(phoneNumber) + "|");
 			bw.write(movieBooked + "|");
-			bw.write(Integer.toString(cineplexID) + "|");
+			bw.write(emailID + "|");
 			bw.write(time + "|");
 			bw.write(Integer.toString(numseats) + "|");
 			bw.write(firstseat + "|");
@@ -151,6 +151,7 @@ public class MovieGoerIO{
     		m1.setCustID(custID);
     		m1.setCustomerName(customerName);
     		m1.setPhoneNumber(phoneNumber);
+    		m1.setemailID(emailID);
     		
     		int length = customers.size();
     		int flag=1;
@@ -210,7 +211,7 @@ public class MovieGoerIO{
 	 * @throws Exception 
 	 * @throws IOException 
 	 */
-   public void assignFinalSeatsbyMovie(movie mo, int index, String custName, int custID, int phoneNumber, String bookingID, int numseats, String firstseat) throws IOException, Exception {
+   public void assignFinalSeatsbyMovie(movie mo, int index, String custName, int custID, String emailID, int phoneNumber, String bookingID, int numseats, String firstseat) throws IOException, Exception {
     	try{
     		readBookingsFile();
     		
@@ -257,13 +258,12 @@ public class MovieGoerIO{
 		int firstseatnum = Character.getNumericValue(firstseat.charAt(1));
     	
     	show s = shows.get(index);
-    	int cineplexID = s.getCineplexID()+1;
     
     	    	for(int j=1; j<=numseats; j++) {
     		s.assignSeat(row-1, j+firstseatnum-2);
     	}   
     	String time = s.getDateTime(); 	
-    	writeNewBooking(custID, bookingID, custName, phoneNumber, movieBooked, cineplexID, time, numseats, firstseat); 	
+    	writeNewBooking(custID, bookingID, custName, phoneNumber, movieBooked, emailID, time, numseats, firstseat); 	
     	}finally{customers.clear();}
     	    	//write new booking after assigning seats
     }

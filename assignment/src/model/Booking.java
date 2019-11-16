@@ -56,8 +56,7 @@ public class Booking{
         this.bookingID = bookingID;
 
         this.numseats = numseats;
-        
-        //check if last-first = num?
+       
         this.firstseat = firstseat;
         
         this.setShow(show);

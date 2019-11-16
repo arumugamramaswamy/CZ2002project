@@ -430,6 +430,10 @@ public class BookingApp {
                     		
                     		int phoneNumber = sc.nextInt();
                     		
+                    		System.out.print ("Enter your email-ID: ");
+                    		sc.nextLine();
+                    		String emailID = sc.nextLine();
+                    		
                     		
                     		
                     		 inputValidation = true;	
@@ -439,7 +443,7 @@ public class BookingApp {
                     		 while(inputValidation) {
                     		
                     			System.out.print ("Enter Movie Goer Category (Adult / SeniorCitizen / Child): ");
-        sc.nextLine();
+                    		
                          	
                     			 movieGoerCategory = sc.nextLine();
                     			 
@@ -583,7 +587,7 @@ public class BookingApp {
         		        		}
         		        	}
         		        	if (!flag1) {
-        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, phoneNumber, bookingID, numseats, firstseat);
+        		        	mgio.assignFinalSeatsbyMovie(m, showindex, customerName, customerID, emailID, phoneNumber, bookingID, numseats, firstseat);
         		        	
         		        	System.out.println("");
         		        	System.out.println("--------------------------------------------");
