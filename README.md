@@ -20,4 +20,4 @@ MOBLIMA is an application to computerize the processes of making online booking 
 
 ## UML Sequence Diagram
 
-![UMLSequenceDiagram](UMLSequenceDiagram.jpg)
+![UMLSequenceDiagram](UMLSequenceDiagram.jpeg)
