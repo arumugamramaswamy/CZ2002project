@@ -166,7 +166,12 @@ public class movieIO {
 			    return data;
 			  }
 		
-		  /** Write fixed content to the given file. */
+		  /**
+		   * 
+		   * @param fileName	Name of the file
+		   * @param data	All the data to be written to the file in form of a List
+		   * @throws IOException
+		   */
 		  public static void write(String fileName, List data) throws IOException  {
 		    PrintWriter out = new PrintWriter(new FileWriter(fileName));
 	
@@ -180,7 +185,12 @@ public class movieIO {
 		    }
 		  }
 		  
-	  // an example of saving
+	  /**
+	   * To save a movie to the txt file
+	   * @param filename	Name of the file to be written to
+	   * @param al	Data to written in form of a list
+	   * @throws IOException
+	   */
 	public static void saveMovie(String filename, List al) throws IOException {
 			List alw = new ArrayList() ;// to store Professors data
 
@@ -231,7 +241,13 @@ public class movieIO {
 				}
 				write(filename,alw);
 		}
-	
+	/**
+	 * To read the shows of a particular movie from the text file
+	 * @param mov	Movie for which the shows are to be retrieved
+	 * @param filename	Name of the file where the shows are saved
+	 * @return	ArrayList of shows for the particular movie
+	 * @throws IOException
+	 */
 	public static ArrayList<show> readShows(movie mov,String filename) throws IOException {
 		
 		// read String from text file
@@ -282,14 +298,17 @@ public class movieIO {
 				boolean is3D = Boolean.parseBoolean(star.nextToken().trim());
 				show s = new show(mov,dateTime,cineplexID,screenNum,is3D,seats_final);
 				
-//				s.assignSeat(0, 1);
-//				s.printSeats();
 				alr.add(s);
 				
         }
 			return alr ;
 	}
-	
+	/**
+	 * To save shows for a particular movie
+	 * @param filename	Name of the file which saves the shows
+	 * @param Shows	List of shows for the particular movie
+	 * @throws IOException
+	 */
 	public static void saveShows(String filename, List Shows) throws IOException {
 		if(Shows==null)
 			return;
