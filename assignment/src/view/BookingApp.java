@@ -616,6 +616,7 @@ public class BookingApp {
         		        	char ch = firstseat.charAt(0);
         		    		int firstseatnum = Character.getNumericValue(firstseat.charAt(1))-1;
         		        	int row = ch - 'a';
+        		        	flag1 = false;
         		        	for (int t =0;t<numseats;t++) {
         		        		if (s.checkSeat(row, firstseatnum+t)){
         		        			flag1 = true;
