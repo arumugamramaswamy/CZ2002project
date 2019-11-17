@@ -19,8 +19,14 @@ public class MovieGoer{
      */
 	private int custID;
 	
+	/**
+	 * customer name
+	 */
 	private String customerName;
     
+	/**
+	 * customer phone number
+	 */
     private int phoneNumber;
     
 

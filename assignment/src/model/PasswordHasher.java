@@ -10,10 +10,23 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class PasswordHasher {
+/**
+ * Hash Passwords using SHA1
+ * @version 1.0
+ */
 
+public class PasswordHasher {
+	
+	/**
+	 * Array to get all passwords stored in data/passwords.txt
+	 */
 	static ArrayList<String> passwords = new ArrayList<>();
 	
+	/**
+	 * hash password using SHA1
+	 * @param password string password entered by user
+	 * @return hashed password
+	 */
 	public static String getHashSHA1 (String password) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("SHA-1");
@@ -31,7 +44,10 @@ public class PasswordHasher {
 		}
 	}
 
-
+	/**
+	 * read all passwords and store in an arraylist
+	 * @return array of all passwords from text file
+	 */
 	public static ArrayList<String> readPasswords() { 
 	        
 	        File file = new File("data/passwords.txt");
@@ -54,6 +70,11 @@ public class PasswordHasher {
 	        
 	}
 	
+	/**
+	 * check whether the user entered password is correct or incorrect
+	 * @param password unhashed password
+	 * @return true if the password is correct
+	 */
 	public static boolean checkPass(String password) {
 		
 		ArrayList<String> pass = readPasswords();

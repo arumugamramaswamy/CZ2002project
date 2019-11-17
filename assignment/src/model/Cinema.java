@@ -30,17 +30,6 @@ public class Cinema {
      * Array of all the shows in the Cinema
      */
     private ArrayList<show> showList;
-
-    // REMOVE??
-
-//    public Cinema() {
-//        cinemaName="";
-//        cinemaClass="";
-//        cinemaCode="";
-//        
-//      
-//    }
-//
     
     /**
      * Default Constructor
@@ -56,17 +45,7 @@ public class Cinema {
 
         
     }
-    
-    // REMOVE??
-    
-//  public Cinema(String cinemaName, String cinemaClass, String cinemaCode, ArrayList<MovieInCinema> moviesList) {
-//        this.cinemaName = cinemaName;
-//        this.cinemaClass = cinemaClass;
-//        this.cinemaCode = cinemaCode;
-//  	  this.moviesList = moviesList;
-//        
-//    }
- 
+
     /**
      * @return Name of the cinema
      */
@@ -102,11 +81,6 @@ public class Cinema {
     public ArrayList<show> getCinemaShows(){
     	return showList;
     }
-    
-    // REMOEV ??
-//    public ArrayList<MovieInCinema> getMoviesList() {
-//        return moviesList;
-//    }
- 
+
 }
 

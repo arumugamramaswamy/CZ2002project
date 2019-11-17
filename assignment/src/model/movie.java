@@ -20,20 +20,24 @@ public class movie {
 	 */
 	private String movieName;
 	
-	// create a common class PERSON which contains first name and last name
-	// movie directors name - object of class PERSON
+	/**
+	 * name of the director of movie
+	 */
 	private String directorName;
 	
-	// all movie reviews -- Array of class AllReviews which contains all reviews and person details with PERSON class
+	/**
+	 * array of all reviews 
+	 */
 	private String[] reviews;
 	
-	// all movie ratings -- Array of class AllRatings and person details with PERSON class
+	/**
+	 * array of all ratings
+	 */
 	private double[] ratings;
 	
 	/**
 	 * status of the movie - preview, now showing, coming soon
 	 */
-	// USE ENUM
 	private String showingStatus;
 	
 	/**
@@ -41,7 +45,9 @@ public class movie {
 	 */
 	private String Synopsis;
 	
-	// cast of the movie -- Array of PERSON class type (can have 2 - 3 actors)
+	/**
+	 * array of the cast starring in a movie
+	 */
 	private String[] Cast;
 	
 	/**
@@ -71,22 +77,7 @@ public class movie {
 		this.reviews = reviews;
 		this.Shows = new ArrayList<show>();
 		this.tSales =tSales;
-//		m.addMovieListing(this);
 	}
-	
-//	/**
-//	 * constructor used by show
-//	 * @param mov contains all the attributes of a movie
-//	 */
-//	public movie(movie mov,master m) {
-//		movieName = mov.movieName;
-//		directorName = mov.directorName;
-//		reviews = mov.reviews;
-//		ratings = mov.ratings;
-//		showingStatus = mov.showingStatus;
-//		Synopsis = mov.Synopsis;
-//		Cast = mov.Cast;
-//	}
 	
 	/**
 	 * get the movie name
@@ -260,7 +251,9 @@ public class movie {
 		showingStatus = st;
 	}
 	
-	//method to get top five movies with highest rankings
+	/**
+	 * method to get top five movies with highest rankings
+	 */
 	public static Comparator<movie> topratings = new Comparator<movie>() {
 
 		public int compare(movie m1, movie m2) {
@@ -271,7 +264,9 @@ public class movie {
 		   /*For ascending order*/
 		   return (int) rating1- (int) rating2; } };
 
-	//method to get top five movies with highest ticketsales
+   /**
+    * method to get top five movies with highest ticketsales
+    */
 	public static Comparator<movie> topticketsales = new Comparator<movie>() {
 
 	public int compare(movie m1, movie m2) {
@@ -282,6 +277,12 @@ public class movie {
 		/*For ascending order*/
 		return ts1-ts2; } };
 
+		
+	/**
+	 * delete a show when a movie listing is deleted
+	 * @param m master class object
+	 * @param ind index of the movie to be deleted
+	 */
 	public void deleteShow(master m, int ind) {
 		show s = Shows.get(ind);
 		ArrayList<Cineplex> temp = m.getCineplexes();
@@ -291,6 +292,11 @@ public class movie {
 		Shows.remove(ind);
 	}
 	
+	/**
+	 * delete a show when a movie listing is deleted
+	 * @param m master class object
+	 * @param s show object
+	 */
 	public void deleteShow(master m, show s) {
 		ArrayList<Cineplex> temp = m.getCineplexes();
 		ArrayList<Cinema> temp2 = temp.get(s.getCineplexID()).getCinemaList();
@@ -299,10 +305,17 @@ public class movie {
 		Shows.remove(s);
 	}
 	
+	/**
+	 * increment ticket sales when a show is booked
+	 */
 	public void incTsales() {
 		tSales++;
 	}
 	
+	/**
+	 * get the total sales
+	 * @return the total sales for a movie
+	 */
 	public int getTsales() {
 		return tSales;
 	}
