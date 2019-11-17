@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import model.*;
 
 /**
- * 
- * @version 1.0
  * Used to read and write bookings made by a MovieGoer
+ * @version 1.0
+ * 
  */
 
 public class MovieGoerIO{

@@ -8,10 +8,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 /**
- * 
- * @version 1.0
  * movie-goer class which holds all the information about him/her including all
  * the bookings made by them.
+ * @version 1.0
+ * 
  */
 public class MovieGoer{
     /**
