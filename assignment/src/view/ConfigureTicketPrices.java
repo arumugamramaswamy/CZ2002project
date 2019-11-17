@@ -16,7 +16,7 @@ public class ConfigureTicketPrices {
 
 	/**
 	 * Configure all ticket prices
-	 * @param args
+	 * @param args	default argument
 	 */
 	public static void main(String[] args) {
 		

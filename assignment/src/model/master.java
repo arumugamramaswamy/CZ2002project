@@ -122,7 +122,7 @@ public class master {
 	
 	/**
 	 * set a cineplex
-	 * @param c
+	 * @param c	cineplex object
 	 */
 	public void setCineplexes(ArrayList<Cineplex> c) {
 		cineplexList = c;

@@ -11,14 +11,30 @@ import model.Cinema;
 import model.Cineplex;
 import model.master;
 
+/**
+ * Class to handle all read cineplexes list and handle update functions
+ * @version 1.0
+ */
+
 public class CineplexIO {
 
 //	private static String SEPERATOR = "|";
+	/**
+	 * file name to read all cineplex data
+	 */
 	public static String filename ="data/cineplex.txt";
+	
+	/**
+	 * default constructor
+	 */
 	public CineplexIO() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/**
+	 * read cineplexes
+	 * @return cineplex list
+	 */
 	public ArrayList<Cineplex> readCineplex(){
 	    try{
 	    	ArrayList<Cineplex> cineplexesList = new ArrayList<Cineplex>();
@@ -49,7 +65,11 @@ public class CineplexIO {
 	        return null;
 	    }
 	}
-	
+	/**
+	 * save cineplex list into the text file
+	 * @param al	list of cineplex
+	 * @throws IOException handle read file errors
+	 */
 	public static void saveCineplex(List al) throws IOException {
 		List alw = new ArrayList() ;
 		Cineplex c;
@@ -84,7 +104,12 @@ public class CineplexIO {
 			write(filename,alw);
 	}
 	
-	
+	/**
+	 * read cineplexes list
+	 * @param fileName name of the file to read cineplexes list from
+	 * @return	list of cineplexes
+	 * @throws IOException to handle file read errors
+	 */
 	public static List read(String fileName) throws IOException {
 			List data = new ArrayList() ;
 		    Scanner scanner = new Scanner(new FileInputStream(fileName));
@@ -98,8 +123,13 @@ public class CineplexIO {
 		    }
 		    return data;
 		  }
-	
-	/** Write fixed content to the given file. */
+
+	/**
+	 * Write fixed content to the given file
+	 * @param fileName name of the file to write data
+	 * @param data	new list of cineplexes
+	 * @throws IOException	handle file write errors
+	 */
 	public static void write(String fileName, List data) throws IOException  {
 	  PrintWriter out = new PrintWriter(new FileWriter(fileName));
 	

@@ -52,6 +52,7 @@ public class Booking{
      * @param firstseat first seat of the booking
      * @param lastseat last seat of the booking
      * @param show show object of the show to be booked
+     * @param emailID email ID of the customer
      */
     public Booking(int custID, String bookingID, String movieBooked,int numseats, String firstseat, show show, String emailID){
         this.custID = custID;
@@ -100,14 +101,14 @@ public class Booking{
     }
     /**
      * sets the name of the movie booked
-     * @param movieBooked
+     * @param movieBooked	object of the movie to be booked
      */
     public void setmovieBooked(String movieBooked) {
     	this.movieBooked = movieBooked;
     }
     /**
      * sets the booking ID of the booking
-     * @param bookingID
+     * @param bookingID transaction ID of the booking to be booked
      */
     public void setbookingID(String bookingID ) {
     	this.bookingID = bookingID;
@@ -156,7 +157,7 @@ public class Booking{
 	}
 	/**
 	 * gets the email ID of the customer
-	 * @return email ID
+	 * @return email ID	email ID of the customer
 	 */
 	public String getemailID() {
 		return emailID;
@@ -169,7 +170,7 @@ public class Booking{
 		this.emailID = emailID;
 	}
 	/**
-	 * 
+	 * get the date and time of the show
 	 * @return	date and time of the show
 	 */
 	public String getDateTime() {

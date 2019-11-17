@@ -15,12 +15,16 @@ public class CreateUpdateRemoveMovieListing {
 	
 	/**
 	 * Initialises the master class which calls the backend of the application
-	 * @param m
+	 * @param m object of the UI master class
 	 */
 	public CreateUpdateRemoveMovieListing(master m){
 		Master = m;
 	}
 	
+	/**
+	 * UI to Create, Update and Remove Movie Listings
+	 * @param args	argument
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		

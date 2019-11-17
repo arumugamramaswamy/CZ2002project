@@ -13,6 +13,10 @@ import java.util.ArrayList;
 
 public class UpdateTicketPrices {
 	
+	/**
+	 * write the new movie ticket prices into the text file
+	 * @param newPrices the new array of prices
+	 */
 	public void writePrices(ArrayList newPrices) {
 		
 		try {

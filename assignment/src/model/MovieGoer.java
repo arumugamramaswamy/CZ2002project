@@ -34,14 +34,18 @@ public class MovieGoer{
      * ArrayList of all the bookings made by the particular customer
      */
     private ArrayList<Booking> customerbookings = new ArrayList<>();
-
+    
+    /**
+     * 
+     */
     public MovieGoer() {};
    
     /**
-     *  constructor of the MovieGoer class
+     * default constructor
      * @param customerName name of the customer
-     * @param customerAge age of the customer
-     * @param customerbookings All the bookings made by the customer
+     * @param phoneNumber	phone number of the customer
+     * @param emailID	email id of the customer
+     * @param customerbookings	list of all bookings made by the customer
      */
     public MovieGoer(String customerName, int phoneNumber, String emailID, ArrayList<Booking> customerbookings){
         this.customerName = customerName;
@@ -56,9 +60,10 @@ public class MovieGoer{
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+	
 	/**
-	 * sets the age of the customer
-	 * @param customerAge age of the customer
+	 * sets the phone number of the customer
+	 * @param phoneNumber set the phone number of the customer
 	 */
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;

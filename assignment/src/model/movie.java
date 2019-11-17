@@ -65,6 +65,7 @@ public class movie {
 	 * @param showingStatus	status of movie - preview, now showing, coming soon
 	 * @param Synopsis		synopsis of movie
 	 * @param Cast			array of actors in the movie
+	 * @param tSales 		total sales for the movie
 	 */
 	public movie(String name,String director,String[] reviews, double[] ratings,
 								String showingStatus, String Synopsis, String[] Cast,int tSales) {
@@ -196,6 +197,7 @@ public class movie {
 	 * @param screenNum screen number
 	 * @param cineplexID ID of the CinePlex
 	 * @param is3D bool true if the movie is 3D
+	 * @return movie show object
 	 */
 	public show createShowListing(String dt,int screenNum,int cineplexID, boolean is3D) {
 		show s = new show(this,dt,screenNum,cineplexID,is3D);
@@ -217,6 +219,7 @@ public class movie {
 	
 	/**
 	 * read show details from the shows folder with file name as movie name
+	 * @param Master object of the Master UI class
 	 */
 	public void readShowDetails(master Master) {
 		show temp;

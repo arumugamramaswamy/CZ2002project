@@ -1,3 +1,0 @@
-Filmgarde Bugis;F1;Cinema1;Cinema2;Cinema3
-Golden Village Vivocity;G1;Cinema1;Cinema2;Cinema3
-Shaw Theaters;S1;Cinema1;Cinema1;Cinema1

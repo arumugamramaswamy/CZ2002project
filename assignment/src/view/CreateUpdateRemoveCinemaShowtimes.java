@@ -20,7 +20,7 @@ private static master Master;
 	
 	/**
 	 * Initialises the master class which calls the backend of the application
-	 * @param m
+	 * @param m object of the Master UI class
 	 */
 	public CreateUpdateRemoveCinemaShowtimes(master m){
 		Master = m;

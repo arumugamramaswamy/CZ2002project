@@ -12,12 +12,23 @@ import model.movie;
 import model.show;
 import model.master;
 
+/**
+ * Master class for Movies. Used to handle all get and set operations for movies
+ * @version 1.0
+ */
+
 public class movieIO {
-
-
-
+		
+		/**
+		 * SEPARATOR to differentiate between values
+		 */
 		public static final String SEPARATOR = "|";
 
+		/**
+		 * generic method to get a string array
+		 * @param arr array of strings
+		 * @return string
+		 */
 		public static String[] GetStringArray(ArrayList<String> arr) 
 	    { 
 	  
@@ -36,14 +47,17 @@ public class movieIO {
 	        return str; 
 	    }
 		
+		/**
+		 * method to get double objects from array
+		 * @param arr
+		 * @return
+		 */
 		public static double[] GetDoubleArray(ArrayList<String> arr) 
 	    { 
 	  
 	        // declaration and initialise Double Array 
 	        double db[] = new double[arr.size()]; 
 	  
-
-	        
 	        // Iterating and Parsing to double
 	        int i = 0; 
 	        for (String str : arr) { 
@@ -54,6 +68,12 @@ public class movieIO {
 	    }
 		
 	    // an example of reading
+		/**
+		 * read all movies from the text file
+		 * @param filename the file name where all the movies are stored
+		 * @return	array of all movies
+		 * @throws IOException	handle file read errors
+		 */
 		public static ArrayList readMovie(String filename) throws IOException {
 			
 			// read String from text file
@@ -61,8 +81,6 @@ public class movieIO {
 			
 			//final array to store movie objects
 			ArrayList alr = new ArrayList() ;// to store Movie data
-			
-
 			
 	        for (int i = 0 ; i < stringArray.size() ; i++) {
 	        		
@@ -123,32 +141,17 @@ public class movieIO {
 					
 					// add to movie list
 					alr.add(mov) ;
-					
-//					//print all fields
-//					System.out.println(movieName);
-//					System.out.println(directorName);
-//					System.out.println(all_rev);
-//					for(int x =0;x<reviews.length;x++) 
-//						System.out.printf("%s ",reviews[x]);
-//					
-//					System.out.printf("\n");
-//					System.out.println(all_ratings);
-//					for(int x =0;x<ratings.length;x++) 
-//						System.out.printf("%f ",ratings[x]);
-//					System.out.printf("\n");
-//
-//					System.out.println(showingStatus);
-//					System.out.println(Synopsis);
-//					System.out.println(all_Cast);
-//					for(int x =0;x<Cast.length;x++) 
-//						System.out.printf("%s ",Cast[x]);
-//					System.out.printf("\n");
-
 
 	        }
 				return alr ;
 		}
 
+		/**
+		 * 
+		 * @param fileName
+		 * @return
+		 * @throws IOException
+		 */
 		  public static List read(String fileName) throws IOException {
 				List data = new ArrayList() ;
 			    Scanner scanner = new Scanner(new FileInputStream(fileName));

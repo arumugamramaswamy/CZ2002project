@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 import model.*;
 
+/**
+ * function used to read all the holiday dates and update them
+ * @version 1.0
+ */
 public class holidyIO {
 
 	    public String[] readHolidays() throws IOException,Exception {
