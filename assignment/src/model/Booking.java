@@ -34,8 +34,13 @@ public class Booking{
      * show object of the show to booked
      */
     private show show;
-    
+    /**
+     * email ID of the customer
+     */
     private String emailID;
+    /**
+     * date and time of the show
+     */
     private String dateTime;
     
     public Booking() {};
@@ -137,7 +142,7 @@ public class Booking{
 	}
 	/**
 	 * gets the show for which the booking is done
-	 * @return shwo object for which the booking is made
+	 * @return show object for which the booking is made
 	 */
 	public show getShow() {
 		return show;
@@ -149,6 +154,10 @@ public class Booking{
 	public void setShow(show show) {
 		this.show = show;
 	}
+	/**
+	 * gets the email ID of the customer
+	 * @return email ID
+	 */
 	public String getemailID() {
 		return emailID;
 	}
@@ -159,10 +168,17 @@ public class Booking{
 	public void setemailID(String emailID) {
 		this.emailID = emailID;
 	}
-	
+	/**
+	 * 
+	 * @return	date and time of the show
+	 */
 	public String getDateTime() {
 		return dateTime;
 	}
+	/**
+	 * sets the date and time of the show
+	 * @param dateTime date and time of the show
+	 */
 	public void setDateTime(String dateTime) {
 		this.dateTime = dateTime;
 	}
